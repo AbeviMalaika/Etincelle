@@ -41,7 +41,7 @@ public class DynamisationShaderMeuble : MonoBehaviour
                 // Transition smooth
                  t = Mathf.SmoothStep(0f, 1f, t);
 
-                print(etatTransformation);
+                //print(etatTransformation);
 
                 // Application de la transformation
                 etatTransformation = Mathf.Lerp(etatDepart, etatFinal, t);
@@ -56,6 +56,7 @@ public class DynamisationShaderMeuble : MonoBehaviour
                 tempsEcoule = 0f;
                 transformation = false;
                 initialisation = false;
+                inverse = !inverse;
             }
         }
         else
@@ -64,15 +65,6 @@ public class DynamisationShaderMeuble : MonoBehaviour
             {
                 mat.SetFloat("_Degre_Transformation", etatDepart);
             }
-        }
-    }
-
-    private void OnCollisionEnter(Collision infoCollision)
-    {
-        if(infoCollision.gameObject.tag == "main")
-        {
-            print("Objet touché");
-            transformation = true;
         }
     }
 }
