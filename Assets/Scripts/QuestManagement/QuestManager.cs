@@ -23,6 +23,7 @@ public class QuestManager : MonoBehaviour
         if (quest != null && quest.etat == QuestState.NonDemarree)
         {
             quest.DemarrerQuest();
+            queteActuelle = TrouverQuestActuelle();
             Debug.Log($"Quête commencée : {quest.titre}");
         }
     }

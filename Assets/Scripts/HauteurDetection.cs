@@ -7,7 +7,7 @@ public class HauteurDetection : MonoBehaviour
     public float hauteurAssis;
     public float hauteurActuelle;
     public float seuilHauteur;
-    public bool estAssis;
+    static public bool estAssis;
 
     void Start()
     {
