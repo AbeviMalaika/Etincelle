@@ -17358,10 +17358,6 @@ MonoBehaviour:
     listeObjectif:
     - objectifID: 0
       titre: Wow bibi
-    - objectifID: 1
-      titre: CoucouMonBB
-    - objectifID: 2
-      titre: Lollllll
     etat: 0
     progressionActuelle: 0
     progressionRequise: 3
