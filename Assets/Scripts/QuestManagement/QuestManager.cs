@@ -37,7 +37,7 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    Quest TrouverQuest(string id)
+    public Quest TrouverQuest(string id)
     {
         return quests.Find(q => q.questID == id);
     }
