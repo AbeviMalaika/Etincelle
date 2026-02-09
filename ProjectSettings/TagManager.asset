@@ -6,6 +6,24 @@ TagManager:
   tags:
   - Anchor
   - Doigt
+  - QDSUIBackplateGradient
+  - QDSUISharedThemeColor
+  - QDSUISection
+  - QDSUIIcon
+  - QDSUITooltip
+  - QDSUIToggleButton
+  - QDSUITextSecondaryColor
+  - QDSUIPrimaryButton
+  - QDSUISecondaryButton
+  - QDSUIAccentColor
+  - QDSUITextInvertedColor
+  - QDSUITextSecondaryInvertedColor
+  - QDSUIToggleBorderlessButton
+  - QDSUITextInputField
+  - QDSUIToggleCheckboxRadio
+  - QDSUIBorderlessButton
+  - QDSUIDestructiveButton
+  - QDSUIToggleSwitch
   layers:
   - Default
   - TransparentFX
@@ -38,7 +56,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - OVROverlayCanvas Rendering
   m_SortingLayers:
   - name: Default
     uniqueID: 0

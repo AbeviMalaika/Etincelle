@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Quest1 : MonoBehaviour
 {
+    public GameObject crayon;
+    public GameObject cahier;
+
     Quest quest_1;
 
     void Start()
@@ -15,6 +18,7 @@ public class Quest1 : MonoBehaviour
         // Objectif 1
         if (quest_1.progressionActuelle == 0)
         {
+            // Si le joueur est assis à l'ordinateur
             if (CollisionChaise.contactChaise && HauteurDetection.estAssis)
             {
                 QuestManager.Instance.AjouterProgression("1");
@@ -24,7 +28,8 @@ public class Quest1 : MonoBehaviour
         // Objectif 2
         if (quest_1.progressionActuelle == 1)
         {
-            if (CollisionChaise.contactChaise && HauteurDetection.estAssis)
+            // À FAIRE - Si la value du input field est égale à "" (en appuyant le backspace pour supprimer les inputs)
+            if (true)
             {
                 QuestManager.Instance.AjouterProgression("1");
             }
@@ -33,7 +38,8 @@ public class Quest1 : MonoBehaviour
         // Objectif 3 | -------------------------------------------------------
         if (quest_1.progressionActuelle == 2)
         {
-            if (CollisionChaise.contactChaise && HauteurDetection.estAssis)
+            // Si le crayon est pris et que l'efface touche le cahier
+            if (crayon.GetComponent<GrabDetection>().isGrabbed && CahierTransformations.estEfface)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("1");

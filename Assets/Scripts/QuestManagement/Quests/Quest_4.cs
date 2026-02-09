@@ -4,6 +4,7 @@ public class Quest_4 : MonoBehaviour
 {
     public GameObject miroir;
     public GameObject positionPortailMiroir;
+    public GameObject crayon;
 
     Quest quest_4;
 
@@ -18,6 +19,7 @@ public class Quest_4 : MonoBehaviour
         // Objectif 1
         if (quest_4.progressionActuelle == 0)
         {
+            // Si le joueur est dans la zone de portail et que le miroir est touché
             if (ZonePortail.entreeZone && miroir.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("4");
@@ -27,7 +29,8 @@ public class Quest_4 : MonoBehaviour
         // Objectif 2
         if (quest_4.progressionActuelle == 1)
         {
-            if (true)
+            // Si le joueur est assis à l'ordinateur
+            if (CollisionChaise.contactChaise && HauteurDetection.estAssis)
             {
                 QuestManager.Instance.AjouterProgression("4");
             }
@@ -36,6 +39,7 @@ public class Quest_4 : MonoBehaviour
         // Objectif 3
         if (quest_4.progressionActuelle == 2)
         {
+            //À FAIRE - Si le joueur ouvre l'ordi (en appuyant la barre d'espace sur le clavier pour le sortir du mode veille)
             if (true)
             {
                 QuestManager.Instance.AjouterProgression("4");
@@ -45,13 +49,14 @@ public class Quest_4 : MonoBehaviour
         // Objectif 4 | -------------------------------------------------------
         if (quest_4.progressionActuelle == 3)
         {
-            if (true)
+            //À FAIRE - Si le crayon est pris et que la mine touche le cahier
+            if (crayon.GetComponent<GrabDetection>().isGrabbed && CahierTransformations.etincelleDessine)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("4");
 
                 //Terminer la partie
-                //Code pour la gestion de fin de partie. Possiblementy faire un script à part pour ça et le déclencher avec enabled et/ou boolean
+                //Code pour la gestion de fin de partie. Possiblement faire un script à part pour ça et le déclencher avec enabled et/ou boolean
             }
         }
 

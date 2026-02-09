@@ -22,6 +22,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 1
         if (quest_2.progressionActuelle == 0)
         {
+            // Si la table de chevet est touchée
             if (chevet.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -31,6 +32,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 2
         if (quest_2.progressionActuelle == 1)
         {
+            // Si la table d'ordi est touchée
             if (tableOrdi.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -40,6 +42,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 3
         if (quest_2.progressionActuelle == 2)
         {
+            // Si le cahier est touché
             if (cahier.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -49,6 +52,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 4
         if (quest_2.progressionActuelle == 3)
         {
+            // Si le lit est touché
             if (lit.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -58,6 +62,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 5
         if (quest_2.progressionActuelle == 4)
         {
+            // Si la commode est touchée
             if (commode.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -67,6 +72,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 6 | -------------------------------------------------------
         if (quest_2.progressionActuelle == 5)
         {
+            // Si les plantes sont touchées
             if (plantes.GetComponent<ToucherDetection>().toucher)
             {
                 //Compléter la quête

@@ -17,6 +17,7 @@ public class Quest_3 : MonoBehaviour
         // Objectif 1
         if (quest_3.progressionActuelle == 0)
         {
+            // Si le joueur est assis à l'ordinateur
             if (CollisionChaise.contactChaise && HauteurDetection.estAssis)
             {
                 QuestManager.Instance.AjouterProgression("3");
@@ -26,6 +27,7 @@ public class Quest_3 : MonoBehaviour
         // Objectif 2 | -------------------------------------------------------
         if (quest_3.progressionActuelle == 1)
         {
+            // Si la cinématique est terminée
             if (cinematiqueTerminee)
             {
                 //Compléter la quête
