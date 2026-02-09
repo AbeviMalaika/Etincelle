@@ -24,6 +24,7 @@ public class QuestManager : MonoBehaviour
         {
             quest.DemarrerQuest();
             queteActuelle = TrouverQuestActuelle();
+            UIManager.Instance.AfficherQueteUI(quest);
             Debug.Log($"Quête commencée : {quest.titre}");
         }
     }

@@ -1,29 +1,84 @@
+using NUnit.Framework;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static Oculus.Interaction.Context;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI titreQuete;
-    public TextMeshProUGUI titreObjectif;
-    Quest questActuelle;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static UIManager Instance;
+
+    public List<TextMeshProUGUI> titresQuetes = new List<TextMeshProUGUI>();
+    public List<TextMeshProUGUI> titresObjectif = new List<TextMeshProUGUI>();
+
+    public Transform targetFin;
+    public GameObject hud;
+    public GameObject UIFin;
+
+    void Awake()
     {
-        QuestManager.Instance.DemarrerQuest("1");
-        questActuelle = QuestManager.Instance.TrouverQuestActuelle();
-        AfficherQueteUI();
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AfficherQueteUI(Quest quete) 
     {
-        questActuelle = QuestManager.Instance.TrouverQuestActuelle();
-        AfficherQueteUI();
+        // Pour chaque titre de quête qu'on veut modifier, on passe au travers d'un tableau de titre (HUD et pause)
+        foreach (var t in titresQuetes)
+        {
+            t.text = quete.titre;
+        }
+
+        // Pour chaque description d'objectif qu'on veut modifier, on passe au travers d'un tableau de titre (HUD et pause)
+        foreach (var t in titresQuetes)
+        {
+            t.text = quete.listeObjectif[quete.listeObjectif.Find(q => q.objectifID == quete.progressionActuelle).objectifID].titre;
+        }
     }
 
-    void AfficherQueteUI()
+    //Fonction pour quit la game
+    public void QuitterJeu()
     {
-        titreQuete.text = questActuelle.titre;
-        titreObjectif.text = questActuelle.listeObjectif[questActuelle.listeObjectif.Find(q => q.objectifID == questActuelle.progressionActuelle).objectifID].titre;
+        Invoke("Quit", 5f);
     }
+
+    //Fonction pour changer de UI à faire disparaitre
+    public void ShowUI(GameObject UI)
+    {
+        StartCoroutine(corou_ShowUI(UI));
+    }
+
+    //Fonction pour changer de UI à afficher
+    public void HideUI(GameObject UI)
+    {
+        StartCoroutine(corou_HideUI(UI));
+    }
+
+    IEnumerator corou_ShowUI(GameObject UI)
+    {
+        yield return new WaitForSeconds(1f);
+        UI.GetComponent<CanvasGroup>().alpha = 1;
+        UI.SetActive(true);
+        UI.GetComponent<Animator>().SetTrigger("show");
+        UI.GetComponent<CanvasGroup>().interactable = true;
+        yield return null;
+    }
+
+    IEnumerator corou_HideUI(GameObject UI)
+    {
+        UI.GetComponent<Animator>().SetTrigger("hide");
+        UI.GetComponent<CanvasGroup>().interactable = false;
+        yield return new WaitForSeconds(1f);
+        UI.GetComponent<CanvasGroup>().alpha = 0;
+        UI.SetActive(false);
+        yield return null;
+    }
+
+
+    public void Quit() => Application.Quit();
+
+    public void OuvrirLien(string hyperlien) => Application.OpenURL(hyperlien);
 }
