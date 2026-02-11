@@ -5,6 +5,7 @@ public class Quest_4 : MonoBehaviour
     public GameObject miroir;
     public GameObject positionPortailMiroir;
     public GameObject crayon;
+    public GameObject cahier;
 
     Quest quest_4;
 
@@ -50,7 +51,7 @@ public class Quest_4 : MonoBehaviour
         if (quest_4.progressionActuelle == 3)
         {
             //À FAIRE - Si le crayon est pris et que la mine touche le cahier
-            if (crayon.GetComponent<GrabDetection>().isGrabbed && CahierTransformations.modifCahier)
+            if (crayon.GetComponent<GrabDetection>().isGrabbed && cahier.GetComponent<CahierTransformations>().modifCahier)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("4");

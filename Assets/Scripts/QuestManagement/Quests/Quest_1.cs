@@ -39,7 +39,7 @@ public class Quest_1 : MonoBehaviour
         if (quest_1.progressionActuelle == 2)
         {
             // Si le crayon est pris et que l'efface touche le cahier
-            if (crayon.GetComponent<GrabDetection>().isGrabbed && CahierTransformations.modifCahier)
+            if (crayon.GetComponent<GrabDetection>().isGrabbed && cahier.GetComponent<CahierTransformations>().modifCahier)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("1");

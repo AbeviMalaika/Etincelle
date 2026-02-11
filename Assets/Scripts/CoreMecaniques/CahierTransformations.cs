@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CahierTransformations : MonoBehaviour
 {
-    [SerializeField] public static bool modifCahier;
+    public bool modifCahier;
     public bool inverse;
     bool initialisation;
     public float dureeTransformation;
@@ -26,8 +26,10 @@ public class CahierTransformations : MonoBehaviour
 
     void Update()
     {
-        etatFinal = !inverse ? 0f : 1f;
-        etatDepart = !inverse ? 1f : 0f;
+        //mat.SetFloat("_Effacage", Mathf.PingPong(Time.time, 1f));
+        //print(mat.name);
+        etatFinal = !inverse ? 1.85f : 0f;
+        etatDepart = !inverse ? 0f : 1.85f;
 
         if (modifCahier)
         {
@@ -40,12 +42,10 @@ public class CahierTransformations : MonoBehaviour
                 // Transition smooth
                 t = Mathf.SmoothStep(0f, 1f, t);
 
-                //print(etatTransformation);
-
                 // Application de la modifCahier
                 etatTransformation = Mathf.Lerp(etatDepart, etatFinal, t);
                 tempsEcoule += Time.deltaTime;
-                mat.SetFloat("_Degre_Transformation", etatTransformation);
+                mat.SetFloat("_Effacage", etatTransformation);
             }
 
             else
@@ -62,7 +62,7 @@ public class CahierTransformations : MonoBehaviour
         {
             if (initialisation)
             {
-                mat.SetFloat("_Degre_Transformation", etatDepart);
+                mat.SetFloat("_Effacage", etatDepart);
             }
         }
     }
