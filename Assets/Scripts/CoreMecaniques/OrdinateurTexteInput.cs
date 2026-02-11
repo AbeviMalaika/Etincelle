@@ -7,6 +7,7 @@ public class OrdinateurTexteInput : MonoBehaviour
     public static bool texteSupp;
     public Text textInputed;
     public TextMeshProUGUI textOutputed;
+    public bool enterClique;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,5 +23,11 @@ public class OrdinateurTexteInput : MonoBehaviour
         {
             texteSupp = true;
         }
+    }
+
+    public void detectEnter()
+    {
+        enterClique = true;
+        print("Enter pressed");
     }
 }
