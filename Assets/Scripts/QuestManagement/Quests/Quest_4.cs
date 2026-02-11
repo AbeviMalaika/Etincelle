@@ -50,7 +50,7 @@ public class Quest_4 : MonoBehaviour
         if (quest_4.progressionActuelle == 3)
         {
             //À FAIRE - Si le crayon est pris et que la mine touche le cahier
-            if (crayon.GetComponent<GrabDetection>().isGrabbed && CahierTransformations.etincelleDessine)
+            if (crayon.GetComponent<GrabDetection>().isGrabbed && CahierTransformations.modifCahier)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("4");

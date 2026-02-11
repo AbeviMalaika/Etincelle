@@ -4,6 +4,8 @@ using static Oculus.Interaction.Context;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    public static bool enPause;
     void Awake()
     {
         if (Instance == null)
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         // On démarre la première quête
         QuestManager.Instance.DemarrerQuest("1");
+        QuestManager.Instance.gameObject.GetComponent<Quest_1>().enabled = true;
     }
 
 

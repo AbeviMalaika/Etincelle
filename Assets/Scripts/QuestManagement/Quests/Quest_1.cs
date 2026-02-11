@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Quest1 : MonoBehaviour
+public class Quest_1 : MonoBehaviour
 {
     public GameObject crayon;
     public GameObject cahier;
@@ -29,7 +29,7 @@ public class Quest1 : MonoBehaviour
         if (quest_1.progressionActuelle == 1)
         {
             // À FAIRE - Si la value du input field est égale à "" (en appuyant le backspace pour supprimer les inputs)
-            if (true)
+            if (OrdinateurTexteInput.texteSupp)
             {
                 QuestManager.Instance.AjouterProgression("1");
             }
@@ -39,7 +39,7 @@ public class Quest1 : MonoBehaviour
         if (quest_1.progressionActuelle == 2)
         {
             // Si le crayon est pris et que l'efface touche le cahier
-            if (crayon.GetComponent<GrabDetection>().isGrabbed && CahierTransformations.estEfface)
+            if (crayon.GetComponent<GrabDetection>().isGrabbed && CahierTransformations.modifCahier)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("1");
