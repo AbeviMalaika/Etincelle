@@ -172,6 +172,7 @@ Material:
     - _Surface: 0
     - _Temps_Dissolution: 0
     - _WorkflowMode: 1
+    - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
@@ -179,7 +180,7 @@ Material:
     - _Couleur_Bordure: {r: 2.6197767, g: 0.8314966, b: 0, a: 1}
     - _Couleur_Brillants: {r: 1.2690134, g: 4.534229, b: 3.0166497, a: 1}
     - _Couleur_Contour_Lumineux: {r: 2, g: 0, b: 0.8258381, a: 0}
-    - _Couleur_Degrade_1: {r: 1, g: 0.6194968, b: 0.9566508, a: 0}
+    - _Couleur_Degrade_1: {r: 0.13207549, g: 0.03800285, b: 0.12140747, a: 0}
     - _Couleur_Degrade_2: {r: 0.5918476, g: 0.7769491, b: 0.9433962, a: 1}
     - _Couleur_Lueur: {r: 4.2655334, g: 2.0287578, b: 0.9791941, a: 0}
     - _Couleur_Paillettes: {r: 1, g: 0, b: 0, a: 1}

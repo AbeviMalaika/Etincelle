@@ -1,0 +1,241 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7660477240369519371
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 10
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SkyboxBorealRave
+  m_Shader: {fileID: -6465566751694194690, guid: 1c2b85dd64a36f24f8baeb96182609c8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise_Texture:
+        m_Texture: {fileID: 2800000, guid: 2473a609fbaa35a49843a35a2aa38e5c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: ec21ed1f3484f994db2ca8a918dc63b5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_70a4bbe2c7884864b8444b982c4c9f1d_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 0309d2293ce65e74ba026318769968f0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a1d2d845dfe044d699d7d899515f09f8_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 3fba5a6c9608fab45afbb6603c2a9a46, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b26dd2597f974279b88e03469378849a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: b9fbe90325e55564c98332f5c9d7b155, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_c7f66e729e6d46eabd428a08d9daedf3_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 1318f787c77892742a9f9747919ee646, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_d64410ee001d4c628dc02d7a69f558d3_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 04c4b7ef6a03fc949a7c271be4cc4bf8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkyVortexTexture:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_08cd612a9b83447a975f768d4a22e56d_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 2473a609fbaa35a49843a35a2aa38e5c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_b4973f81591849e6b8080ed2d676ffef_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 2473a609fbaa35a49843a35a2aa38e5c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_d7a1a09923704884adef54ea974c3463_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 34bdd51729719934e862c93c7b0315a7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture_Brillants:
+        m_Texture: {fileID: 2800000, guid: 2473a609fbaa35a49843a35a2aa38e5c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture_Paillettes:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AddPrecomputedVelocity: 0
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Amplitude_Degrade: 1.99
+    - _Base_Gradient_Color: 0.48
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _Degre_Transformation: 0
+    - _DensiteEtoile: -40.7
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _Dissolve_Size: 30
+    - _Dissolve_Timer: 0.5
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _Edge_Thickness: 0.02
+    - _EnvironmentReflections: 1
+    - _Float: 0
+    - _Fresnel_Power: 3.12
+    - _Glitter_offset: 0.51
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _GradientBlend: 0.21
+    - _GradientPosition: -0.22
+    - _Grosseur_Brillants: 8.69
+    - _Grosseur_Brillants_1: 0
+    - _Grosseur_Dissolution: 34.64
+    - _Grosseur_Transformation: 1.01
+    - _Intensite_Lueur: -1.65
+    - _Intensite_Scintillement: 0.28
+    - _Largeur_Bordure: 0.005
+    - _Metallic: 0
+    - _Metalness: 0.5
+    - _Noise: -50
+    - _Noise_Rotation_Speed: 1.5
+    - _OcclusionStrength: 1
+    - _Parallax: 0.005
+    - _PositionEtoile: 33.7
+    - _Quantite_Brillants: 0.59
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Rotation: -197.5
+    - _RotationEtoile: 13.5
+    - _RotationVortex: 0
+    - _Seuil_Brillants: -28.6
+    - _Smoothness: 0.47
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _Surface: 0
+    - _TailleEtoile: -12.3
+    - _TailleVortex: 0.9
+    - _Temps_Dissolution: 0
+    - _WorkflowMode: 1
+    - _XRMotionVectorsPass: 1
+    - _ZWrite: 1
+    - _test: -3.58
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BottomColor: {r: 0.059433963, g: 0, b: 0.084905684, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Couleur_Bordure: {r: 2.6197767, g: 0.8314966, b: 0, a: 1}
+    - _Couleur_Brillants: {r: 1.2690134, g: 4.534229, b: 3.0166497, a: 1}
+    - _Couleur_Contour_Lumineux: {r: 2, g: 0, b: 0.8258381, a: 0}
+    - _Couleur_Degrade_1: {r: 1, g: 0.6194968, b: 0.9566508, a: 0}
+    - _Couleur_Degrade_2: {r: 0.5918476, g: 0.7769491, b: 0.9433962, a: 1}
+    - _Couleur_Lueur: {r: 4.2655334, g: 2.0287578, b: 0.9791941, a: 0}
+    - _Couleur_Paillettes: {r: 1, g: 0, b: 0, a: 1}
+    - _Edge_Color: {r: 0.8373351, g: 0, b: 0.38876286, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EtoileColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Fresnel_Color: {r: 1.664882, g: 0.81197727, b: 0.16491756, a: 1}
+    - _Glitter_Color: {r: 0.94114244, g: 0.6305857, b: 2.1915438, a: 1}
+    - _Grosseur_Brillants: {r: 1.7, g: 1.7, b: 0, a: 0}
+    - _Grosseur_Paillettes: {r: 1.7, g: 1.7, b: 0, a: 0}
+    - _Noise_Scale: {r: 5, g: 5, b: 0, a: 0}
+    - _Primary_Color: {r: 0.1079161, g: 0.08285868, b: 0.3584906, a: 0}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Secondary_Color: {r: 0.3773585, g: 0.19947258, b: 0.076539695, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _StarsColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TopColor: {r: 0.025154337, g: 0.00048949925, b: 0.103773594, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
