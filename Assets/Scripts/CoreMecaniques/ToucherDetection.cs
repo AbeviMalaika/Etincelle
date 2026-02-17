@@ -4,6 +4,7 @@ using UnityEngine;
 public class ToucherDetection : MonoBehaviour
 {
     public bool toucher;
+    public bool detecterToucher;
 
     void Start()
     {
@@ -15,12 +16,16 @@ public class ToucherDetection : MonoBehaviour
         // Si l'objet se fait toucher, il se transforme
         if (infoCollision.gameObject.tag == "Doigt")
         {
-            if(!toucher)
+            if (detecterToucher)
             {
-                toucher = true;
-                print("<color=green>Objet touché: " + gameObject.name + "</color>");
-                Invoke("ResetToucher", 1f);
+                if (!toucher)
+                {
+                    toucher = true;
+                    print("<color=green>Objet touché: " + gameObject.name + "</color>");
+                    Invoke("ResetToucher", 1f);
+                }
             }
+
         }
     }
 

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DynamisationShaderMeuble : MonoBehaviour
 {
-    //public float timeDessolve;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public bool transformation;
     public bool inverse;
@@ -16,18 +15,20 @@ public class DynamisationShaderMeuble : MonoBehaviour
     Material mat;
     void Start()
     {
-        //Initialisation du matériel
-        etatFinal = !inverse ? 0f : 1f;
-        etatDepart = !inverse ? 1f : 0f;
-        initialisation = true;
+        mat = GetComponent<MeshRenderer>().materials[0];
 
-        mat = GetComponent<MeshRenderer>().material;
+        //Initialisation du matériel
+        etatDepart = !inverse ? 1f : 0f;
+        etatFinal = !inverse ? 0f : 1f;
         mat.SetFloat("_Degre_Transformation", etatDepart);
+        initialisation = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        transformation = gameObject.GetComponent<ToucherDetection>().toucher;
+
         etatFinal = !inverse ? 0f : 1f;
         etatDepart = !inverse ? 1f : 0f;
 
@@ -40,8 +41,6 @@ public class DynamisationShaderMeuble : MonoBehaviour
 
                 // Transition smooth
                  t = Mathf.SmoothStep(0f, 1f, t);
-
-                //print(etatTransformation);
 
                 // Application de la transformation
                 etatTransformation = Mathf.Lerp(etatDepart, etatFinal, t);

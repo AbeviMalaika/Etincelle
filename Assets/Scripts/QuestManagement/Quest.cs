@@ -5,7 +5,6 @@ public class Quest
 {
     public string questID;
     public string titre;
-    //public string description;
     public List<Objectif> listeObjectif = new List<Objectif>();
 
     public QuestState etat;
