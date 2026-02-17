@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ToucherDetection : MonoBehaviour
@@ -14,8 +15,15 @@ public class ToucherDetection : MonoBehaviour
         // Si l'objet se fait toucher, il se transforme
         if (infoCollision.gameObject.tag == "Doigt")
         {
-            toucher = true;
-            print("<color=green>Objet touché: " + gameObject.name + "</color>");
+            if(!toucher)
+            {
+                toucher = true;
+                print("<color=green>Objet touché: " + gameObject.name + "</color>");
+                Invoke("ResetToucher", 1f);
+            }
         }
     }
+
+    //Pour réinitialiser l'état de toucher
+    void ResetToucher() { toucher = false; }
 }

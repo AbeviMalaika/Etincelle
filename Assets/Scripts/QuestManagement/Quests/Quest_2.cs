@@ -1,13 +1,14 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Quest_2 : MonoBehaviour
 {
     public GameObject chevet;
     public GameObject tableOrdi;
-    public GameObject cahier;
     public GameObject lit;
     public GameObject commode;
     public GameObject plantes;
+    public PlayableDirector director;
 
     Quest quest_2;
 
@@ -15,6 +16,9 @@ public class Quest_2 : MonoBehaviour
     {
         //QuestManager.Instance.DemarrerQuest("1");
         quest_2 = QuestManager.Instance.TrouverQuest("2");
+        director.gameObject.SetActive(true);
+
+        TimelineManager.Instance.PlayTimeline(director);
     }
 
     void Update()
@@ -26,6 +30,7 @@ public class Quest_2 : MonoBehaviour
             if (chevet.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
+                TimelineManager.Instance.PlayTimeline(director);
             }
         }
 
@@ -36,47 +41,41 @@ public class Quest_2 : MonoBehaviour
             if (tableOrdi.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
-            }
-        }
-
-        // Objectif 3
-        if (quest_2.progressionActuelle == 2)
-        {
-            // Si le cahier est touché
-            if (cahier.GetComponent<ToucherDetection>().toucher)
-            {
-                QuestManager.Instance.AjouterProgression("2");
+                TimelineManager.Instance.PlayTimeline(director);
             }
         }
 
         // Objectif 4
-        if (quest_2.progressionActuelle == 3)
+        if (quest_2.progressionActuelle == 2)
         {
             // Si le lit est touché
             if (lit.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
+                TimelineManager.Instance.PlayTimeline(director);
             }
         }
 
         // Objectif 5
-        if (quest_2.progressionActuelle == 4)
+        if (quest_2.progressionActuelle == 3)
         {
             // Si la commode est touchée
             if (commode.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
+                TimelineManager.Instance.PlayTimeline(director);
             }
         }
 
         // Objectif 6 | -------------------------------------------------------
-        if (quest_2.progressionActuelle == 5)
+        if (quest_2.progressionActuelle == 4)
         {
             // Si les plantes sont touchées
             if (plantes.GetComponent<ToucherDetection>().toucher)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("2");
+                TimelineManager.Instance.PlayTimeline(director);
 
                 //Démarrer la nouvelle quête
                 QuestManager.Instance.DemarrerQuest("3");

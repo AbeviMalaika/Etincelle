@@ -35,6 +35,11 @@ public class QuestManager : MonoBehaviour
         if (quest != null)
         {
             quest.AjouterProgression(amount);
+
+            if (quest.progressionActuelle < quest.progressionRequise)
+            {
+                UIManager.Instance.AfficherQueteUI(quest);
+            }
         }
     }
 
