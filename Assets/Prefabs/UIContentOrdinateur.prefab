@@ -515,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OrdinateurTexteInput
   textInputed: {fileID: 3826594679872827156}
   textOutputed: {fileID: 7960236740057935325}
+  enterClique: 0
 --- !u!1 &6050989668369161442
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: 22c36286-08e1-4f8e-a16e-2b595d3821c1
+  instanceId: b82855b9-6609-4250-bc07-c42463793c11
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: c88fc9f2-e9d1-41ea-b937-cdaf92a806d0
