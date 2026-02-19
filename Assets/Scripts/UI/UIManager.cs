@@ -28,11 +28,19 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.sceneActuelle.name == "scenePartie")
+        //Uniquement lorsque la partie est en cours
+        if (GameManager.Instance.sceneActuelle.name == "ScenePartie")
         {
+            //Rendre possible l'interactivité avec le UI
             rayInteractable.enabled = GameManager.enPause;
+
+            //Désactiver l'HUD
             hud.SetActive(!GameManager.enPause);
-            menuPause.SetActive(GameManager.enPause);
+
+            //Afficher le menu pause
+            if (GameManager.Instance.gestureDone) ShowUI(menuPause);
+
+            //menuPause.SetActive(GameManager.enPause);
         }
     }
 
@@ -72,26 +80,59 @@ public class UIManager : MonoBehaviour
         StartCoroutine(corou_HideUI(UI));
     }
 
+    //Fonction pour changer de UI à faire disparaitre
+    public void ShowUIDelay(GameObject UI)
+    {
+        StartCoroutine(corou_ShowUIDelay(UI));
+    }
+
     IEnumerator corou_ShowUI(GameObject UI)
     {
-        yield return new WaitForSeconds(2.5f);
-        UI.GetComponent<CanvasGroup>().alpha = 1;
+        //yield return new WaitForSeconds(1f);
+        UI.GetComponent<Animator>().enabled = true;
         UI.SetActive(true);
+
         UI.GetComponent<Animator>().SetTrigger("show");
         UI.GetComponent<CanvasGroup>().interactable = true;
+        yield return new WaitForSeconds(0.5f);
+
+        UI.GetComponent<Animator>().enabled = false;
+
+        UI.GetComponent<CanvasGroup>().alpha = 1;
+        yield return null;
+    }
+
+    // Un autre enumerator dans le cas ou je veux un délai avant l'apparition du UI
+    IEnumerator corou_ShowUIDelay(GameObject UI)
+    {
+        yield return new WaitForSeconds(1f);
+        UI.GetComponent<Animator>().enabled = true;
+        UI.SetActive(true);
+
+        UI.GetComponent<Animator>().SetTrigger("show");
+        UI.GetComponent<CanvasGroup>().interactable = true;
+        yield return new WaitForSeconds(0.5f);
+
+        UI.GetComponent<Animator>().enabled = false;
+
+        UI.GetComponent<CanvasGroup>().alpha = 1;
         yield return null;
     }
 
     IEnumerator corou_HideUI(GameObject UI)
     {
+        UI.GetComponent<Animator>().enabled = true;
+
         UI.GetComponent<Animator>().SetTrigger("hide");
         UI.GetComponent<CanvasGroup>().interactable = false;
         yield return new WaitForSeconds(2.5f);
+
+        UI.GetComponent<Animator>().enabled = false;
+
         UI.GetComponent<CanvasGroup>().alpha = 0;
         UI.SetActive(false);
         yield return null;
     }
-
 
     void Quit() => Application.Quit();
 

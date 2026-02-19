@@ -1,21 +1,21 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
-using UnityEngine.Timeline;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public OVRHand OvrHand;
+    public bool gestureDone;
 
     public Animator animTransition;
-    //public float tempsTransition;
     public Scene sceneActuelle;
 
     public GameObject SphereTransition;
     Material matTransition;
+
+    public GameObject MenuPrincipalUI;
+    public GameObject ConteneurMenuPrincipalUI;
 
     public static bool enPause;
     void Awake()
@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         sceneActuelle = SceneManager.GetActiveScene();
+
+        if (sceneActuelle.name == "SceneMenuPrincipal")
+        {
+            UIManager.Instance.ShowUI(MenuPrincipalUI);
+            UIManager.Instance.ShowUI(ConteneurMenuPrincipalUI);
+        }
 
         if (sceneActuelle.name == "ScenePartie")
         {
@@ -43,7 +49,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Récupérer le matériel de la sphère
-        matTransition = SphereTransition.GetComponent<Material>();
+        matTransition = SphereTransition.GetComponent<MeshRenderer>().material;
     }
 
     void Update()
@@ -51,7 +57,19 @@ public class GameManager : MonoBehaviour
         if (sceneActuelle.name == "ScenePartie")
         {
             OVRHand.MicrogestureType microGesture = OvrHand.GetMicrogestureType();
-            if (microGesture == OVRHand.MicrogestureType.SwipeRight) enPause = !enPause;
+            //if (microGesture == OVRHand.MicrogestureType.SwipeRight) enPause = !enPause;
+
+            if (microGesture == OVRHand.MicrogestureType.SwipeRight)
+            {
+                enPause = !enPause;
+                gestureDone = true;
+            }
+            else
+            {
+                gestureDone = false;
+            }
+
+
         }
     }
 
@@ -68,10 +86,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ChargementAsyncScene(string nomScene)
     {
-        //changementSceneEnCours = true;
-
         //On active l'animation de fade-out
-        animTransition.SetTrigger("fadeOut");
+        FadeOut();
 
         //On attend le temps que l'animation dure
         yield return new WaitForSeconds(2.5f);
@@ -115,18 +131,26 @@ public class GameManager : MonoBehaviour
 
     IEnumerator corou_FadeIn()
     {
+        animTransition.enabled = true;
         animTransition.SetTrigger("fadeIn");
         yield return new WaitForSeconds(2.5f);
-        matTransition.SetFloat("Alpha", 0f);
+
+        //Désactiver l'animator car il controle l'opacité et empèche de set par la suite
+        animTransition.enabled = false;
+        matTransition.SetFloat("_Opacity", 0f);
 
         yield return null;
     }
 
     IEnumerator corou_FadeOut()
     {
+        animTransition.enabled = true;
         animTransition.SetTrigger("fadeOut");
         yield return new WaitForSeconds(2.5f);
-        matTransition.SetFloat("Alpha", 1f);
+
+        //Désactiver l'animator car il controle l'opacité et empèche de set par la suite
+        animTransition.enabled = false;
+        matTransition.SetFloat("_Opacity", 1f);
 
         yield return null;
     }
