@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NuageMat
-  m_Shader: {fileID: -6465566751694194690, guid: 2a49f907b9097734c9598eaa42c57a2c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 605ab357dedb76f46925c11f817dc403, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -57,6 +57,7 @@ Material:
     m_Floats:
     - _AmbientOcclusion: 0.5
     - _IntensiteDegrade: 2.85
+    - _IntensiteEmmision: 5.5
     - _IntensiteNuage: -0.11
     - _Metallic: 1
     - _QueueControl: 0

@@ -12,8 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource pisteSFX;
 
     // Variables pour les options actuellement manipulées par le joueur
-    public float volumeMusique;
-    public float volumeSFX;
+    public static float volumeMusique;
+    public static float volumeSFX;
 
     // Éléments à manipuler
     public AudioMixer audioMixer; // AudioMixer pour la musique et les SFX
@@ -28,6 +28,15 @@ public class AudioManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        if(volumeMusique != 0) controleurVolMusique.value = volumeMusique;
+        if(volumeSFX != 0) controleurVolSFX.value = volumeSFX;
+           
+        AjusterVolumeMusique();
+        AjusterVolumeSFX();
     }
 
     // Fonction pour ajuster le volume de la musique
@@ -50,6 +59,9 @@ public class AudioManager : MonoBehaviour
 
         controleurVolMusique.value = volumeMusiqueDefaut;
         controleurVolSFX.value = volumeSFXDefaut;
+
+        AjusterVolumeMusique();
+        AjusterVolumeSFX();
     }
 
     //public void JouerSonBoutonUI(AudioClip sonUI)

@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     public List<TextMeshProUGUI> titresQuetes = new List<TextMeshProUGUI>();
     public List<TextMeshProUGUI> titresObjectif = new List<TextMeshProUGUI>();
 
-    //public Transform targetFin;
     public GameObject hud;
     public GameObject menuPause;
     //public GameObject UIFin;
@@ -27,16 +26,14 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void Start()
-    {
-        //GameManager.enPause = false;
-    }
-
     private void Update()
     {
-        rayInteractable.enabled = GameManager.enPause;
-        hud.SetActive(!GameManager.enPause);     
-        menuPause.SetActive(GameManager.enPause);
+        if (GameManager.Instance.sceneActuelle.name == "scenePartie")
+        {
+            rayInteractable.enabled = GameManager.enPause;
+            hud.SetActive(!GameManager.enPause);
+            menuPause.SetActive(GameManager.enPause);
+        }
     }
 
 
@@ -53,6 +50,8 @@ public class UIManager : MonoBehaviour
         {
             t.text = quete.listeObjectif[quete.listeObjectif.Find(q => q.objectifID == quete.progressionActuelle).objectifID].titre;
         }
+
+        hud.GetComponent<Animator>().SetTrigger("popUp");
     }
 
     //Fonction pour quit la game
@@ -75,7 +74,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator corou_ShowUI(GameObject UI)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
         UI.GetComponent<CanvasGroup>().alpha = 1;
         UI.SetActive(true);
         UI.GetComponent<Animator>().SetTrigger("show");
@@ -87,14 +86,14 @@ public class UIManager : MonoBehaviour
     {
         UI.GetComponent<Animator>().SetTrigger("hide");
         UI.GetComponent<CanvasGroup>().interactable = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
         UI.GetComponent<CanvasGroup>().alpha = 0;
         UI.SetActive(false);
         yield return null;
     }
 
 
-    public void Quit() => Application.Quit();
+    void Quit() => Application.Quit();
 
     public void OuvrirLien(string hyperlien) => Application.OpenURL(hyperlien);
 }
