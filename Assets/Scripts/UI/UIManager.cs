@@ -11,9 +11,10 @@ public class UIManager : MonoBehaviour
     public List<TextMeshProUGUI> titresQuetes = new List<TextMeshProUGUI>();
     public List<TextMeshProUGUI> titresObjectif = new List<TextMeshProUGUI>();
 
-    public Transform targetFin;
+    //public Transform targetFin;
     public GameObject hud;
-    public GameObject UIFin;
+    public GameObject menuPause;
+    //public GameObject UIFin;
     //public GameObject pokeInteraction;
     //public PointableCanvas pointableCanvas;
     public RayInteractable rayInteractable;
@@ -28,14 +29,14 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        GameManager.enPause = false;
+        //GameManager.enPause = false;
     }
 
     private void Update()
     {
-        //pokeInteraction.SetActive(GameManager.enPause);
-        //pointableCanvas.enabled = GameManager.enPause;
         rayInteractable.enabled = GameManager.enPause;
+        hud.SetActive(!GameManager.enPause);     
+        menuPause.SetActive(GameManager.enPause);
     }
 
 

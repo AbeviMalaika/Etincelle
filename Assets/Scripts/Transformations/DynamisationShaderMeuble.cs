@@ -5,7 +5,7 @@ public class DynamisationShaderMeuble : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public bool transformation;
     public bool inverse;
-    bool initialisation;
+    //bool initialisation;
     public float dureeTransformation;
     float tempsEcoule;
     float etatTransformation;
@@ -13,6 +13,7 @@ public class DynamisationShaderMeuble : MonoBehaviour
     float etatDepart;
 
     Material mat;
+
     void Start()
     {
         mat = GetComponent<MeshRenderer>().materials[0];
@@ -21,7 +22,7 @@ public class DynamisationShaderMeuble : MonoBehaviour
         etatDepart = !inverse ? 1f : 0f;
         etatFinal = !inverse ? 0f : 1f;
         mat.SetFloat("_Degre_Transformation", etatDepart);
-        initialisation = true;
+        //initialisation = true;
     }
 
     // Update is called once per frame
@@ -54,16 +55,16 @@ public class DynamisationShaderMeuble : MonoBehaviour
                 etatTransformation = etatFinal;
                 tempsEcoule = 0f;
                 transformation = false;
-                initialisation = false;
+                //initialisation = false;
                 inverse = !inverse;
             }
         }
-        else
-        {
-            if(initialisation)
-            {
-                mat.SetFloat("_Degre_Transformation", etatDepart);
-            }
-        }
+        //else
+        //{
+        //    if(initialisation)
+        //    {
+        //        mat.SetFloat("_Degre_Transformation", etatDepart);
+        //    }
+        //}
     }
 }

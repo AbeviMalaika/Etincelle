@@ -1,9 +1,9 @@
 using UnityEngine;
-using static Oculus.Interaction.Context;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public OVRHand OvrHand;
 
     public static bool enPause;
     void Awake()
@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        enPause = false;
     }
 
     void Start()
@@ -21,10 +23,10 @@ public class GameManager : MonoBehaviour
         QuestManager.Instance.gameObject.GetComponent<Quest_1>().enabled = true;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-        
+        OVRHand.MicrogestureType microGesture = OvrHand.GetMicrogestureType();
+
+        if (microGesture == OVRHand.MicrogestureType.SwipeRight) enPause = !enPause;
     }
 }

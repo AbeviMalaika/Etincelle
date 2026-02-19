@@ -22,7 +22,10 @@ public class ToucherDetection : MonoBehaviour
                 {
                     toucher = true;
                     print("<color=green>Objet touché: " + gameObject.name + "</color>");
-                    Invoke("ResetToucher", 1f);
+
+                    DesactiverDetectionToucher();
+
+                    //Invoke("ActiverDetectionToucher", 1f);
                 }
             }
 
@@ -31,4 +34,11 @@ public class ToucherDetection : MonoBehaviour
 
     //Pour réinitialiser l'état de toucher
     void ResetToucher() { toucher = false; }
+
+    //Pour activer la détection du toucher
+    public void ActiverDetectionToucher() { 
+        detecterToucher = true;
+        toucher = false;
+    }
+    public void DesactiverDetectionToucher() { detecterToucher = false; }
 }
