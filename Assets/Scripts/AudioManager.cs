@@ -43,12 +43,14 @@ public class AudioManager : MonoBehaviour
     public void AjusterVolumeMusique()
     {
         audioMixer.SetFloat("volMusique", controleurVolMusique.value);
+        volumeMusique = controleurVolMusique.value;
     }
 
     // Fonction pour ajuster le volume des effets sonores
     public void AjusterVolumeSFX()
     {
         audioMixer.SetFloat("volSFX", controleurVolSFX.value);
+        volumeSFX = controleurVolSFX.value;
     }
 
     // Fonction pour réinitialiser les options
@@ -63,9 +65,4 @@ public class AudioManager : MonoBehaviour
         AjusterVolumeMusique();
         AjusterVolumeSFX();
     }
-
-    //public void JouerSonBoutonUI(AudioClip sonUI)
-    //{
-    //    sfxPisteUI.PlayOneShot(sonUI);
-    //}
 }

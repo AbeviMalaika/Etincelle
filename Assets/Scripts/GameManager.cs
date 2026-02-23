@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Oculus.Interaction;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,20 +20,29 @@ public class GameManager : MonoBehaviour
     public GameObject MenuPrincipalUI;
     public GameObject ConteneurMenuPrincipalUI;
 
+    public event Action OnPauseGesture;
+
     public static bool enPause;
+
     void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
+        {
             Destroy(gameObject);
+            return;
+        }
 
         sceneActuelle = SceneManager.GetActiveScene();
 
         if (sceneActuelle.name == "SceneMenuPrincipal")
         {
-            UIManager.Instance.ShowUI(MenuPrincipalUI);
-            UIManager.Instance.ShowUI(ConteneurMenuPrincipalUI);
+            if (UIManager.Instance != null)
+            {
+                UIManager.Instance.ShowUI(MenuPrincipalUI);
+                UIManager.Instance.ShowUI(ConteneurMenuPrincipalUI);
+            }
         }
 
         if (sceneActuelle.name == "ScenePartie")
@@ -41,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if(sceneActuelle.name == "ScenePartie")
+        if (sceneActuelle.name == "ScenePartie")
         {
             // On démarre la première quête
             QuestManager.Instance.DemarrerQuest("1");
@@ -49,27 +61,25 @@ public class GameManager : MonoBehaviour
         }
 
         //Récupérer le matériel de la sphère
-        matTransition = SphereTransition.GetComponent<MeshRenderer>().material;
+        if (SphereTransition != null)
+            matTransition = SphereTransition.GetComponent<MeshRenderer>().material;
     }
 
     void Update()
     {
         if (sceneActuelle.name == "ScenePartie")
         {
-            OVRHand.MicrogestureType microGesture = OvrHand.GetMicrogestureType();
-            //if (microGesture == OVRHand.MicrogestureType.SwipeRight) enPause = !enPause;
+            if (OvrHand == null) return;
 
-            if (microGesture == OVRHand.MicrogestureType.SwipeRight)
+            OVRHand.MicrogestureType microGesture = OvrHand.GetMicrogestureType();
+
+            if (microGesture == OVRHand.MicrogestureType.SwipeRight && !gestureDone)
             {
                 enPause = !enPause;
                 gestureDone = true;
-            }
-            else
-            {
-                gestureDone = false;
-            }
 
-
+                OnPauseGesture?.Invoke();
+            }
         }
     }
 
@@ -101,6 +111,7 @@ public class GameManager : MonoBehaviour
         do
         {
             Debug.Log("Chargement... : " + scene.progress);
+
             if (scene.progress >= 0.9f)
             {
                 //On attend le temps que l'animation dure
@@ -115,6 +126,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("La scène est chargée");
 
         yield return null;
+    }
+
+    //
+    void ResetGestureDone()
+    {
+        gestureDone = false;
     }
 
     //Fonction pour faire un fondu d'entrée
@@ -133,11 +150,14 @@ public class GameManager : MonoBehaviour
     {
         animTransition.enabled = true;
         animTransition.SetTrigger("fadeIn");
+
         yield return new WaitForSeconds(2.5f);
 
         //Désactiver l'animator car il controle l'opacité et empèche de set par la suite
         animTransition.enabled = false;
-        matTransition.SetFloat("_Opacity", 0f);
+
+        if (matTransition != null)
+            matTransition.SetFloat("_Opacity", 0f);
 
         yield return null;
     }
@@ -146,11 +166,14 @@ public class GameManager : MonoBehaviour
     {
         animTransition.enabled = true;
         animTransition.SetTrigger("fadeOut");
+
         yield return new WaitForSeconds(2.5f);
 
         //Désactiver l'animator car il controle l'opacité et empèche de set par la suite
         animTransition.enabled = false;
-        matTransition.SetFloat("_Opacity", 1f);
+
+        if (matTransition != null)
+            matTransition.SetFloat("_Opacity", 1f);
 
         yield return null;
     }

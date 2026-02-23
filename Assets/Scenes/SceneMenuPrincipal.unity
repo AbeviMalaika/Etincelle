@@ -18233,7 +18233,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728763286}
-  - component: {fileID: 728763288}
   - component: {fileID: 728763287}
   m_Layer: 3
   m_Name: Principal
@@ -18276,28 +18275,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!95 &728763288
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728763285}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b0e436de9eaaa540918f1b68d7bd71d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &735573990
 GameObject:
   m_ObjectHideFlags: 0
@@ -20018,7 +19995,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 829049456}
-  - component: {fileID: 829049458}
   - component: {fileID: 829049457}
   m_Layer: 3
   m_Name: Options
@@ -20066,28 +20042,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!95 &829049458
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829049455}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b0e436de9eaaa540918f1b68d7bd71d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &837833656
 GameObject:
   m_ObjectHideFlags: 0
@@ -25643,6 +25597,8 @@ MonoBehaviour:
   titresObjectif: []
   hud: {fileID: 0}
   menuPause: {fileID: 0}
+  options: {fileID: 0}
+  pause: {fileID: 0}
   rayInteractable: {fileID: 1051363818}
 --- !u!1 &1144920890
 GameObject:
@@ -26696,7 +26652,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1192360612}
-  - component: {fileID: 1192360614}
   - component: {fileID: 1192360613}
   m_Layer: 3
   m_Name: EcranQuitter
@@ -26738,28 +26693,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!95 &1192360614
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192360611}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b0e436de9eaaa540918f1b68d7bd71d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1194111724
 GameObject:
   m_ObjectHideFlags: 0
@@ -31628,6 +31561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   OvrHand: {fileID: 1461041744}
+  gestureDone: 0
   animTransition: {fileID: 1385425634}
   sceneActuelle:
     m_Handle: 0
@@ -35376,7 +35310,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1631457892}
-  - component: {fileID: 1631457894}
   - component: {fileID: 1631457893}
   m_Layer: 3
   m_Name: MenuPrincipal
@@ -35420,28 +35353,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!95 &1631457894
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631457891}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b0e436de9eaaa540918f1b68d7bd71d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1635651725
 GameObject:
   m_ObjectHideFlags: 0
@@ -36185,7 +36096,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1674219416}
-  - component: {fileID: 1674219418}
   - component: {fileID: 1674219417}
   m_Layer: 3
   m_Name: Credits
@@ -36232,28 +36142,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!95 &1674219418
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674219415}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b0e436de9eaaa540918f1b68d7bd71d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1676978161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 765411864458344808, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
@@ -42874,7 +42762,7 @@ GameObject:
   - component: {fileID: 2022609392}
   - component: {fileID: 2022609391}
   m_Layer: 3
-  m_Name: TitreOptions
+  m_Name: TitreQuitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

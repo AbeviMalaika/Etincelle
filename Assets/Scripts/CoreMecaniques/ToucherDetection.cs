@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ToucherDetection : MonoBehaviour
@@ -24,8 +23,7 @@ public class ToucherDetection : MonoBehaviour
                     print("<color=green>Objet touché: " + gameObject.name + "</color>");
 
                     DesactiverDetectionToucher();
-
-                    //Invoke("ActiverDetectionToucher", 1f);
+                    Invoke("ResetToucher", 0.5f);
                 }
             }
 

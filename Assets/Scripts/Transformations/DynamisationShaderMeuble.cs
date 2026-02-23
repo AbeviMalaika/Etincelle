@@ -22,13 +22,15 @@ public class DynamisationShaderMeuble : MonoBehaviour
         etatDepart = !inverse ? 1f : 0f;
         etatFinal = !inverse ? 0f : 1f;
         mat.SetFloat("_Degre_Transformation", etatDepart);
-        //initialisation = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transformation = gameObject.GetComponent<ToucherDetection>().toucher;
+        if (gameObject.GetComponent<ToucherDetection>().toucher)
+        {
+            transformation = true;
+        }
 
         etatFinal = !inverse ? 0f : 1f;
         etatDepart = !inverse ? 1f : 0f;
@@ -59,12 +61,5 @@ public class DynamisationShaderMeuble : MonoBehaviour
                 inverse = !inverse;
             }
         }
-        //else
-        //{
-        //    if(initialisation)
-        //    {
-        //        mat.SetFloat("_Degre_Transformation", etatDepart);
-        //    }
-        //}
     }
 }
