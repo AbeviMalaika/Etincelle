@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonShader
-  m_Shader: {fileID: -6465566751694194690, guid: b0977d21b1afd3e498193332d043348c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 8c4c89dc0c4c9994280fcfdedeacf17c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -174,6 +174,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_4aea33edacaa4b3996bcb816f3f9cf5f_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 1318f787c77892742a9f9747919ee646, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_84c923d7c5fb4feba1a735e981e6c0f3_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 1318f787c77892742a9f9747919ee646, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Set_1st_ShadePosition:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -220,6 +228,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Texture:
         m_Texture: {fileID: 2800000, guid: 1318f787c77892742a9f9747919ee646, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureColor:
+        m_Texture: {fileID: 2800000, guid: f5606116b09d693409fde1085c85bb99, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureNormal:
+        m_Texture: {fileID: 2800000, guid: 2affd080f0247a2409435d9bde482780, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
@@ -269,6 +285,7 @@ Material:
     - _AlphaRemapMin: 0
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
+    - _AmbientOcclusion: 0
     - _AngelRing: 0
     - _AngelRingOverridden: 0
     - _AngelRingVisible: 1
@@ -339,7 +356,10 @@ Material:
     - _HighColor_Power: 0
     - _HighlightOverridden: 0
     - _HighlightVisible: 1
+    - _IntensiteDegrade: 84.29
+    - _IntensiteNuage: 7.04
     - _IntensiteOmbrage: 1.06
+    - _IntensityWave: 0
     - _InvTilingScale: 1
     - _Inverse_Clipping: 0
     - _Inverse_MatcapMask: 0
@@ -451,6 +471,7 @@ Material:
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
     - _TransmissionMask: 1
+    - _Transparence: 10
     - _TransparentCullMode: 2
     - _TransparentEnabled: 0
     - _TransparentZWrite: 0
@@ -492,6 +513,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _CouleurBordure: {r: 1, g: 0.8745099, b: 0.67058825, a: 1}
+    - _CouleurNuage: {r: 0.094918095, g: 0.745283, b: 0.745283, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
