@@ -3,7 +3,7 @@ using UnityEngine;
 public class Quest_3 : MonoBehaviour
 {
     Quest quest_3;
-    static public bool cinematiqueTerminee;
+    public bool cinematiqueTerminee;
 
     void Start()
     {

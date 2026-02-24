@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
 
     public event Action OnPauseGesture;
 
-    public static bool enPause;
+    public bool enPause;
+
+    public bool finPartie;
 
     void Awake()
     {

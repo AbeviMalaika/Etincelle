@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
         //Uniquement lorsque la partie est en cours
         if (GameManager.Instance.sceneActuelle.name == "ScenePartie")
         {
-            if (GameManager.enPause)
+            if (GameManager.Instance.enPause)
             {
                 //Rendre possible l'interactivité avec le UI
                 rayInteractable.enabled = true;
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
 
     public void GestionAffichagePause()
     {
-        if (!GameManager.enPause)
+        if (!GameManager.Instance.enPause)
         {
             HideUI(menuPause);
 
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
 
             Invoke("PopUpHUD", 1f);
         }
-        else if (GameManager.enPause)
+        else if (GameManager.Instance.enPause)
         {
             ShowUI(menuPause);
             ShowUI(pause);

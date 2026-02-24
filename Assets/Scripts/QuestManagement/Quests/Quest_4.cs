@@ -6,6 +6,7 @@ public class Quest_4 : MonoBehaviour
     public GameObject positionPortailMiroir;
     public GameObject crayon;
     public GameObject cahier;
+    public bool appelTermine;
 
     Quest quest_4;
 
@@ -40,9 +41,10 @@ public class Quest_4 : MonoBehaviour
         // Objectif 3
         if (quest_4.progressionActuelle == 2)
         {
-            //À FAIRE - Si le joueur ouvre l'ordi (en appuyant la barre d'espace sur le clavier pour le sortir du mode veille)
-            if (true)
+            //À FAIRE - Si le crayon est pris et que la mine touche le cahier
+            if (crayon.GetComponent<GrabDetection>().isGrabbed && cahier.GetComponent<CahierTransformations>().modifCahier)
             {
+                //Compléter la quête
                 QuestManager.Instance.AjouterProgression("4");
             }
         }
@@ -50,13 +52,23 @@ public class Quest_4 : MonoBehaviour
         // Objectif 4 | -------------------------------------------------------
         if (quest_4.progressionActuelle == 3)
         {
-            //À FAIRE - Si le crayon est pris et que la mine touche le cahier
-            if (crayon.GetComponent<GrabDetection>().isGrabbed && cahier.GetComponent<CahierTransformations>().modifCahier)
+            // Le joueur doit prendre le téléphone et répondre à un appel
+            if (crayon.GetComponent<GrabDetection>().isGrabbed)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("4");
+            }
+        }
 
+        if (quest_4.progressionActuelle == 3)
+        {
+            // Quand le dialogue de la fin est terminé, la quête est complétée
+            if (appelTermine)
+            {
+                //Compléter la quête
+                QuestManager.Instance.AjouterProgression("4");
                 //Terminer la partie
+                GameManager.Instance.finPartie = true;
                 //Code pour la gestion de fin de partie. Possiblement faire un script à part pour ça et le déclencher avec enabled et/ou boolean
             }
         }
