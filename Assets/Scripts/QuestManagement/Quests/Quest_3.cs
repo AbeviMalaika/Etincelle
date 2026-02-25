@@ -3,6 +3,7 @@ using UnityEngine;
 public class Quest_3 : MonoBehaviour
 {
     Quest quest_3;
+    public GameObject joueur;
     public bool cinematiqueTerminee;
 
     void Start()
@@ -18,7 +19,7 @@ public class Quest_3 : MonoBehaviour
         if (quest_3.progressionActuelle == 0)
         {
             // Si le joueur est assis à l'ordinateur
-            if (CollisionChaise.contactChaise && HauteurDetection.estAssis)
+            if (CollisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
             {
                 QuestManager.Instance.AjouterProgression("3");
             }

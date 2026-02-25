@@ -6,6 +6,7 @@ public class Quest_4 : MonoBehaviour
     public GameObject positionPortailMiroir;
     public GameObject crayon;
     public GameObject cahier;
+    public GameObject joueur;
     public bool appelTermine;
 
     Quest quest_4;
@@ -32,7 +33,7 @@ public class Quest_4 : MonoBehaviour
         if (quest_4.progressionActuelle == 1)
         {
             // Si le joueur est assis à l'ordinateur
-            if (CollisionChaise.contactChaise && HauteurDetection.estAssis)
+            if (CollisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
             {
                 QuestManager.Instance.AjouterProgression("4");
             }

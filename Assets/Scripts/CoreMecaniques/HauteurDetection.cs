@@ -1,13 +1,17 @@
+﻿using Oculus.Interaction.Locomotion;
 using UnityEngine;
 
 public class HauteurDetection : MonoBehaviour
 {
+    public GameObject player;
     public Transform centerEyeAnchor;
+
     public float hauteurJoueur;
     public float hauteurAssis;
     public float hauteurActuelle;
     public float seuilHauteur;
-    static public bool estAssis;
+    public bool estAssis;
+
 
     void Start()
     {
@@ -23,7 +27,20 @@ public class HauteurDetection : MonoBehaviour
         if (hauteurJoueur != 0 && hauteurActuelle <= hauteurAssis)
         {
             estAssis = true;
-            print("Le joueur est assis");
+            //print("Le joueur est assis");
+        }
+
+
+        //Detection du bouton A | Ce bouton sert à calibrer l'espace du joueur
+        if (OVRInput.GetDown(OVRInput.Button.One)) // OVRInput.Button.One maps to the primary button
+        {
+            Debug.Log("Primary button pressed!");
+        }
+
+        //Detection du bouton B | Ce bouton sert à confirmer le calibrage du joueur
+        if (OVRInput.GetDown(OVRInput.Button.Two)) // OVRInput.Button.One maps to the primary button
+        {
+            Debug.Log("Secondary button pressed!");
         }
     }
 
@@ -31,5 +48,10 @@ public class HauteurDetection : MonoBehaviour
     {
         hauteurJoueur = centerEyeAnchor.localPosition.y;
         hauteurAssis = hauteurJoueur - seuilHauteur;
+    }
+
+    public void CalibrageJoueur()
+    {
+        OVRManager.display.RecenterPose();
     }
 }

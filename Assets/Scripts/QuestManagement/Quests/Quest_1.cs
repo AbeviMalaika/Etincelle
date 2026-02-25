@@ -4,6 +4,7 @@ public class Quest_1 : MonoBehaviour
 {
     public GameObject crayon;
     public GameObject cahier;
+    public GameObject joueur;
 
     Quest quest_1;
 
@@ -19,7 +20,7 @@ public class Quest_1 : MonoBehaviour
         if (quest_1.progressionActuelle == 0)
         {
             // Si le joueur est assis à l'ordinateur
-            if (CollisionChaise.contactChaise && HauteurDetection.estAssis)
+            if (CollisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
             {
                 QuestManager.Instance.AjouterProgression("1");
             }

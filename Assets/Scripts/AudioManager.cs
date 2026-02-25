@@ -32,9 +32,9 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        if(volumeMusique != 0) controleurVolMusique.value = volumeMusique;
-        if(volumeSFX != 0) controleurVolSFX.value = volumeSFX;
-           
+        if (volumeMusique != 0) controleurVolMusique.value = volumeMusique;
+        if (volumeSFX != 0) controleurVolSFX.value = volumeSFX;
+
         AjusterVolumeMusique();
         AjusterVolumeSFX();
     }
