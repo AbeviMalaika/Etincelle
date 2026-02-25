@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
         sceneActuelle = SceneManager.GetActiveScene();
 
-        if (sceneActuelle.name == "SceneMenuPrincipal")
+        if (sceneActuelle.buildIndex == 0)
         {
             if (UIManager.Instance != null)
             {
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (sceneActuelle.name == "ScenePartie")
+        if (sceneActuelle.buildIndex == 1)
         {
             enPause = false;
         }
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (sceneActuelle.name == "ScenePartie")
+        if (sceneActuelle.buildIndex == 1)
         {
             // On démarre la première quête
             QuestManager.Instance.DemarrerQuest("1");
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (sceneActuelle.name == "ScenePartie")
+        if (sceneActuelle.buildIndex == 1)
         {
             if (OvrHand == null) return;
 
@@ -91,12 +91,12 @@ public class GameManager : MonoBehaviour
     }
 
     //Fonction pour démarrer la coroutine du chargement de scène
-    public void ChargerScene(string nomScene)
+    public void ChargerScene(int indexScene)
     {
-        StartCoroutine(ChargementAsyncScene(nomScene));
+        StartCoroutine(ChargementAsyncScene(indexScene));
     }
 
-    IEnumerator ChargementAsyncScene(string nomScene)
+    IEnumerator ChargementAsyncScene(int indexScene)
     {
         //On active l'animation de fade-out
         FadeOut();
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
 
         //On demande le chargement de la scène
-        AsyncOperation scene = SceneManager.LoadSceneAsync(nomScene);
+        AsyncOperation scene = SceneManager.LoadSceneAsync(indexScene);
 
         //On ne veut pas que la prochaine scène s'affiche tant qu'elle n'est pas entièrement chargée
         scene.allowSceneActivation = false;

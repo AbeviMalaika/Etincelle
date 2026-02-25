@@ -102,11 +102,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_d64410ee001d4c628dc02d7a69f558d3_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 04c4b7ef6a03fc949a7c271be4cc4bf8, type: 3}
+        m_Texture: {fileID: 2800000, guid: fac014618d489424ead8933d02e8ead4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SkyPattern:
-        m_Texture: {fileID: 2800000, guid: fac014618d489424ead8933d02e8ead4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 325a105e04967ea42925945935e7aa6f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:

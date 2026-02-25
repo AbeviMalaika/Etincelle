@@ -24099,6 +24099,87 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1001 &1074445179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.99112
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9484
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.69195
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd136d242af865345bf63e08bc25d82e, type: 2}
+    - target: {fileID: 919132149155446097, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_Name
+      value: SphereSkybox
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00bf4252599abb84384451f6e6bcd789, type: 3}
 --- !u!1 &1075471801
 GameObject:
   m_ObjectHideFlags: 0
@@ -27915,11 +27996,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1421605157}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ChargerScene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: ScenePartie
           m_BoolArgument: 0
@@ -31464,11 +31545,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d2bb4fb1eebf54b92789165fafa993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HauteurDetection
+  player: {fileID: 0}
   centerEyeAnchor: {fileID: 82281693}
   hauteurJoueur: 0
   hauteurAssis: 0
   hauteurActuelle: 0
   seuilHauteur: 0.3
+  estAssis: 0
 --- !u!1 &1417095967
 GameObject:
   m_ObjectHideFlags: 0
@@ -31568,6 +31651,8 @@ MonoBehaviour:
   SphereTransition: {fileID: 1385425633}
   MenuPrincipalUI: {fileID: 728763285}
   ConteneurMenuPrincipalUI: {fileID: 1631457891}
+  enPause: 0
+  finPartie: 0
 --- !u!4 &1421605158
 Transform:
   m_ObjectHideFlags: 0
@@ -45655,6 +45740,7 @@ SceneRoots:
   - {fileID: 65799205}
   - {fileID: 1546172455}
   - {fileID: 315694703}
+  - {fileID: 1074445179}
   - {fileID: 1989709934}
   - {fileID: 139773971}
   - {fileID: 1473981115}
