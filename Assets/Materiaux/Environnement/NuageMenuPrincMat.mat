@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NuageMenuPrincMat
-  m_Shader: {fileID: -6465566751694194690, guid: 2a49f907b9097734c9598eaa42c57a2c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 55c8692988ba60a439ed71faa4558b46, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,6 +37,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2DLOD_84c923d7c5fb4feba1a735e981e6c0f3_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 1318f787c77892742a9f9747919ee646, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -56,16 +60,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _AmbientOcclusion: 0.29
-    - _IntensiteDegrade: 2.85
-    - _IntensiteEmmision: -1.58
+    - _Glossiness: 0.5
+    - _IntensiteDegrade: 5.7
+    - _IntensiteEmmision: 0.48
     - _IntensiteNuage: -0.11
-    - _Metallic: 1
+    - _Metallic: 3.44
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.29
-    - _Transparence: 20
+    - _Transparence: 19.69
     - _XRMotionVectorsPass: 1
     m_Colors:
-    - _CouleurNuage: {r: 0.38679248, g: 0.25050578, b: 0.056559276, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CouleurNuage: {r: 0.6666665, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

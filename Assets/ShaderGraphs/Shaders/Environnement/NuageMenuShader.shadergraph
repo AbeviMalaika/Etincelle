@@ -837,7 +837,7 @@
     "m_ObjectId": "0075856a801c4e1999eef0665c0f412f",
     "m_Title": "Height pour les vagues de nuage",
     "m_Position": {
-        "x": -5803.99951171875,
+        "x": -5804.0,
         "y": -2277.0
     }
 }
@@ -2455,8 +2455,8 @@
     "m_ObjectId": "544bc915af8c4166afa391fadfffbbcc",
     "m_Title": "Color",
     "m_Position": {
-        "x": -643.0001220703125,
-        "y": 41.99996566772461
+        "x": -643.0,
+        "y": 42.0
     }
 }
 
@@ -4457,7 +4457,7 @@
         "a": 1.0
     },
     "isMainColor": false,
-    "m_ColorMode": 0
+    "m_ColorMode": 1
 }
 
 {
@@ -5809,7 +5809,7 @@
     "m_Title": "Alpha et Emmision",
     "m_Position": {
         "x": -1611.0,
-        "y": 222.00006103515626
+        "y": 222.0
     }
 }
 

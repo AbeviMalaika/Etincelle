@@ -106,7 +106,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SkyVortexTexture:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 9d9bfc0d1a444d7409e0fa6a9f8da7fe, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -160,7 +160,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _Degre_Transformation: 0
-    - _DensiteEtoile: 0.41
+    - _DensiteEtoile: 0.26
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dissolve_Size: 30
@@ -169,7 +169,7 @@ Material:
     - _DstBlendAlpha: 0
     - _Edge_Thickness: 0.02
     - _EnvironmentReflections: 1
-    - _EtenduEtole: -0.1
+    - _EtenduEtole: 0.21
     - _Float: 0
     - _Fresnel_Power: 3.12
     - _Glitter_offset: 0.51
@@ -190,7 +190,7 @@ Material:
     - _Noise: -50
     - _Noise_Rotation_Speed: 1.5
     - _OcclusionStrength: 1
-    - _OpaciteTexture: 1.51
+    - _OpaciteTexture: 0.12
     - _Parallax: 0.005
     - _PositionEtoile: 33.7
     - _Quantite_Brillants: 0.59
@@ -198,7 +198,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Rotation: -197.5
-    - _RotationEtoile: 0.002
+    - _RotationEtoile: 0.005
     - _RotationVortex: -6.83
     - _Seuil_Brillants: -28.6
     - _Smoothness: 0.47
