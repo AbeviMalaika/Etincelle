@@ -1,0 +1,909 @@
+fileFormatVersion: 2
+guid: 50098e0eca35a9d449ba86ba41c03f16
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Lho_Controls_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_Neck
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux1
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleGauche1
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleDroite1
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lho_Controls_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Lho(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_
+      parentName: Lho(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_Hips
+      parentName: Lho(Clone)
+      position: {x: 0.000000008393483, y: 1.0985824, z: -0.000000008344635}
+      rotation: {x: -0.7003542, y: -0.09748844, z: 0.0974885, w: 0.7003542}
+      scale: {x: 0.9999988, y: 1, z: 1}
+    - name: Lho_Controls_LeftUpLeg
+      parentName: Lho_Controls_Hips
+      position: {x: -0.14046326, y: 0.0000000108084155, z: 0.000000009214893}
+      rotation: {x: 0.77474314, y: 0.015081297, z: 0.63182557, w: 0.01849536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftLeg
+      parentName: Lho_Controls_LeftUpLeg
+      position: {x: -0.38675123, y: -0.000012627745, z: 0.0000010356415}
+      rotation: {x: -0.20952179, y: -0.09686144, z: 0.020863773, w: 0.9727709}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftFoot
+      parentName: Lho_Controls_LeftLeg
+      position: {x: -0.54696, y: -0.0000046376017, z: 0.000002503503}
+      rotation: {x: -0.42838365, y: 0.24124521, z: -0.119818814, w: 0.86251473}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftToeBase
+      parentName: Lho_Controls_LeftFoot
+      position: {x: -0.09473524, y: -0.000000083505434, z: 0.0000000037466736}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightUpLeg
+      parentName: Lho_Controls_Hips
+      position: {x: 0.119509846, y: -0.000000010882425, z: -0.07380588}
+      rotation: {x: 0.81939304, y: 0.021907456, z: 0.5727354, w: 0.00945309}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightLeg
+      parentName: Lho_Controls_RightUpLeg
+      position: {x: -0.3867513, y: -0.0000066225584, z: -0.0000009324439}
+      rotation: {x: 0.20952167, y: 0.09685942, z: 0.020854857, w: 0.9727713}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightFoot
+      parentName: Lho_Controls_RightLeg
+      position: {x: -0.54696023, y: -0.0000046382397, z: -0.0000022509937}
+      rotation: {x: 0.42838374, y: -0.24124253, z: -0.11981584, w: 0.86251587}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightToeBase
+      parentName: Lho_Controls_RightFoot
+      position: {x: -0.09473523, y: -0.0000000019160455, z: -0.0000000014946933}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_Spine
+      parentName: Lho_Controls_Hips
+      position: {x: 0.02371755, y: 8.3779095e-11, z: 0.08354227}
+      rotation: {x: 0.04054558, y: 0.78945506, z: -0.054878466, w: 0.61000425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_Spine1
+      parentName: Lho_Controls_Spine
+      position: {x: -0.11612851, y: -0.000000004623538, z: 0.000000032771975}
+      rotation: {x: 0.92544377, y: -0.008271862, z: -0.020239316, w: 0.3782536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_Spine2
+      parentName: Lho_Controls_Spine1
+      position: {x: -0.18043728, y: -0.00000012903102, z: -0.000000068332035}
+      rotation: {x: 0.03579067, y: 0.41012275, z: 0.016109433, w: 0.91118544}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftShoulder
+      parentName: Lho_Controls_Spine2
+      position: {x: -0.07766984, y: -0.000000020700504, z: -0.00000005517442}
+      rotation: {x: 0.7351884, y: 0.24521787, z: -0.49442104, w: -0.3935911}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftArm
+      parentName: Lho_Controls_LeftShoulder
+      position: {x: -0.10687908, y: 0.000000033547362, z: 0.000000009257873}
+      rotation: {x: 0.8008412, y: 0.18179168, z: -0.078527816, w: 0.565189}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftForeArm
+      parentName: Lho_Controls_LeftArm
+      position: {x: -0.2694681, y: 0.0000057739317, z: 0.0000116830015}
+      rotation: {x: -0.55667377, y: -0.030882474, z: -0.019738773, w: 0.8299223}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHand
+      parentName: Lho_Controls_LeftForeArm
+      position: {x: -0.20537384, y: -0.00000063107007, z: -0.000000525536}
+      rotation: {x: 0.43339527, y: 0.34649876, z: 0.17693733, w: 0.8128963}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandThumb1
+      parentName: Lho_Controls_LeftHand
+      position: {x: -0.04310465, y: 0.0027136253, z: 0.0021220013}
+      rotation: {x: 0.44998738, y: 0.005404037, z: -0.024561077, w: 0.89268076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandThumb2
+      parentName: Lho_Controls_LeftHandThumb1
+      position: {x: -0.015219784, y: 0.0013790042, z: -0.0034920587}
+      rotation: {x: -0.59337014, y: -0.12666644, z: -0.15224493, w: 0.7801852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandThumb3
+      parentName: Lho_Controls_LeftHandThumb2
+      position: {x: -0.019425746, y: -0.004274434, z: 0.0004176495}
+      rotation: {x: -0.113053925, y: 0.08161238, z: 0.091928, w: 0.9859552}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandThumb4
+      parentName: Lho_Controls_LeftHandThumb3
+      position: {x: -0.01552322, y: 0.00089108344, z: -0.002899117}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandIndex1
+      parentName: Lho_Controls_LeftHand
+      position: {x: -0.073792934, y: 0.00037093507, z: -0.038500093}
+      rotation: {x: -0.35787645, y: -0.22380939, z: -0.08863201, w: 0.90220743}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandIndex2
+      parentName: Lho_Controls_LeftHandIndex1
+      position: {x: -0.013531976, y: 0.00060054, z: -0.00088924344}
+      rotation: {x: 0.8842215, y: 0.065032326, z: 0.24994715, w: 0.38916525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandIndex3
+      parentName: Lho_Controls_LeftHandIndex2
+      position: {x: -0.022437047, y: 0.0006013306, z: -0.010462521}
+      rotation: {x: -0.009606237, y: -0.2735131, z: -0.03631997, w: 0.9611343}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandIndex4
+      parentName: Lho_Controls_LeftHandIndex3
+      position: {x: -0.009657225, y: -0.0010278602, z: 0.0016340188}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandMiddle1
+      parentName: Lho_Controls_LeftHand
+      position: {x: -0.06862981, y: -0.011094864, z: -0.055202436}
+      rotation: {x: -0.537519, y: -0.3265977, z: -0.12162307, w: 0.767864}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandMiddle2
+      parentName: Lho_Controls_LeftHandMiddle1
+      position: {x: -0.021311278, y: -0.0006487052, z: 0.0007738153}
+      rotation: {x: 0.9753538, y: 0.00012771781, z: 0.039264344, w: 0.21712513}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandMiddle3
+      parentName: Lho_Controls_LeftHandMiddle2
+      position: {x: -0.017937174, y: 0.0012887265, z: -0.00034932903}
+      rotation: {x: -0.69619524, y: 0.04820238, z: -0.05922669, w: 0.7137793}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandMiddle4
+      parentName: Lho_Controls_LeftHandMiddle3
+      position: {x: -0.0153263, y: -0.00027467406, z: -0.00005528915}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandRing1
+      parentName: Lho_Controls_LeftHand
+      position: {x: -0.058368333, y: -0.018284738, z: -0.06532915}
+      rotation: {x: 0.47337025, y: -0.22769867, z: 0.33544353, w: 0.78201765}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandRing2
+      parentName: Lho_Controls_LeftHandRing1
+      position: {x: -0.018782197, y: 0.0011580836, z: -0.000036739348}
+      rotation: {x: 0.07212806, y: 0.08545938, z: 0.006203467, w: 0.9937081}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandRing3
+      parentName: Lho_Controls_LeftHandRing2
+      position: {x: -0.016562734, y: 0.000000006674475, z: -2.0418327e-10}
+      rotation: {x: 0.898066, y: -0.025379907, z: 0.052277382, w: -0.43600512}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandRing4
+      parentName: Lho_Controls_LeftHandRing3
+      position: {x: -0.018155498, y: 0.00000007314198, z: 0.000000025966703}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandPinky1
+      parentName: Lho_Controls_LeftHand
+      position: {x: -0.044863075, y: -0.029607555, z: -0.067825384}
+      rotation: {x: 0.7326825, y: 0.47131446, z: 0.15002197, w: -0.46747446}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandPinky2
+      parentName: Lho_Controls_LeftHandPinky1
+      position: {x: -0.015573631, y: 0.0010366141, z: 0.0049175303}
+      rotation: {x: 0.838196, y: 0.021838138, z: 0.033654667, w: 0.5438915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandPinky3
+      parentName: Lho_Controls_LeftHandPinky2
+      position: {x: -0.011022904, y: -0.0007082743, z: 0.0046377806}
+      rotation: {x: 0.3045042, y: -0.07079481, z: -0.022701383, w: 0.94960517}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_LeftHandPinky4
+      parentName: Lho_Controls_LeftHandPinky3
+      position: {x: -0.010961758, y: 0.00042489386, z: -0.00017009219}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightShoulder
+      parentName: Lho_Controls_Spine2
+      position: {x: -0.017043917, y: 0.051609006, z: -0.055485304}
+      rotation: {x: 0.32078436, y: -0.3686195, z: 0.8723844, w: -0.012750116}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightArm
+      parentName: Lho_Controls_RightShoulder
+      position: {x: -0.10687904, y: 0.000000035594944, z: -0.000000034868783}
+      rotation: {x: -0.8019148, y: -0.18218976, z: -0.07445158, w: 0.5640891}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightForeArm
+      parentName: Lho_Controls_RightArm
+      position: {x: -0.2694683, y: 0.0000063664224, z: -0.0000129758555}
+      rotation: {x: 0.56158596, y: 0.028996335, z: -0.02311156, w: 0.82658714}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHand
+      parentName: Lho_Controls_RightForeArm
+      position: {x: -0.2053737, y: -0.00000019367627, z: 0.00000041733028}
+      rotation: {x: -0.43306243, y: -0.34673277, z: 0.1772482, w: 0.8129061}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandThumb1
+      parentName: Lho_Controls_RightHand
+      position: {x: -0.040582556, y: 0.006150382, z: -0.0002716253}
+      rotation: {x: -0.47052512, y: 0.042655323, z: -0.16111642, w: 0.8665034}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandThumb2
+      parentName: Lho_Controls_RightHandThumb1
+      position: {x: -0.020809926, y: -0.0033220288, z: 0.00088032376}
+      rotation: {x: 0.5905189, y: 0.12886415, z: 0.041076876, w: 0.7956093}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandThumb3
+      parentName: Lho_Controls_RightHandThumb2
+      position: {x: -0.017666608, y: -0.0029853466, z: -0.0021235049}
+      rotation: {x: 0.102296814, y: -0.06588984, z: 0.034992747, w: 0.99195236}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandThumb4
+      parentName: Lho_Controls_RightHandThumb3
+      position: {x: -0.014360939, y: -0.00040763873, z: 0.00092245167}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandIndex1
+      parentName: Lho_Controls_RightHand
+      position: {x: -0.07700338, y: -0.0006171283, z: 0.041187428}
+      rotation: {x: 0.37575468, y: 0.24844094, z: -0.051534712, w: 0.8913079}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandIndex2
+      parentName: Lho_Controls_RightHandIndex1
+      position: {x: -0.0135066975, y: 0.0018544882, z: -0.00012744508}
+      rotation: {x: 0.9041459, y: -0.006668105, z: -0.14363323, w: -0.40229994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandIndex3
+      parentName: Lho_Controls_RightHandIndex2
+      position: {x: -0.016718267, y: 0.0009792168, z: 0.0053376914}
+      rotation: {x: 0.014124185, y: 0.22442318, z: -0.016501822, w: 0.9742497}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandIndex4
+      parentName: Lho_Controls_RightHandIndex3
+      position: {x: -0.013846627, y: -0.00052971434, z: -0.0013188274}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandMiddle1
+      parentName: Lho_Controls_RightHand
+      position: {x: -0.069893725, y: -0.010974937, z: 0.055950236}
+      rotation: {x: 0.537519, y: 0.3265977, z: -0.12162307, w: 0.767864}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandMiddle2
+      parentName: Lho_Controls_RightHandMiddle1
+      position: {x: -0.019737065, y: 0.00049492554, z: 0.0006096384}
+      rotation: {x: 0.9743056, y: -0.027723169, z: -0.06021508, w: -0.21525352}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandMiddle3
+      parentName: Lho_Controls_RightHandMiddle2
+      position: {x: -0.021251699, y: 0.0021500352, z: 0.0007339871}
+      rotation: {x: 0.6967197, y: -0.022838484, z: -0.074092165, w: 0.7131412}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandMiddle4
+      parentName: Lho_Controls_RightHandMiddle3
+      position: {x: -0.009420389, y: -0.00086055696, z: -0.00019099012}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandRing1
+      parentName: Lho_Controls_RightHand
+      position: {x: -0.056546062, y: -0.018620247, z: 0.06437488}
+      rotation: {x: -0.4874345, y: 0.23325032, z: 0.3016957, w: 0.78548175}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandRing2
+      parentName: Lho_Controls_RightHandRing1
+      position: {x: -0.021012144, y: -0.00018395753, z: -0.00029894704}
+      rotation: {x: -0.07121808, y: -0.055825945, z: 0.021639831, w: 0.99566215}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandRing3
+      parentName: Lho_Controls_RightHandRing2
+      position: {x: -0.018864159, y: 0.0013298331, z: 0.0005853408}
+      rotation: {x: 0.8980662, y: -0.025379935, z: -0.052277368, w: 0.43600464}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandRing4
+      parentName: Lho_Controls_RightHandRing3
+      position: {x: -0.014111018, y: 0.00044599874, z: 0.0008489124}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandPinky1
+      parentName: Lho_Controls_RightHand
+      position: {x: -0.047680512, y: -0.028337263, z: 0.067439586}
+      rotation: {x: 0.7492004, y: 0.31635043, z: -0.20681134, w: 0.5439213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandPinky2
+      parentName: Lho_Controls_RightHandPinky1
+      position: {x: -0.012082191, y: -0.00006816886, z: 0.00010125577}
+      rotation: {x: -0.83790994, y: -0.0202478, z: 0.05824618, w: 0.5423139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandPinky3
+      parentName: Lho_Controls_RightHandPinky2
+      position: {x: -0.012735842, y: 0.0010313783, z: 0.0008861157}
+      rotation: {x: -0.3045042, y: 0.07079481, z: -0.022701383, w: 0.94960517}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_RightHandPinky4
+      parentName: Lho_Controls_RightHandPinky3
+      position: {x: -0.011959915, y: 0.00031160403, z: -0.0005139235}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_Neck
+      parentName: Lho_Controls_Spine2
+      position: {x: -0.08014158, y: 0.003143699, z: -0.08464258}
+      rotation: {x: -0.62189823, y: 0.6317582, z: -0.033427645, w: 0.4615265}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lho_Controls_Head
+      parentName: Lho_Controls_Neck
+      position: {x: 0.0000002627903, y: 0.1855188, z: 0.000000034433445}
+      rotation: {x: 0, y: 0, z: -0.70811063, w: 0.7061015}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:curve1
+      parentName: Lho_Controls_Head
+      position: {x: 0.80860054, y: -1.0041806, z: -0.000000023320682}
+      rotation: {x: 0.12556404, y: -0.695869, z: 0.12556404, w: 0.695869}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux1
+      parentName: Lho_Controls_Head
+      position: {x: -0, y: 0.109909, z: 0.000002}
+      rotation: {x: -0.0061426186, y: 0.026445534, z: -0.6399792, w: 0.76791245}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux2
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux1
+      position: {x: -0, y: 0.097207, z: 0}
+      rotation: {x: 0, y: -0, z: -0.15572679, w: 0.9878002}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux3
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux2
+      position: {x: -0, y: 0.128346, z: 0}
+      rotation: {x: 0, y: -0, z: -0.05835159, w: 0.9982961}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux4
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux3
+      position: {x: -0, y: 0.16871099, z: 0}
+      rotation: {x: -0.02660207, y: 0.005425185, z: -0.03981, w: 0.99883837}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux5
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux4
+      position: {x: -0, y: 0.086022995, z: 0}
+      rotation: {x: -0.14472245, y: 0.029953094, z: 0.43700564, w: 0.8872341}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux6
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Cheveux5
+      position: {x: -0, y: 0.056208, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleGauche1
+      parentName: Lho_Controls_Head
+      position: {x: 0.037956, y: 0.033011, z: 0.051448002}
+      rotation: {x: -0.008273907, y: 0.4025051, z: 0.87202346, w: 0.27838156}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleGauche2
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleGauche1
+      position: {x: -0.069201, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:joint3
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleGauche2
+      position: {x: -0.036119, y: -0.015887, z: 0.0066939997}
+      rotation: {x: 0.50666165, y: 0.81138825, z: 0.15041488, w: -0.24963668}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleDroite1
+      parentName: Lho_Controls_Head
+      position: {x: 0.037956, y: 0.033011, z: -0.038654998}
+      rotation: {x: 0.056517288, y: -0.51501375, z: 0.7936622, w: 0.3188526}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleDroite2
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleDroite1
+      position: {x: -0.073980995, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:joint4
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:boucleDroite2
+      position: {x: -0.033203002, y: -0.02, z: -0.005}
+      rotation: {x: -0.34559503, y: -0.6348162, z: -0.31486, w: 0.6151712}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeAvant1
+      parentName: Lho_Controls_Hips
+      position: {x: -0, y: -0.116656, z: 0}
+      rotation: {x: 0.79717946, y: 0.0000001688057, z: 0.6037424, w: 0.0000001688057}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeAvant12
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeAvant1
+      position: {x: -0.097372994, y: 0, z: 0}
+      rotation: {x: 0, y: -0.0010986845, z: -0, w: 0.9999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeAvant3
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeAvant12
+      position: {x: -0.10386799, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeArriere1
+      parentName: Lho_Controls_Hips
+      position: {x: 0.022481998, y: 0.091157995, z: 0.08053099}
+      rotation: {x: 0.79717946, y: 0.0000001688057, z: 0.6037424, w: 0.0000001688057}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeArriere2
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeArriere1
+      position: {x: -0.134308, y: -0.076721, z: 0}
+      rotation: {x: 0, y: -0.0010986845, z: -0, w: 0.9999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeArriere3
+      parentName: Abevi_Malaika_pose_TP2_0001:poseEquipe_0023:Abevi_Malaika_TP2_Pose:Uhgomi1_JupeArriere2
+      position: {x: -0.142712, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

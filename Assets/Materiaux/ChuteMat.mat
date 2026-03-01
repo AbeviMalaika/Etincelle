@@ -21,16 +21,19 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ChuteMat
-  m_Shader: {fileID: -6465566751694194690, guid: 8c4c89dc0c4c9994280fcfdedeacf17c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: c9f959bad4074c3459af6630ee5255e1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  - _SPECULAR_SETUP
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2001
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -42,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureColor:
-        m_Texture: {fileID: 2800000, guid: 1dec7c9ee10e8f648ad12b4586e6cfe7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 57e1518f4c4216f47ab2cf51a7c84a5e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureNormal:
@@ -63,13 +66,32 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _IntensityWave: 17.33
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _CastShadows: 1
+    - _Cull: 2
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _ENVIRONMENTREFLECTIONS_OFF: 1
+    - _ForceNormal: 9.9
+    - _IntensityWave: -20.8
     - _Metallic: 0.15
     - _QueueControl: 0
     - _QueueOffset: 1
-    - _Smoothness: 0.87
+    - _ReceiveShadows: 0
+    - _Smoothness: 9.8
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _Surface: 0
+    - _WorkflowMode: 0
     - _XRMotionVectorsPass: 1
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
-    - _Tint: {r: 0.41568628, g: 0.35294116, b: 0.8039216, a: 1}
+    - _Specular: {r: 0, g: 0, b: 0, a: 1}
+    - _Tint: {r: 1, g: 0, b: 0.643137, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
