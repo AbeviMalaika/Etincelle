@@ -7,7 +7,7 @@ public class ZonePortail : MonoBehaviour
 
     private Coroutine timerCoroutine;
 
-    public CinemachineTargetSwitcher targetSwitcher;
+    public CinemachineManager targetSwitcher;
     public Transform target;
 
     void Start()
