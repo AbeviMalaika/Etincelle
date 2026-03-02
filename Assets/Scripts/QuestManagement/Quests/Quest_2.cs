@@ -18,7 +18,7 @@ public class Quest_2 : MonoBehaviour
         quest_2 = QuestManager.Instance.TrouverQuest("2");
         director.gameObject.SetActive(true);
 
-        TimelineManager.Instance.PlayTimeline(director);
+        TimelineManager.Instance.PlayTimeline();
     }
 
     void Update()
@@ -36,7 +36,7 @@ public class Quest_2 : MonoBehaviour
             {
                 QuestManager.Instance.AjouterProgression("2");
                 chevet.GetComponent<ToucherDetection>().detecterToucher = false;
-                TimelineManager.Instance.PlayTimeline(director);
+                TimelineManager.Instance.PlayTimeline();
             }
         }
 
@@ -53,7 +53,7 @@ public class Quest_2 : MonoBehaviour
             {
                 QuestManager.Instance.AjouterProgression("2");
                 tableOrdi.GetComponent<ToucherDetection>().detecterToucher = false;
-                TimelineManager.Instance.PlayTimeline(director);
+                TimelineManager.Instance.PlayTimeline();
             }
         }
 
@@ -70,7 +70,7 @@ public class Quest_2 : MonoBehaviour
             {
                 QuestManager.Instance.AjouterProgression("2");
                 lit.GetComponent<ToucherDetection>().detecterToucher = false;
-                TimelineManager.Instance.PlayTimeline(director);
+                TimelineManager.Instance.PlayTimeline();
             }
         }
 
@@ -87,7 +87,7 @@ public class Quest_2 : MonoBehaviour
             {
                 QuestManager.Instance.AjouterProgression("2");
                 commode.GetComponent<ToucherDetection>().detecterToucher = false;
-                TimelineManager.Instance.PlayTimeline(director);
+                TimelineManager.Instance.PlayTimeline();
             }
         }
 
@@ -105,7 +105,7 @@ public class Quest_2 : MonoBehaviour
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("2");
                 plantes.GetComponent<ToucherDetection>().detecterToucher = false;
-                TimelineManager.Instance.PlayTimeline(director);
+                TimelineManager.Instance.PlayTimeline();
 
                 //Démarrer la nouvelle quête
                 QuestManager.Instance.DemarrerQuest("3");

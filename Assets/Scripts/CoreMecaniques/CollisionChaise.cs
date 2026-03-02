@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CollisionChaise : MonoBehaviour
 {
-    static public bool contactChaise;
+    public bool contactChaise;
 
     void Start()
     {

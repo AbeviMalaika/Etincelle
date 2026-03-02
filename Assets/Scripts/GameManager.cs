@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Oculus.Interaction;
+using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,12 @@ public class GameManager : MonoBehaviour
     public bool enPause;
 
     public bool finPartie;
+
+    public Color couleurFade;
+
+    //Pour la fin
+    public GameObject portail;
+    public RuntimeAnimatorController animatorPortailFin;
 
     void Awake()
     {
@@ -130,11 +137,7 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
-    //
-    void ResetGestureDone()
-    {
-        gestureDone = false;
-    }
+    public void ChangerCouleurFade() { matTransition.SetColor("_Color", couleurFade); }
 
     //Fonction pour faire un fondu d'entrée
     public void FadeIn()
@@ -178,5 +181,11 @@ public class GameManager : MonoBehaviour
             matTransition.SetFloat("_Opacity", 1f);
 
         yield return null;
+    }
+
+    //Mettre tout en place pour la scène finale
+    public void SetDecoFin()
+    {
+        portail.GetComponent<Animator>().runtimeAnimatorController = animatorPortailFin;
     }
 }

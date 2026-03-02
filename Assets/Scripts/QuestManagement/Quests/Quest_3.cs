@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Quest_3 : MonoBehaviour
 {
     Quest quest_3;
     public GameObject joueur;
-    public bool cinematiqueTerminee;
+    public PlayableDirector director;
+    public CollisionChaise collisionChaise;
 
     void Start()
     {
         //QuestManager.Instance.DemarrerQuest("1");
         quest_3 = QuestManager.Instance.TrouverQuest("3");
-        cinematiqueTerminee = false;
     }
 
     void Update()
@@ -19,9 +20,10 @@ public class Quest_3 : MonoBehaviour
         if (quest_3.progressionActuelle == 0)
         {
             // Si le joueur est assis à l'ordinateur
-            if (CollisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
+            if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
             {
                 QuestManager.Instance.AjouterProgression("3");
+                TimelineManager.Instance.PlayTimeline();
             }
         }
 
@@ -29,7 +31,7 @@ public class Quest_3 : MonoBehaviour
         if (quest_3.progressionActuelle == 1)
         {
             // Si la cinématique est terminée
-            if (cinematiqueTerminee)
+            if (TimelineManager.Instance.cinematiqueTerminee)
             {
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("3");

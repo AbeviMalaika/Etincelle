@@ -1,12 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Quest_4 : MonoBehaviour
 {
     public GameObject miroir;
-    public GameObject positionPortailMiroir;
     public GameObject crayon;
     public GameObject cahier;
     public GameObject joueur;
+
+    //Les effets sur les mains
+    public List<GameObject> effetsMains;
+
+    public CollisionChaise collisionChaise;
+    public ZonePortail zonePortail;
     public bool appelTermine;
 
     Quest quest_4;
@@ -23,9 +29,18 @@ public class Quest_4 : MonoBehaviour
         if (quest_4.progressionActuelle == 0)
         {
             // Si le joueur est dans la zone de portail et que le miroir est touché
-            if (ZonePortail.entreeZone && miroir.GetComponent<ToucherDetection>().toucher)
+            if (zonePortail.entreeZone && miroir.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("4");
+
+                //On retourne dans la chambre
+                zonePortail.RetourChambre();
+
+                //On désactive les effets sur les mains
+                foreach (GameObject eff in effetsMains)
+                {
+                    eff.SetActive(false);
+                }
             }
         }
 
@@ -33,7 +48,7 @@ public class Quest_4 : MonoBehaviour
         if (quest_4.progressionActuelle == 1)
         {
             // Si le joueur est assis à l'ordinateur
-            if (CollisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
+            if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
             {
                 QuestManager.Instance.AjouterProgression("4");
             }

@@ -3,9 +3,12 @@ using System.Collections;
 
 public class ZonePortail : MonoBehaviour
 {
-    public static bool entreeZone;
+    public bool entreeZone;
 
     private Coroutine timerCoroutine;
+
+    public CinemachineTargetSwitcher targetSwitcher;
+    public Transform target;
 
     void Start()
     {
@@ -39,9 +42,34 @@ public class ZonePortail : MonoBehaviour
 
     IEnumerator TempsDansZone()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         entreeZone = true;
         Debug.Log("Le joueur est resté 5 secondes dans la zone");
+    }
+
+
+    public void RetourChambre()
+    {
+        StartCoroutine(corou_RetourChambre());
+    }
+
+    IEnumerator corou_RetourChambre()
+    {
+        GameManager.Instance.ChangerCouleurFade();
+
+        yield return new WaitForSeconds(0.5f);
+
+        GameManager.Instance.FadeOut();
+
+        yield return new WaitForSeconds(2.5f);
+
+        targetSwitcher.TargetSwitch(target);
+
+        yield return new WaitForSeconds(0.5f);
+
+        GameManager.Instance.FadeIn();
+
+        yield return null;
     }
 }
