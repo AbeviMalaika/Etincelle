@@ -26,7 +26,6 @@ public class ToucherDetection : MonoBehaviour
                     Invoke("ResetToucher", 0.5f);
                 }
             }
-
         }
     }
 
@@ -38,5 +37,6 @@ public class ToucherDetection : MonoBehaviour
         detecterToucher = true;
         toucher = false;
     }
+
     public void DesactiverDetectionToucher() { detecterToucher = false; }
 }
