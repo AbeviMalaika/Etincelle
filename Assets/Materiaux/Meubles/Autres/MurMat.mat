@@ -151,10 +151,10 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Couleur_Bordure: {r: 0.1929296, g: 0.4056604, b: 0.11672302, a: 1}
+    - _Couleur_Bordure: {r: 0.003737978, g: 0.26415092, b: 0.115853645, a: 1}
     - _Couleur_Brillants: {r: 0.4292453, g: 1, b: 0.6232002, a: 1}
-    - _Couleur_Degrade_1: {r: 0.15294118, g: 0.11372549, b: 0.2784314, a: 0}
-    - _Couleur_Degrade_2: {r: 0.15294118, g: 0.11372549, b: 0.2784314, a: 1}
+    - _Couleur_Degrade_1: {r: 0.28293347, g: 0.14901964, b: 0.48235294, a: 0}
+    - _Couleur_Degrade_2: {r: 0.21422213, g: 0.5471698, b: 0.31304374, a: 1}
     - _Couleur_Lueur: {r: 1, g: 0, b: 0.08789873, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}

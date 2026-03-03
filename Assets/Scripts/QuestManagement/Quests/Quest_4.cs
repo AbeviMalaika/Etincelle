@@ -6,6 +6,7 @@ public class Quest_4 : MonoBehaviour
     public GameObject miroir;
     public GameObject crayon;
     public GameObject cahier;
+    public GameObject telephone;
     public GameObject joueur;
 
     //Les effets sur les mains
@@ -76,7 +77,20 @@ public class Quest_4 : MonoBehaviour
             }
         }
 
-        if (quest_4.progressionActuelle == 3)
+        if (quest_4.progressionActuelle == 4)
+        {
+            // Quand le dialogue de la fin est terminé, la quête est complétée
+            if (telephone.GetComponent<GrabDetection>().isGrabbed)
+            {
+                //Compléter la quête
+                QuestManager.Instance.AjouterProgression("4");
+                //Terminer la partie
+                GameManager.Instance.finPartie = true;
+                //Code pour la gestion de fin de partie. Possiblement faire un script à part pour ça et le déclencher avec enabled et/ou boolean
+            }
+        }
+
+        if (quest_4.progressionActuelle == 5)
         {
             // Quand le dialogue de la fin est terminé, la quête est complétée
             if (appelTermine)

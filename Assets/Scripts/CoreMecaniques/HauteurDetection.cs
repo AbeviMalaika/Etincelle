@@ -19,7 +19,6 @@ public class HauteurDetection : MonoBehaviour
         Invoke("GetJoueurHauteurDonnees", 2f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         hauteurActuelle = centerEyeAnchor.localPosition.y;
@@ -27,18 +26,16 @@ public class HauteurDetection : MonoBehaviour
         if (hauteurJoueur != 0 && hauteurActuelle <= hauteurAssis)
         {
             estAssis = true;
-            //print("Le joueur est assis");
         }
 
-
         //Detection du bouton A | Ce bouton sert à calibrer l'espace du joueur
-        if (OVRInput.GetDown(OVRInput.Button.One)) // OVRInput.Button.One maps to the primary button
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
             Debug.Log("Primary button pressed!");
         }
 
         //Detection du bouton B | Ce bouton sert à confirmer le calibrage du joueur
-        if (OVRInput.GetDown(OVRInput.Button.Two)) // OVRInput.Button.One maps to the primary button
+        if (OVRInput.GetDown(OVRInput.Button.Two))
         {
             Debug.Log("Secondary button pressed!");
         }
@@ -46,7 +43,16 @@ public class HauteurDetection : MonoBehaviour
 
     public void GetJoueurHauteurDonnees()
     {
-        hauteurJoueur = centerEyeAnchor.localPosition.y;
+        //On calcule selon la taille du joueur, mais si la valeur n'est pas calculé, on prend la valeur par défaut
+        if(centerEyeAnchor.localPosition.y < 0)
+        {
+            hauteurJoueur = centerEyeAnchor.localPosition.y;
+        }
+        else
+        {
+            hauteurJoueur = 1.6f;
+        }
+
         hauteurAssis = hauteurJoueur - seuilHauteur;
     }
 

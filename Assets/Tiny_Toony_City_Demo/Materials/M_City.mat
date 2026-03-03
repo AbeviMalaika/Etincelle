@@ -99,9 +99,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
+    - _Alpha: 0.0000017285347
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Amplitude_Degrade: 0.48
+    - _Amplitude_Degrade: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -118,23 +119,23 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Grosseur_Brillants: 1.7
-    - _Grosseur_Transformation: 0.14
-    - _Intensite_Lueur: -2.9
-    - _Intensite_Scintillement: -0.24
-    - _IntensityColor: 0.5
-    - _Largeur_Bordure: 0.02
+    - _Grosseur_Brillants: 2.24
+    - _Grosseur_Transformation: 0.44
+    - _Intensite_Lueur: -4.04
+    - _Intensite_Scintillement: 1.9
+    - _IntensityColor: 0.15
+    - _Largeur_Bordure: -0.46
     - _Metallic: 0
-    - _Metalness: 0
+    - _Metalness: 1
     - _Mode: 0
-    - _NormalIntensity: 1
+    - _NormalIntensity: 5.56
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Seuil_Brillants: -34.66
-    - _Smoothness: 0.5
+    - _Seuil_Brillants: -32.86
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -149,8 +150,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Couleur_Bordure: {r: 0.09453884, g: 0.2641509, b: 0.04360982, a: 1}
     - _Couleur_Brillants: {r: 0, g: 0, b: 0, a: 1}
-    - _Couleur_Degrade_1: {r: 0, g: 0, b: 0, a: 0}
-    - _Couleur_Degrade_2: {r: 0, g: 0, b: 0, a: 1}
+    - _Couleur_Degrade_1: {r: 0.11320752, g: 0.08704163, b: 0.08704163, a: 1}
+    - _Couleur_Degrade_2: {r: 0.3490566, g: 0.14983091, b: 0.14983091, a: 1}
     - _Couleur_Lueur: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}

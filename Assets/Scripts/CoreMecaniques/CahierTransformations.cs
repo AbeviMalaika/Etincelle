@@ -26,8 +26,6 @@ public class CahierTransformations : MonoBehaviour
 
     void Update()
     {
-        //mat.SetFloat("_Effacage", Mathf.PingPong(Time.time, 1f));
-        //print(mat.name);
         etatFinal = !inverse ? 1.85f : 0f;
         etatDepart = !inverse ? 0f : 1.85f;
 

@@ -14,10 +14,7 @@ public class Quest_2 : MonoBehaviour
 
     void Start()
     {
-        //QuestManager.Instance.DemarrerQuest("1");
         quest_2 = QuestManager.Instance.TrouverQuest("2");
-        director.gameObject.SetActive(true);
-
         TimelineManager.Instance.PlayTimeline();
     }
 
@@ -26,7 +23,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 1
         if (quest_2.progressionActuelle == 0)
         {
-            if (director.playableGraph.GetRootPlayable(0).GetSpeed() == 0)
+            if (TimelineManager.Instance.timelinePause)
             {
                 chevet.GetComponent<ToucherDetection>().detecterToucher = true;
             }
@@ -43,7 +40,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 2
         if (quest_2.progressionActuelle == 1)
         {
-            if (director.playableGraph.GetRootPlayable(0).GetSpeed() == 0)
+            if (TimelineManager.Instance.timelinePause)
             {
                 tableOrdi.GetComponent<ToucherDetection>().detecterToucher = true;
             }
@@ -60,7 +57,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 4
         if (quest_2.progressionActuelle == 2)
         {
-            if (director.playableGraph.GetRootPlayable(0).GetSpeed() == 0)
+            if (TimelineManager.Instance.timelinePause)
             {
                 lit.GetComponent<ToucherDetection>().detecterToucher = true;
             }
@@ -77,7 +74,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 5
         if (quest_2.progressionActuelle == 3)
         {
-            if (director.playableGraph.GetRootPlayable(0).GetSpeed() == 0)
+            if (TimelineManager.Instance.timelinePause)
             {
                 commode.GetComponent<ToucherDetection>().detecterToucher = true;
             }
@@ -94,7 +91,7 @@ public class Quest_2 : MonoBehaviour
         // Objectif 6 | -------------------------------------------------------
         if (quest_2.progressionActuelle == 4)
         {
-            if (director.playableGraph.GetRootPlayable(0).GetSpeed() == 0)
+            if (TimelineManager.Instance.timelinePause)
             {
                 plantes.GetComponent<ToucherDetection>().detecterToucher = true;
             }

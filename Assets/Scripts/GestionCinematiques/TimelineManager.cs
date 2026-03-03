@@ -6,6 +6,7 @@ public class TimelineManager : MonoBehaviour
     public static TimelineManager Instance;
     public bool cinematiqueTerminee;
     PlayableDirector director;
+    public bool timelinePause;  //Booléenne pour m'assurer si le Timeline est en pause ou non
 
     void Awake()
     {
@@ -19,16 +20,24 @@ public class TimelineManager : MonoBehaviour
     {
         cinematiqueTerminee = false;
         director = GetComponent<PlayableDirector>();
+
+        //Je veux que le Timeline soit à 0 et en pause au début du jeu
+        director.playOnAwake = false;
+        director.Stop();
+
+        timelinePause = true;
     }
 
     public void PauseTimeline()
     {
-        director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+        director.Pause();
+        timelinePause = true;
     }
 
     public void PlayTimeline()
     {
-        director.playableGraph.GetRootPlayable(0).SetSpeed(1);
+        director.Play();
+        timelinePause = false;
     }
 
     public void TerminerCinematique()
