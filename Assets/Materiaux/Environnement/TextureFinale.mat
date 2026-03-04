@@ -177,12 +177,12 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
-    - _Couleur_Bordure: {r: 3.4976077, g: 3.4976077, b: 3.4976077, a: 1}
-    - _Couleur_Brillants: {r: 0.5583406, g: 0.116970696, b: 0.1470273, a: 1}
+    - _Couleur_Bordure: {r: 0.9496855, g: 0.6181914, b: 0.6181914, a: 1}
+    - _Couleur_Brillants: {r: 0, g: 0, b: 0, a: 1}
     - _Couleur_Contour_Lumineux: {r: 2, g: 0, b: 0.8258381, a: 0}
-    - _Couleur_Degrade_1: {r: 0.18614274, g: 0.4433962, b: 0.4278051, a: 0}
-    - _Couleur_Degrade_2: {r: 0, g: 0.48280948, b: 0.9245283, a: 1}
-    - _Couleur_Lueur: {r: 0.4182666, g: 0.42427042, b: 0.41901708, a: 0}
+    - _Couleur_Degrade_1: {r: 0.24423477, g: 0.3138602, b: 0.3333333, a: 0}
+    - _Couleur_Degrade_2: {r: 0, g: 0, b: 0, a: 1}
+    - _Couleur_Lueur: {r: 0, g: 0, b: 0, a: 0}
     - _Couleur_Paillettes: {r: 1, g: 0, b: 0, a: 1}
     - _Edge_Color: {r: 0.8373351, g: 0, b: 0.38876286, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
