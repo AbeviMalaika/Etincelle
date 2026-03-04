@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Oculus.Interaction;
-using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,11 +24,20 @@ public class GameManager : MonoBehaviour
 
     public bool finPartie;
 
+    public bool gestionFinFait;
+
     public Color couleurFade;
 
+    public GameObject UIFin;
+    public GameObject BtnUIFin;
+
+    OVRHand.MicrogestureType microGesture;
+
     //Pour la fin
-    public GameObject portail;
+    public Animator portail;
     public RuntimeAnimatorController animatorPortailFin;
+
+    public Animator cristauxChemin;
 
     void Awake()
     {
@@ -58,15 +64,26 @@ public class GameManager : MonoBehaviour
         {
             enPause = false;
         }
+
+        if (sceneActuelle.buildIndex == 2)
+        {
+            enPause = false;
+        }
     }
 
     void Start()
     {
-        if (sceneActuelle.buildIndex == 1)
+        if (sceneActuelle.buildIndex == 2)
         {
             // On démarre la première quête
             QuestManager.Instance.DemarrerQuest("1");
             QuestManager.Instance.gameObject.GetComponent<Quest_1>().enabled = true;
+
+            if (SessionData.calibrage != null)
+            {
+                transform.position += SessionData.calibrage.positionOffset;
+                transform.rotation = SessionData.calibrage.rotationOffset * transform.rotation;
+            }
         }
 
         //Récupérer le matériel de la sphère
@@ -76,19 +93,30 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (sceneActuelle.buildIndex == 1)
+        if (!finPartie)
         {
-            if (OvrHand == null) return;
-
-            OVRHand.MicrogestureType microGesture = OvrHand.GetMicrogestureType();
-
-            if (microGesture == OVRHand.MicrogestureType.SwipeRight && !gestureDone)
+            if (sceneActuelle.buildIndex == 2)
             {
-                enPause = !enPause;
-                gestureDone = true;
+                if (OvrHand == null) return;
 
-                OnPauseGesture?.Invoke();
+                microGesture = OvrHand.GetMicrogestureType();
+
+                if (microGesture == OVRHand.MicrogestureType.SwipeRight && !gestureDone)
+                {
+                    enPause = !enPause;
+                    gestureDone = true;
+
+                    OnPauseGesture?.Invoke();
+                }
             }
+        }
+        else
+        {
+            if (!gestionFinFait)
+            {
+                gestionFinFait = true;
+                GestionFinPartie();
+            }  
         }
     }
 
@@ -186,6 +214,36 @@ public class GameManager : MonoBehaviour
     //Mettre tout en place pour la scène finale
     public void SetDecoFin()
     {
-        portail.GetComponent<Animator>().runtimeAnimatorController = animatorPortailFin;
+        portail.runtimeAnimatorController = animatorPortailFin;
+
+        cristauxChemin.SetTrigger("formation");
+        Invoke("ActiverPortail", 5f);
+    }
+
+    public void ActiverPortail()
+    {
+        portail.SetTrigger("flip");
+    }
+
+    public void GestionFinPartie()
+    {
+        StartCoroutine(corou_GestionFinPartie());
+    }
+
+    IEnumerator corou_GestionFinPartie()
+    {
+        yield return new WaitForSeconds(5.5f);
+
+        FadeOut();
+
+        yield return new WaitForSeconds(5.5f);
+
+        UIManager.Instance.ShowUI(UIFin);
+
+        yield return new WaitForSeconds(3f);
+
+        UIManager.Instance.ShowUI(BtnUIFin);
+
+        yield return null;
     }
 }

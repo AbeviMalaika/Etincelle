@@ -160,7 +160,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _Degre_Transformation: 0
-    - _DensiteEtoile: -34.1
+    - _DensiteEtoile: -16.8
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dissolve_Size: 30
@@ -203,8 +203,8 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TailleEtoile: 20.8
-    - _TaillePattern: -10
+    - _TailleEtoile: 22.5
+    - _TaillePattern: -12.97
     - _Temps_Dissolution: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1

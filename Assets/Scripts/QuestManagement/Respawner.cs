@@ -24,7 +24,7 @@ public class Respawner : MonoBehaviour
         }
     }
 
-    void Respawn()
+    public void Respawn()
     {
         // On coupe toute physique avant déplacement
         rb.linearVelocity = Vector3.zero;

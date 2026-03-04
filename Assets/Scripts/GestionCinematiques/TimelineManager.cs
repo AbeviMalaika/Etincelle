@@ -38,12 +38,14 @@ public class TimelineManager : MonoBehaviour
     {
         director.Play();
         timelinePause = false;
+
+        Debug.Log("<color=#00FFAA>Le timeline repars!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</color>");
     }
 
     public void TerminerCinematique()
     {
         cinematiqueTerminee = true;
         GameManager.Instance.SetDecoFin();
-        PauseTimeline();
+        director.Stop();
     }
 }

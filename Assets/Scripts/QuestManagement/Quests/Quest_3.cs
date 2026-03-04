@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -7,6 +8,9 @@ public class Quest_3 : MonoBehaviour
     public GameObject joueur;
     public PlayableDirector director;
     public CollisionChaise collisionChaise;
+
+    //Les effets sur les mains
+    public List<GameObject> effetsMains;
 
     void Start()
     {
@@ -20,10 +24,16 @@ public class Quest_3 : MonoBehaviour
         if (quest_3.progressionActuelle == 0)
         {
             // Si le joueur est assis à l'ordinateur
-            if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
+            if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis && TimelineManager.Instance.timelinePause)
             {
                 QuestManager.Instance.AjouterProgression("3");
-                TimelineManager.Instance.PlayTimeline();
+                TimelineManager.Instance.PlayTimeline();  //Souci à fix ici
+
+                //On désactive les effets sur les mains
+                foreach (GameObject eff in effetsMains)
+                {
+                    eff.SetActive(true);
+                }
             }
         }
 
@@ -42,7 +52,7 @@ public class Quest_3 : MonoBehaviour
             }
         }
 
-        // Si la quête actuelle n'est pas la quête 1, alors désactiver le script
+        // Si la quête actuelle n'est pas la quête 3, alors désactiver le script
         if (quest_3 != QuestManager.Instance.queteActuelle)
         {
             print("<color=green>Quête " + quest_3.questID + "complétée!</color>");

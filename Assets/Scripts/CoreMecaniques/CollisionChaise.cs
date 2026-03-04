@@ -17,4 +17,12 @@ public class CollisionChaise : MonoBehaviour
             print("Contact avec la chaise");
         }
     }
+
+    private void OnTriggerExit(Collider infoCollider)
+    {
+        if (infoCollider.gameObject.name == "PlayerController")
+        {
+            contactChaise = false;
+        }
+    }
 }

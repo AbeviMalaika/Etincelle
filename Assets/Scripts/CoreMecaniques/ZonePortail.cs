@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine.UI;
 
 public class ZonePortail : MonoBehaviour
 {
@@ -9,6 +12,11 @@ public class ZonePortail : MonoBehaviour
 
     public CinemachineManager targetSwitcher;
     public Transform target;
+
+    public GameObject decoPlateau;
+
+    public List<DynamisationShaderMeuble> transfoMeubles;
+    public TextMeshProUGUI textOrdi;
 
     void Start()
     {
@@ -68,7 +76,16 @@ public class ZonePortail : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        decoPlateau.SetActive(false);
+
         GameManager.Instance.FadeIn();
+
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (DynamisationShaderMeuble transfoM in transfoMeubles)
+        {
+            transfoM.transformation = true;
+        }
 
         yield return null;
     }

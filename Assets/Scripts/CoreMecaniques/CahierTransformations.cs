@@ -11,6 +11,8 @@ public class CahierTransformations : MonoBehaviour
     float etatFinal;
     float etatDepart;
 
+    public Texture2D textureCroquisFinal;
+
     Material mat;
     void Start()
     {
@@ -80,6 +82,12 @@ public class CahierTransformations : MonoBehaviour
             modifCahier = true;
             print("<color=green>Objet touché: " + infoCollision.gameObject.name + "</color>");
         }
+    }
+
+    //Fonction pour changer d'image pour le croquis de fin
+    public void SwitchCroquisFinal()
+    {
+         mat.SetTexture("_Dessin", textureCroquisFinal);
     }
 }
 
