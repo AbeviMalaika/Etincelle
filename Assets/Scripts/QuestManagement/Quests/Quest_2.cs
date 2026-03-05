@@ -54,7 +54,7 @@ public class Quest_2 : MonoBehaviour
             }
         }
 
-        // Objectif 4
+        // Objectif 3
         if (quest_2.progressionActuelle == 2)
         {
             if (TimelineManager.Instance.timelinePause)
@@ -71,7 +71,7 @@ public class Quest_2 : MonoBehaviour
             }
         }
 
-        // Objectif 5
+        // Objectif 4
         if (quest_2.progressionActuelle == 3)
         {
             if (TimelineManager.Instance.timelinePause)
@@ -88,7 +88,7 @@ public class Quest_2 : MonoBehaviour
             }
         }
 
-        // Objectif 6 | -------------------------------------------------------
+        // Objectif 5 | -------------------------------------------------------
         if (quest_2.progressionActuelle == 4)
         {
             if (TimelineManager.Instance.timelinePause)
@@ -103,6 +103,17 @@ public class Quest_2 : MonoBehaviour
                 QuestManager.Instance.AjouterProgression("2");
                 plantes.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
+            }
+        }
+
+        // Objectif 6 | -------------------------------------------------------
+        if (quest_2.progressionActuelle == 5)
+        {
+            //Si le narrateur est entrée en scène
+            if (TimelineManager.Instance.entreeLho)
+            {
+                //Compléter la quête
+                QuestManager.Instance.AjouterProgression("2");
 
                 //Démarrer la nouvelle quête
                 QuestManager.Instance.DemarrerQuest("3");

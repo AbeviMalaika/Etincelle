@@ -27048,12 +27048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d2bb4fb1eebf54b92789165fafa993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HauteurDetection
-  player: {fileID: 0}
   centerEyeAnchor: {fileID: 82281693}
-  hauteurJoueur: 0
-  hauteurAssis: 0
-  hauteurActuelle: 0
-  seuilHauteur: 0.3
   estAssis: 0
 --- !u!1 &1417095967
 GameObject:
@@ -27156,9 +27151,13 @@ MonoBehaviour:
   ConteneurMenuPrincipalUI: {fileID: 1631457891}
   enPause: 0
   finPartie: 0
+  gestionFinFait: 0
   couleurFade: {r: 0, g: 0, b: 0, a: 0}
+  UIFin: {fileID: 0}
+  BtnUIFin: {fileID: 0}
   portail: {fileID: 0}
   animatorPortailFin: {fileID: 0}
+  cristauxChemin: {fileID: 0}
 --- !u!4 &1421605158
 Transform:
   m_ObjectHideFlags: 0
@@ -27225,6 +27224,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 82281694}
+    - target: {fileID: 702507761490558278, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 776071944286655352, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.43949628
@@ -27297,6 +27300,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0013891249
       objectReference: {fileID: 0}
+    - target: {fileID: 3469981918431717162, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 3497063247922825244, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9999999
@@ -27561,6 +27568,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000003798572
       objectReference: {fileID: 0}
+    - target: {fileID: 6064490830173670506, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 6267690530596161800, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _ovrCameraRig
       value: 
@@ -27641,6 +27652,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.45215714
       objectReference: {fileID: 0}
+    - target: {fileID: 7904225791563683334, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8779972744546753495, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _interactors.Array.size
       value: 12

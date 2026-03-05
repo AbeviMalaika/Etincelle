@@ -591,7 +591,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OrdinateurTexteInput
   textInputed: {fileID: 3826594679872827156}
   textOutputed: {fileID: 7960236740057935325}
+  texteFinal: 
   enterClique: 0
+  fadeEcran: {fileID: 0}
+  dureeTransformation: 0
 --- !u!1 &6050989668369161442
 GameObject:
   m_ObjectHideFlags: 0

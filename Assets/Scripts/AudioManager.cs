@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -21,6 +22,10 @@ public class AudioManager : MonoBehaviour
     // Gestion de l'apparence du UI des options
     [SerializeField] private Slider controleurVolMusique;
     [SerializeField] private Slider controleurVolSFX;
+
+    public AudioSource mPiste1;
+    public AudioSource mPiste2;
+    public float vitesseTransition;
 
     void Awake()
     {
@@ -64,5 +69,78 @@ public class AudioManager : MonoBehaviour
 
         AjusterVolumeMusique();
         AjusterVolumeSFX();
+    }
+
+    public void ChangementMusique(AudioClip musiqueChoisie)
+    {
+        AudioSource pisteEnCours = mPiste1;
+        AudioSource pisteChoisie = mPiste2;
+
+        if (!pisteEnCours.isPlaying)
+        {
+            pisteEnCours = mPiste2;
+            pisteChoisie = mPiste1;
+        }
+
+        pisteChoisie.clip = musiqueChoisie;
+
+        StopAllCoroutines();
+        StartCoroutine(TransitionMusique(pisteChoisie, pisteEnCours));
+    }
+
+    IEnumerator TransitionMusique(AudioSource pisteChoisie, AudioSource pisteEnCours)
+    {
+        float temps = 0;
+
+        pisteChoisie.volume = 0;
+        pisteChoisie.Play();
+
+        while (temps < 1)
+        {
+            temps += Time.deltaTime * vitesseTransition;
+
+            float t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(temps));
+
+            pisteEnCours.volume = Mathf.Lerp(1, 0, t);
+            pisteChoisie.volume = Mathf.Lerp(0, 1, t);
+
+            yield return null;
+        }
+
+        pisteEnCours.Pause();
+    }
+
+    public void FadeMusiqueNormal(AudioSource musique)
+    {
+        ChangerVolume(musique, 1f, 1f);
+    }
+
+    public void FadeMusiqueMute(AudioSource musique)
+    {
+        ChangerVolume(musique, 0f, 1f);
+    }
+
+    public void ChangerVolume(AudioSource source, float volumeCible, float vitesse)
+    {
+        StopCoroutine("TransitionVolume");
+        StartCoroutine(TransitionVolume(source, volumeCible, vitesse));
+    }
+
+    IEnumerator TransitionVolume(AudioSource source, float volumeCible, float vitesse)
+    {
+        float volumeInitial = source.volume;
+        float temps = 0;
+
+        while (temps < 1)
+        {
+            temps += Time.deltaTime * vitesse;
+
+            float t = Mathf.SmoothStep(0f, 1f, temps);
+            source.volume = Mathf.Lerp(volumeInitial, volumeCible, t);
+
+            yield return null;
+        }
+
+        source.volume = volumeCible;
     }
 }

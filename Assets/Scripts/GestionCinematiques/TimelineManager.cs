@@ -7,6 +7,7 @@ public class TimelineManager : MonoBehaviour
     public bool cinematiqueTerminee;
     PlayableDirector director;
     public bool timelinePause;  //Booléenne pour m'assurer si le Timeline est en pause ou non
+    public bool entreeLho;
     public bool introTerminee;
 
     void Awake()
@@ -44,6 +45,7 @@ public class TimelineManager : MonoBehaviour
         //Debug.Log("<color=#00FFAA>Le timeline repars!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</color>");
     }
 
+
     public void TerminerCinematique()
     {
         cinematiqueTerminee = true;
@@ -51,5 +53,6 @@ public class TimelineManager : MonoBehaviour
         director.Stop();
     }
 
+    public void ValiderEntreeLho() { entreeLho = true; }
     public void ValiderIntro() { introTerminee = true; }
 }

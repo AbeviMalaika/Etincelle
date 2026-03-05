@@ -180,7 +180,7 @@ Material:
     - _Couleur_Bordure: {r: 2, g: 0.31858408, b: 0, a: 1}
     - _Couleur_Brillants: {r: 3.3962264, g: 1.8797909, b: 1.8262722, a: 1}
     - _Couleur_Contour_Lumineux: {r: 2, g: 0, b: 0.8258381, a: 0}
-    - _Couleur_Degrade_1: {r: 0.64007854, g: 0, b: 0.8301887, a: 0}
+    - _Couleur_Degrade_1: {r: 0.88334376, g: 0.495283, b: 1, a: 0}
     - _Couleur_Degrade_2: {r: 0.5918476, g: 0.7769491, b: 0.9433962, a: 1}
     - _Couleur_Lueur: {r: 3.9999998, g: 1.260563, b: 0, a: 0}
     - _Couleur_Paillettes: {r: 1, g: 0, b: 0, a: 1}

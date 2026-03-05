@@ -16,7 +16,7 @@ public class ZonePortail : MonoBehaviour
     public GameObject decoPlateau;
 
     public List<DynamisationShaderMeuble> transfoMeubles;
-    public TextMeshProUGUI textOrdi;
+    //public TextMeshProUGUI textOrdi;
 
     void Start()
     {

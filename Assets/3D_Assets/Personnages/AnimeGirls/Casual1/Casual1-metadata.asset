@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19d1e02490929e41b903b049fc91c34, type: 3}
+  m_Name: Casual1-metadata
+  m_EditorClassIdentifier: Meta.XR.Movement.Editor::Meta.XR.Movement.Editor.MSDKUtilityEditorMetadata
+  _model: {fileID: 1694388104871626409, guid: 678bf8bc91771fa498236de892b83d1d, type: 3}
+  _configJson: {fileID: 4900000, guid: c56b878a4a4a37b4f8cf8707da08d8a6, type: 3}

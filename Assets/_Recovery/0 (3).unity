@@ -13201,7 +13201,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc4d7ce5792772441b6c5aae280221a7, type: 2}
   m_sharedMaterial: {fileID: 1047230474999758558, guid: cc4d7ce5792772441b6c5aae280221a7, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 1047230474999758558, guid: cc4d7ce5792772441b6c5aae280221a7, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -17616,6 +17617,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7930046b7f853c45a532af6136eaca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quest_4
+  miroir: {fileID: 0}
+  crayon: {fileID: 0}
+  cahier: {fileID: 0}
+  telephone: {fileID: 0}
+  clavier: {fileID: 0}
+  joueur: {fileID: 0}
+  effetsMains: []
+  collisionChaise: {fileID: 0}
+  zonePortail: {fileID: 0}
 --- !u!114 &1126890959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17628,6 +17638,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d547944bc5b20f0418f29468c4ecfc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quest_3
+  joueur: {fileID: 0}
+  director: {fileID: 0}
+  collisionChaise: {fileID: 0}
+  effetsMains: []
 --- !u!114 &1126890960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17640,6 +17654,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf58062e193d3164e9462e47f66ef159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quest_2
+  chevet: {fileID: 0}
+  tableOrdi: {fileID: 0}
+  lit: {fileID: 0}
+  commode: {fileID: 0}
+  plantes: {fileID: 0}
+  director: {fileID: 0}
 --- !u!114 &1126890961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17652,7 +17672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a538191bc5dbf4c98acfceeab6586d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quest1
+  crayon: {fileID: 0}
+  cahier: {fileID: 0}
   joueur: {fileID: 1414837490}
+  collisionChaise: {fileID: 0}
 --- !u!1 &1130699827
 GameObject:
   m_ObjectHideFlags: 0
@@ -18134,8 +18157,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b276be3465a1d4cbfadfbeb2846ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  titreQuete: {fileID: 1458471602}
-  titreObjectif: {fileID: 850742301}
+  titresQuetes: []
+  titresObjectif: []
+  hud: {fileID: 0}
+  menuPause: {fileID: 0}
+  options: {fileID: 0}
+  pause: {fileID: 0}
+  rayInteractable: {fileID: 0}
 --- !u!1 &1148225117
 GameObject:
   m_ObjectHideFlags: 0
@@ -20718,6 +20746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f60cfabdc2149b40817355461113719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionChaise
+  contactChaise: 0
 --- !u!65 &1272172865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23454,10 +23483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HauteurDetection
   centerEyeAnchor: {fileID: 82281693}
-  hauteurJoueur: 0
-  hauteurAssis: 0
-  hauteurActuelle: 0
-  seuilHauteur: 0.3
+  estAssis: 0
 --- !u!1 &1415893368
 GameObject:
   m_ObjectHideFlags: 0
@@ -23754,6 +23780,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 82281694}
+    - target: {fileID: 702507761490558278, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 982273847431484472, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -23770,6 +23800,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 82281694}
+    - target: {fileID: 3469981918431717162, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 4148778239110795873, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_Name
       value: '[BuildingBlock] OVRInteractionComprehensive'
@@ -23834,10 +23868,18 @@ PrefabInstance:
       propertyPath: _playerOrigin
       value: 
       objectReference: {fileID: 1414837495}
+    - target: {fileID: 6064490830173670506, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 6267690530596161800, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _ovrCameraRig
       value: 
       objectReference: {fileID: 1414837493}
+    - target: {fileID: 7904225791563683334, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8779972744546753495, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _interactors.Array.size
       value: 12
@@ -24860,7 +24902,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eba2a37fdd08a294cb4be370c0e17d33, type: 2}
   m_sharedMaterial: {fileID: 303903218556721191, guid: eba2a37fdd08a294cb4be370c0e17d33, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 303903218556721191, guid: eba2a37fdd08a294cb4be370c0e17d33, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:

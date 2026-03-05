@@ -7314,6 +7314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704dbcdb5ef93e64fa7a07a21952ca3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimelineManager
+  cinematiqueTerminee: 0
+  timelinePause: 0
+  introTerminee: 0
 --- !u!1 &235006293
 GameObject:
   m_ObjectHideFlags: 0
@@ -42642,9 +42645,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quest_4
   miroir: {fileID: 6266154731253361450}
-  positionPortailMiroir: {fileID: 0}
   crayon: {fileID: 324023325}
   cahier: {fileID: 1250528637}
+  telephone: {fileID: 0}
+  clavier: {fileID: 0}
+  joueur: {fileID: 0}
+  effetsMains: []
+  collisionChaise: {fileID: 0}
+  zonePortail: {fileID: 0}
 --- !u!114 &1126890959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42657,6 +42665,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d547944bc5b20f0418f29468c4ecfc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quest_3
+  joueur: {fileID: 0}
+  director: {fileID: 0}
+  collisionChaise: {fileID: 0}
+  effetsMains: []
 --- !u!114 &1126890960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42689,6 +42701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Quest1
   crayon: {fileID: 324023325}
   cahier: {fileID: 1250528637}
+  joueur: {fileID: 0}
+  collisionChaise: {fileID: 0}
 --- !u!1 &1130699827
 GameObject:
   m_ObjectHideFlags: 0
@@ -43833,6 +43847,8 @@ MonoBehaviour:
   - {fileID: 2012437545}
   hud: {fileID: 1339570662}
   menuPause: {fileID: 1305664017}
+  options: {fileID: 0}
+  pause: {fileID: 0}
   rayInteractable: {fileID: 1051363818}
 --- !u!1 &1146882848
 GameObject:
@@ -47656,6 +47672,7 @@ MonoBehaviour:
   modifCahier: 0
   inverse: 0
   dureeTransformation: 4
+  textureCroquisFinal: {fileID: 0}
 --- !u!114 &1250528642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54865,10 +54882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HauteurDetection
   centerEyeAnchor: {fileID: 82281693}
-  hauteurJoueur: 0
-  hauteurAssis: 0
-  hauteurActuelle: 0
-  seuilHauteur: 0.3
+  estAssis: 0
 --- !u!1 &1417095967
 GameObject:
   m_ObjectHideFlags: 0
@@ -55166,6 +55180,15 @@ MonoBehaviour:
   SphereTransition: {fileID: 2094371503}
   MenuPrincipalUI: {fileID: 0}
   ConteneurMenuPrincipalUI: {fileID: 0}
+  enPause: 0
+  finPartie: 0
+  gestionFinFait: 0
+  couleurFade: {r: 0, g: 0, b: 0, a: 0}
+  UIFin: {fileID: 0}
+  BtnUIFin: {fileID: 0}
+  portail: {fileID: 0}
+  animatorPortailFin: {fileID: 0}
+  cristauxChemin: {fileID: 0}
 --- !u!4 &1421605158
 Transform:
   m_ObjectHideFlags: 0
@@ -55233,6 +55256,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 82281694}
+    - target: {fileID: 702507761490558278, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 776071944286655352, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.43949628
@@ -55305,6 +55332,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0013891249
       objectReference: {fileID: 0}
+    - target: {fileID: 3469981918431717162, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 3497063247922825244, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9999999
@@ -55569,6 +55600,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000003798572
       objectReference: {fileID: 0}
+    - target: {fileID: 6064490830173670506, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 6267690530596161800, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _ovrCameraRig
       value: 
@@ -55649,6 +55684,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.45215714
       objectReference: {fileID: 0}
+    - target: {fileID: 7904225791563683334, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8779972744546753495, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _interactors.Array.size
       value: 12
@@ -61622,7 +61661,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eba2a37fdd08a294cb4be370c0e17d33, type: 2}
   m_sharedMaterial: {fileID: 303903218556721191, guid: eba2a37fdd08a294cb4be370c0e17d33, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 303903218556721191, guid: eba2a37fdd08a294cb4be370c0e17d33, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -61967,7 +62007,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc4d7ce5792772441b6c5aae280221a7, type: 2}
   m_sharedMaterial: {fileID: 1047230474999758558, guid: cc4d7ce5792772441b6c5aae280221a7, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 1047230474999758558, guid: cc4d7ce5792772441b6c5aae280221a7, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -87287,6 +87328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f60cfabdc2149b40817355461113719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionChaise
+  contactChaise: 0
 --- !u!1 &3166931540691897693
 GameObject:
   m_ObjectHideFlags: 0

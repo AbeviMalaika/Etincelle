@@ -2921,6 +2921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToucherDetection
   toucher: 0
+  detecterToucher: 0
 --- !u!65 &122800705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8910,6 +8911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToucherDetection
   toucher: 0
+  detecterToucher: 0
 --- !u!65 &373973864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11839,6 +11841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToucherDetection
   toucher: 0
+  detecterToucher: 0
 --- !u!23 &515832672
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11907,8 +11910,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1638e0003538b4180259e9240d56ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CahierTransformations
+  modifCahier: 0
   inverse: 0
   dureeTransformation: 0
+  textureCroquisFinal: {fileID: 0}
 --- !u!1 &519827681
 GameObject:
   m_ObjectHideFlags: 0
@@ -15579,6 +15584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToucherDetection
   toucher: 0
+  detecterToucher: 0
 --- !u!65 &690330536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25011,8 +25017,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quest_4
   miroir: {fileID: 0}
-  positionPortailMiroir: {fileID: 0}
   crayon: {fileID: 0}
+  cahier: {fileID: 0}
+  telephone: {fileID: 0}
+  clavier: {fileID: 0}
+  joueur: {fileID: 0}
+  effetsMains: []
+  collisionChaise: {fileID: 0}
+  zonePortail: {fileID: 0}
 --- !u!114 &1126890959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25025,6 +25037,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d547944bc5b20f0418f29468c4ecfc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quest_3
+  joueur: {fileID: 0}
+  director: {fileID: 0}
+  collisionChaise: {fileID: 0}
+  effetsMains: []
 --- !u!114 &1126890960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25039,10 +25055,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Quest_2
   chevet: {fileID: 278858516}
   tableOrdi: {fileID: 278858515}
-  cahier: {fileID: 515832667}
   lit: {fileID: 278858514}
   commode: {fileID: 278858513}
   plantes: {fileID: 278858512}
+  director: {fileID: 0}
 --- !u!114 &1126890961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25057,6 +25073,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Quest1
   crayon: {fileID: 1169587602}
   cahier: {fileID: 1250528637}
+  joueur: {fileID: 0}
+  collisionChaise: {fileID: 0}
 --- !u!1 &1130699827
 GameObject:
   m_ObjectHideFlags: 0
@@ -25688,9 +25706,11 @@ MonoBehaviour:
   titresObjectif:
   - {fileID: 1599760056}
   - {fileID: 2012437545}
-  targetFin: {fileID: 0}
   hud: {fileID: 0}
-  UIFin: {fileID: 0}
+  menuPause: {fileID: 0}
+  options: {fileID: 0}
+  pause: {fileID: 0}
+  rayInteractable: {fileID: 0}
 --- !u!1 &1144920890
 GameObject:
   m_ObjectHideFlags: 0
@@ -28537,8 +28557,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1638e0003538b4180259e9240d56ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CahierTransformations
+  modifCahier: 0
   inverse: 0
   dureeTransformation: 4
+  textureCroquisFinal: {fileID: 0}
 --- !u!114 &1250528642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28552,6 +28574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToucherDetection
   toucher: 0
+  detecterToucher: 0
 --- !u!65 &1250528643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29155,6 +29178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f60cfabdc2149b40817355461113719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionChaise
+  contactChaise: 0
 --- !u!65 &1272172865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30948,8 +30972,6 @@ MonoBehaviour:
   volumeMusiqueDefaut: 0
   volumeSFXDefaut: 0
   pisteSFX: {fileID: 258281360}
-  volumeMusique: 0
-  volumeSFX: 0
   audioMixer: {fileID: 24100000, guid: bb403ccd43d6c9043bcbef28debfafc7, type: 2}
   controleurVolMusique: {fileID: 1918110495}
   controleurVolSFX: {fileID: 1015591223}
@@ -32832,10 +32854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HauteurDetection
   centerEyeAnchor: {fileID: 82281693}
-  hauteurJoueur: 0
-  hauteurAssis: 0
-  hauteurActuelle: 0
-  seuilHauteur: 0.3
+  estAssis: 0
 --- !u!1 &1417095967
 GameObject:
   m_ObjectHideFlags: 0
@@ -32927,6 +32946,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19ede59d00a0f842a1dff9ad5ecfc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  OvrHand: {fileID: 0}
+  gestureDone: 0
+  animTransition: {fileID: 0}
+  sceneActuelle:
+    m_Handle: 0
+  SphereTransition: {fileID: 0}
+  MenuPrincipalUI: {fileID: 0}
+  ConteneurMenuPrincipalUI: {fileID: 0}
+  enPause: 0
+  finPartie: 0
+  gestionFinFait: 0
+  couleurFade: {r: 0, g: 0, b: 0, a: 0}
+  UIFin: {fileID: 0}
+  BtnUIFin: {fileID: 0}
+  portail: {fileID: 0}
+  animatorPortailFin: {fileID: 0}
+  cristauxChemin: {fileID: 0}
 --- !u!4 &1421605158
 Transform:
   m_ObjectHideFlags: 0
@@ -32993,6 +33029,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 82281694}
+    - target: {fileID: 702507761490558278, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 982273847431484472, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -33009,6 +33049,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 82281694}
+    - target: {fileID: 3469981918431717162, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 4148778239110795873, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_Name
       value: '[BuildingBlock] OVRInteractionComprehensive'
@@ -33073,10 +33117,18 @@ PrefabInstance:
       propertyPath: _playerOrigin
       value: 
       objectReference: {fileID: 1414837495}
+    - target: {fileID: 6064490830173670506, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 6267690530596161800, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _ovrCameraRig
       value: 
       objectReference: {fileID: 1414837493}
+    - target: {fileID: 7904225791563683334, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8779972744546753495, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _interactors.Array.size
       value: 12
@@ -38406,6 +38458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToucherDetection
   toucher: 0
+  detecterToucher: 0
 --- !u!65 &1683601948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42694,6 +42747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToucherDetection
   toucher: 0
+  detecterToucher: 0
 --- !u!65 &1881117901
 BoxCollider:
   m_ObjectHideFlags: 0
