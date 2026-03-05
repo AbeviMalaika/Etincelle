@@ -4589,7 +4589,7 @@ AudioSource:
   m_GameObject: {fileID: 258281359}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1009278772471171118, guid: bb403ccd43d6c9043bcbef28debfafc7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -5636,7 +5636,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1337511814}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: AjusterVolumeMusique
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &282519407
 GameObject:
   m_ObjectHideFlags: 0
@@ -10877,7 +10889,19 @@ MonoBehaviour:
   m_Value: 0.817
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1337511814}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: AjusterVolumeMusique
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &595909356
 GameObject:
   m_ObjectHideFlags: 0
@@ -10919,7 +10943,7 @@ AudioSource:
   m_GameObject: {fileID: 595909356}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2580509732351740376, guid: bb403ccd43d6c9043bcbef28debfafc7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 51b8eb0cec606994f83618234d7bb348, type: 3}
   m_PlayOnAwake: 1
@@ -25288,6 +25312,9 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: bb403ccd43d6c9043bcbef28debfafc7, type: 2}
   controleurVolMusique: {fileID: 281258471}
   controleurVolSFX: {fileID: 591263932}
+  mPiste1: {fileID: 0}
+  mPiste2: {fileID: 0}
+  vitesseTransition: 0
 --- !u!1 &1344122217
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,12 +60,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (sceneActuelle.buildIndex == 1)
-        {
-            enPause = false;
-        }
+        //if (sceneActuelle.buildIndex == 1)
+        //{
+        //    enPause = false;
+        //}
 
-        if (sceneActuelle.buildIndex == 2)
+        if (sceneActuelle.buildIndex == 1)
         {
             enPause = false;
         }
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (sceneActuelle.buildIndex == 2)
+        if (sceneActuelle.buildIndex == 1)
         {
             // On démarre la première quête
             QuestManager.Instance.DemarrerQuest("1");
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         if (!finPartie)
         {
-            if (sceneActuelle.buildIndex == 2)
+            if (sceneActuelle.buildIndex == 1)
             {
                 if (OvrHand == null) return;
 
