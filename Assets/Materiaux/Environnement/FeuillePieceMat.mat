@@ -122,11 +122,11 @@ Material:
     m_Floats:
     - _AO: 1.22
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 0.2
+    - _Alpha: 0.4
     - _AlphaClip: 0
     - _AlphaClipping: 0.04
     - _AlphaToMask: 0
-    - _Blend: 0
+    - _Blend: 2
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
     - _BumpScale: 1
@@ -150,8 +150,8 @@ Material:
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0.1
     - _DrawOrder: 0
-    - _DstBlend: 10
-    - _DstBlendAlpha: 10
+    - _DstBlend: 1
+    - _DstBlendAlpha: 1
     - _EnvironmentReflections: 1
     - _FlipbookBlending: 0
     - _FlipbookMode: 0
@@ -202,6 +202,6 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
-    - _Tint: {r: 0.9811321, g: 0.8006408, b: 0.8006408, a: 1}
+    - _Tint: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

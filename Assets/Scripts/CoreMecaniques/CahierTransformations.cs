@@ -1,5 +1,18 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
 using UnityEngine;
 
+/// <summary>
+/// Gère les transformations du cahier pendant les quêtes.
+/// Permet d'effacer ou de dessiner, de gérer l'état et l'animation de la texture.
+/// </summary>
 public class CahierTransformations : MonoBehaviour
 {
     public bool modifCahier;
@@ -14,6 +27,10 @@ public class CahierTransformations : MonoBehaviour
     public Texture2D textureCroquisFinal;
 
     Material mat;
+
+    /// <summary>
+    /// Initialise le matériel du cahier et les variables de transformation.
+    /// </summary>
     void Start()
     {
         //Initialisation du matériel
@@ -26,6 +43,9 @@ public class CahierTransformations : MonoBehaviour
         mat.SetFloat("_Effacage", etatDepart);
     }
 
+    /// <summary>
+    /// Met à jour la transformation du cahier chaque frame si nécessaire.
+    /// </summary>
     void Update()
     {
         etatFinal = !inverse ? 1.85f : 0f;
@@ -36,21 +56,15 @@ public class CahierTransformations : MonoBehaviour
             print("Le cahier a été modifié");
             if (tempsEcoule < dureeTransformation)
             {
-                // Pourcentage du temps écoulé par rapport au temps de modifCahier défini
                 float t = tempsEcoule / dureeTransformation;
-
-                // Transition smooth
                 t = Mathf.SmoothStep(0f, 1f, t);
 
-                // Application de la modifCahier
                 etatTransformation = Mathf.Lerp(etatDepart, etatFinal, t);
                 tempsEcoule += Time.deltaTime;
                 mat.SetFloat("_Effacage", etatTransformation);
             }
-
             else
             {
-                // Set l'état final
                 etatTransformation = etatFinal;
                 tempsEcoule = 0f;
                 modifCahier = false;
@@ -67,16 +81,20 @@ public class CahierTransformations : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Détecte les collisions avec l'efface ou la mine et active la modification du cahier selon la quête actuelle.
+    /// </summary>
+    /// <param name="infoCollision">Collider de l'objet entrant en contact.</param>
     private void OnTriggerEnter(Collider infoCollision)
     {
-        // Si l'objet se fait toucher, il se transforme (Effacer le dessin à la quête 1)
+        // Effacer le dessin à la quête 1
         if (infoCollision.gameObject.name == "Efface" && QuestManager.Instance.queteActuelle.questID == "1")
         {
             modifCahier = true;
             print("<color=green>Objet touché: " + infoCollision.gameObject.name + "</color>");
         }
 
-        // Si l'objet se fait toucher, il se transforme (Dessiner une étincelle à la dessin à la quête 4)
+        // Dessiner une étincelle à la quête 4
         if (infoCollision.gameObject.name == "Mine" && QuestManager.Instance.queteActuelle.questID == "4")
         {
             modifCahier = true;
@@ -84,11 +102,11 @@ public class CahierTransformations : MonoBehaviour
         }
     }
 
-    //Fonction pour changer d'image pour le croquis de fin
+    /// <summary>
+    /// Change l'image du cahier pour afficher le croquis final.
+    /// </summary>
     public void SwitchCroquisFinal()
     {
-         mat.SetTexture("_Dessin", textureCroquisFinal);
+        mat.SetTexture("_Dessin", textureCroquisFinal);
     }
 }
-
-

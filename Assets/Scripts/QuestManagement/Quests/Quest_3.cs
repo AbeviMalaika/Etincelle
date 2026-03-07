@@ -1,7 +1,22 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+/// <summary>
+/// Gère la logique et la progression de la quête 3.
+/// Cette quête surveille plusieurs conditions de jeu
+/// (fin de l'introduction, position du joueur, cinématique)
+/// afin de faire avancer les objectifs et déclencher les événements associés.
+/// </summary>
 public class Quest_3 : MonoBehaviour
 {
     Quest quest_3;
@@ -12,11 +27,19 @@ public class Quest_3 : MonoBehaviour
     //Les effets sur les mains
     public List<GameObject> effetsMains;
 
+    /// <summary>
+    /// Récupère la référence de la quête 3 depuis le QuestManager au démarrage.
+    /// </summary>
     void Start()
     {
         quest_3 = QuestManager.Instance.TrouverQuest("3");
     }
 
+    /// <summary>
+    /// Vérifie en continu les conditions permettant de faire progresser
+    /// les différents objectifs de la quête.
+    /// Gère également l'activation d'effets visuels et le passage à la quête suivante.
+    /// </summary>
     void Update()
     {
         // Objectif 1
@@ -75,6 +98,10 @@ public class Quest_3 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Lance la timeline via le TimelineManager.
+    /// Appelé après un délai lorsque le joueur s'assoit à l'ordinateur.
+    /// </summary>
     void DemarrerTimeline()
     {
         TimelineManager.Instance.PlayTimeline();

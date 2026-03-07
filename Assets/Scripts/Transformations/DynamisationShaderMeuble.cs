@@ -1,8 +1,19 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
 using UnityEngine;
 
+/// <summary>
+/// Script pour l'initialisation et la transformation des matériaux dynamiques (matériaux à partir de shaders personnalisés)
+/// </summary>
 public class DynamisationShaderMeuble : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public bool transformation;
     public bool inverse;
     //bool initialisation;
@@ -14,6 +25,9 @@ public class DynamisationShaderMeuble : MonoBehaviour
 
     Material mat;
 
+    /// <summary>
+    /// Initialise le matériel et configure l'état de transformation initial du shader.
+    /// </summary>
     void Start()
     {
         mat = GetComponent<MeshRenderer>().materials[0];
@@ -24,7 +38,9 @@ public class DynamisationShaderMeuble : MonoBehaviour
         mat.SetFloat("_Degre_Transformation", etatDepart);
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Gère la détection du toucher et applique la transformation du shader dans le temps.
+    /// </summary>
     void Update()
     {
         if (gameObject.GetComponent<ToucherDetection>().toucher)
@@ -43,7 +59,7 @@ public class DynamisationShaderMeuble : MonoBehaviour
                 float t = tempsEcoule / dureeTransformation;
 
                 // Transition smooth
-                 t = Mathf.SmoothStep(0f, 1f, t);
+                t = Mathf.SmoothStep(0f, 1f, t);
 
                 // Application de la transformation
                 etatTransformation = Mathf.Lerp(etatDepart, etatFinal, t);

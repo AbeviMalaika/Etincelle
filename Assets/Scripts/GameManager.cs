@@ -1,8 +1,25 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
 using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Gestionnaire principal du jeu (Singleton) qui centralise :
+/// - Le contrôle des scènes et transitions avec fondu (fade in/out)
+/// - La détection des gestes pour la pause
+/// - La gestion de la fin de partie et de l'activation du portail final
+/// - L'initialisation des quêtes et de l'interface utilisateur
+/// - Le contrôle visuel de la sphère de transition
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -39,6 +56,11 @@ public class GameManager : MonoBehaviour
 
     public Animator cristauxChemin;
 
+    /// <summary>
+    /// Initialise le GameManager en tant que Singleton.
+    /// Configure certaines valeurs selon la scène actuelle
+    /// et affiche l'interface du menu principal si nécessaire.
+    /// </summary>
     void Awake()
     {
         if (Instance == null)
@@ -60,17 +82,17 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        //if (sceneActuelle.buildIndex == 1)
-        //{
-        //    enPause = false;
-        //}
-
         if (sceneActuelle.buildIndex == 1)
         {
             enPause = false;
         }
     }
 
+    /// <summary>
+    /// Initialise les éléments dépendants de la scène.
+    /// Lance la première quête et applique le calibrage de session
+    /// si celui-ci est disponible.
+    /// </summary>
     void Start()
     {
         if (sceneActuelle.buildIndex == 1)
@@ -79,11 +101,11 @@ public class GameManager : MonoBehaviour
             QuestManager.Instance.DemarrerQuest("1");
             QuestManager.Instance.gameObject.GetComponent<Quest_1>().enabled = true;
 
-            if (SessionData.calibrage != null)
-            {
-                transform.position += SessionData.calibrage.positionOffset;
-                transform.rotation = SessionData.calibrage.rotationOffset * transform.rotation;
-            }
+            //if (SessionData.calibrage != null)
+            //{
+            //    transform.position += SessionData.calibrage.positionOffset;
+            //    transform.rotation = SessionData.calibrage.rotationOffset * transform.rotation;
+            //}
         }
 
         //Récupérer le matériel de la sphère
@@ -91,6 +113,10 @@ public class GameManager : MonoBehaviour
             matTransition = SphereTransition.GetComponent<MeshRenderer>().material;
     }
 
+    /// <summary>
+    /// Vérifie les gestes de la main pour gérer la pause du jeu
+    /// et déclenche la gestion de fin de partie si nécessaire.
+    /// </summary>
     void Update()
     {
         if (!finPartie)
@@ -116,21 +142,32 @@ public class GameManager : MonoBehaviour
             {
                 gestionFinFait = true;
                 GestionFinPartie();
-            }  
+            }
         }
     }
 
+    /// <summary>
+    /// Inverse l'état de pause du jeu.
+    /// </summary>
     public void SetPause()
     {
         enPause = !enPause;
     }
 
-    //Fonction pour démarrer la coroutine du chargement de scène
+    /// <summary>
+    /// Lance le chargement asynchrone d'une scène via une coroutine.
+    /// </summary>
+    /// <param name="indexScene">Index de la scène à charger dans le Build Settings.</param>
     public void ChargerScene(int indexScene)
     {
         StartCoroutine(ChargementAsyncScene(indexScene));
     }
 
+    /// <summary>
+    /// Gère le chargement asynchrone d'une scène avec un fondu de transition.
+    /// Empêche l'activation de la scène tant que le chargement n'est pas terminé.
+    /// </summary>
+    /// <param name="indexScene">Index de la scène à charger.</param>
     IEnumerator ChargementAsyncScene(int indexScene)
     {
         //On active l'animation de fade-out
@@ -165,20 +202,30 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Change la couleur utilisée pour l'effet de fondu sur la sphère de transition.
+    /// </summary>
     public void ChangerCouleurFade() { matTransition.SetColor("_Color", couleurFade); }
 
-    //Fonction pour faire un fondu d'entrée
+    /// <summary>
+    /// Lance un fondu d'entrée (apparition de la scène).
+    /// </summary>
     public void FadeIn()
     {
         StartCoroutine(corou_FadeIn());
     }
 
-    //Fonction pour faire un fondu de sortie
+    /// <summary>
+    /// Lance un fondu de sortie (disparition de la scène).
+    /// </summary>
     public void FadeOut()
     {
         StartCoroutine(corou_FadeOut());
     }
 
+    /// <summary>
+    /// Coroutine qui gère l'animation de fondu d'entrée.
+    /// </summary>
     IEnumerator corou_FadeIn()
     {
         animTransition.enabled = true;
@@ -195,6 +242,9 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Coroutine qui gère l'animation de fondu de sortie.
+    /// </summary>
     IEnumerator corou_FadeOut()
     {
         animTransition.enabled = true;
@@ -211,7 +261,10 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
-    //Mettre tout en place pour la scène finale
+    /// <summary>
+    /// Configure les éléments visuels de la scène finale
+    /// et déclenche l'animation de formation du chemin.
+    /// </summary>
     public void SetDecoFin()
     {
         portail.runtimeAnimatorController = animatorPortailFin;
@@ -220,16 +273,26 @@ public class GameManager : MonoBehaviour
         Invoke("ActiverPortail", 5f);
     }
 
+    /// <summary>
+    /// Active l'animation d'ouverture du portail final.
+    /// </summary>
     public void ActiverPortail()
     {
         portail.SetTrigger("flip");
     }
 
+    /// <summary>
+    /// Lance la séquence de fin de partie.
+    /// </summary>
     public void GestionFinPartie()
     {
         StartCoroutine(corou_GestionFinPartie());
     }
 
+    /// <summary>
+    /// Coroutine qui gère la séquence finale :
+    /// fondu, affichage de l'interface de fin et activation du bouton final.
+    /// </summary>
     IEnumerator corou_GestionFinPartie()
     {
         yield return new WaitForSeconds(5.5f);

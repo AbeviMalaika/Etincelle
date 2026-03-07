@@ -1,5 +1,17 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
 using UnityEngine;
 
+/// <summary>
+/// Gère le respawn d'un objet lorsqu'il tombe en dessous d'une certaine hauteur.
+/// </summary>
 public class Respawner : MonoBehaviour
 {
     public float hauteurLimite = -10f;
@@ -9,6 +21,9 @@ public class Respawner : MonoBehaviour
     Vector3 positionInitiale;
     Quaternion rotationInitiale;
 
+    /// <summary>
+    /// Initialise les références et enregistre la position et rotation initiales.
+    /// </summary>
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,6 +31,9 @@ public class Respawner : MonoBehaviour
         rotationInitiale = transform.rotation;
     }
 
+    /// <summary>
+    /// Vérifie à chaque frame si l'objet est tombé sous la hauteur limite et le respawn si nécessaire.
+    /// </summary>
     void Update()
     {
         if (transform.position.y < hauteurLimite)
@@ -24,6 +42,9 @@ public class Respawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Replace l'objet à son point de respawn ou à sa position initiale et réinitialise sa physique.
+    /// </summary>
     public void Respawn()
     {
         // On coupe toute physique avant déplacement

@@ -1,14 +1,24 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine.UI;
 
+/// <summary>
+/// Gère la zone de portail qui détecte lorsque le joueur l'atteint.
+/// Permet de déclencher le retour dans la chambre et de réinitialiser l'environnement.
+/// </summary>
 public class ZonePortail : MonoBehaviour
 {
-    public bool entreeZone;
-
-    private Coroutine timerCoroutine;
+    public bool toucher;
+    public bool detecterToucher;
 
     public CinemachineManager targetSwitcher;
     public Transform target;
@@ -16,76 +26,76 @@ public class ZonePortail : MonoBehaviour
     public GameObject decoPlateau;
 
     public List<DynamisationShaderMeuble> transfoMeubles;
-    //public TextMeshProUGUI textOrdi;
 
+    public DisparitionVille dispa;
+    public GameObject chambreDummy;
+
+    /// <summary>
+    /// Initialise l'état de toucher à false au démarrage.
+    /// </summary>
     void Start()
     {
-        entreeZone = false;
+        toucher = false;
     }
 
+    /// <summary>
+    /// Détecte si le joueur entre dans la zone et active l'état de toucher si la détection est autorisée.
+    /// </summary>
+    /// <param name="infoCollider">Le collider entrant dans la zone</param>
     private void OnTriggerEnter(Collider infoCollider)
     {
-        if (infoCollider.gameObject.name == "PlayerController")
+        if (infoCollider.gameObject.name == "PlayerController" && detecterToucher)
         {
-            // Démarre le timer quand le joueur entre
-            timerCoroutine = StartCoroutine(TempsDansZone());
+            toucher = true;
         }
     }
 
-    private void OnTriggerExit(Collider infoCollider)
-    {
-        if (infoCollider.gameObject.name == "PlayerController")
-        {
-            // Annule le timer si le joueur sort avant 5 secondes
-            if (timerCoroutine != null)
-            {
-                StopCoroutine(timerCoroutine);
-                timerCoroutine = null;
-            }
-
-            entreeZone = false;
-            Debug.Log("Le joueur a quitté la zone");
-        }
-    }
-
-    IEnumerator TempsDansZone()
-    {
-        yield return new WaitForSeconds(3f);
-
-        entreeZone = true;
-        Debug.Log("Le joueur est resté 5 secondes dans la zone");
-    }
-
-
+    /// <summary>
+    /// Déclenche le retour dans la chambre avec les effets de fade et réinitialisation des objets.
+    /// </summary>
     public void RetourChambre()
     {
         StartCoroutine(corou_RetourChambre());
     }
 
+    /// <summary>
+    /// Coroutine qui gère le retour dans la chambre : fade out, reset de l'environnement,
+    /// repositionnement des meubles et fade in.
+    /// </summary>
+    /// <returns>IEnumerator pour la coroutine</returns>
     IEnumerator corou_RetourChambre()
     {
         GameManager.Instance.ChangerCouleurFade();
 
         yield return new WaitForSeconds(0.5f);
 
+        //Moment pour le fade out
         GameManager.Instance.FadeOut();
 
         yield return new WaitForSeconds(2.5f);
 
+        // Resetting de l'environnement
         targetSwitcher.TargetSwitch(target);
 
+        TimelineManager.Instance.StopResetDirector();
+        dispa.ResetVille();
+        chambreDummy.SetActive(false);
+
+        //Petite pause par sécurité
         yield return new WaitForSeconds(0.5f);
 
-        decoPlateau.SetActive(false);
-
+        // Puis un fade in vers la chambre 
         GameManager.Instance.FadeIn();
 
         yield return new WaitForSeconds(0.5f);
 
+        //Puis on retransforme les meubles de la chambre vers des meubles normaux
         foreach (DynamisationShaderMeuble transfoM in transfoMeubles)
         {
             transfoM.transformation = true;
         }
+
+        decoPlateau.SetActive(false);
 
         yield return null;
     }

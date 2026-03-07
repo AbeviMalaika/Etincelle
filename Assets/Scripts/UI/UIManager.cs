@@ -1,9 +1,22 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
+
 using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Gestionnaire pour le UI. S'occupe des tâches principales pour l'affichage des quêtes et des menus
+/// </summary>
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
@@ -21,6 +34,9 @@ public class UIManager : MonoBehaviour
     Dictionary<GameObject, Coroutine> runningUI = new Dictionary<GameObject, Coroutine>();
     Coroutine popupHUDCoroutine;
 
+    /// <summary>
+    /// Initialise le singleton du UIManager.
+    /// </summary>
     void Awake()
     {
         if (Instance == null)
@@ -32,6 +48,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gère l'état du HUD, du menu pause et de l'interaction avec le UI selon l'état du jeu.
+    /// </summary>
     private void Update()
     {
         //Uniquement lorsque la partie est en cours
@@ -65,6 +84,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gère l'affichage ou la fermeture du menu pause et des options.
+    /// </summary>
     public void GestionAffichagePause()
     {
         if (!GameManager.Instance.enPause)
@@ -83,24 +105,27 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Met à jour le texte des quêtes et objectifs dans le UI.
+    /// </summary>
     public void AfficherQueteUI(Quest quete)
     {
-        // Pour chaque titre de quête qu'on veut modifier, on passe au travers d'un tableau de titre (HUD et pause)
         foreach (var t in titresQuetes)
         {
             t.text = quete.titre;
         }
 
-        // Pour chaque description d'objectif qu'on veut modifier, on passe au travers d'un tableau de titre (HUD et pause)
         foreach (var t in titresObjectif)
         {
             t.text = quete.listeObjectif[quete.listeObjectif.Find(q => q.objectifID == quete.progressionActuelle).objectifID].titre;
         }
 
-        //hud.GetComponent<Animator>().SetTrigger("popUp");
         PopUpHUD();
     }
 
+    /// <summary>
+    /// Lance la coroutine qui affiche temporairement le HUD.
+    /// </summary>
     public void PopUpHUD()
     {
         if (popupHUDCoroutine != null)
@@ -109,7 +134,9 @@ public class UIManager : MonoBehaviour
         popupHUDCoroutine = StartCoroutine(corou_PopUpHUD());
     }
 
-    //Coroutine pour le pop up du HUD
+    /// <summary>
+    /// Coroutine qui fait apparaître puis disparaître le HUD avec un effet de fondu.
+    /// </summary>
     IEnumerator corou_PopUpHUD()
     {
         hud.SetActive(true);
@@ -119,7 +146,6 @@ public class UIManager : MonoBehaviour
 
         float duration = 0.5f;
 
-        // FADE IN
         float time = 0f;
         while (time < duration)
         {
@@ -132,7 +158,6 @@ public class UIManager : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-        // FADE OUT
         time = 0f;
         while (time < duration)
         {
@@ -146,7 +171,9 @@ public class UIManager : MonoBehaviour
         yield return null;
     }
 
-    //Fonction pour changer de UI à faire disparaitre
+    /// <summary>
+    /// Lance l'animation d'apparition d'un élément UI.
+    /// </summary>
     public void ShowUI(GameObject UI)
     {
         if (UI == null) return;
@@ -157,7 +184,9 @@ public class UIManager : MonoBehaviour
         runningUI[UI] = StartCoroutine(corou_ShowUI(UI));
     }
 
-    //Fonction pour changer de UI à afficher
+    /// <summary>
+    /// Lance l'animation de disparition d'un élément UI.
+    /// </summary>
     public void HideUI(GameObject UI)
     {
         if (UI == null) return;
@@ -168,12 +197,17 @@ public class UIManager : MonoBehaviour
         runningUI[UI] = StartCoroutine(corou_HideUI(UI));
     }
 
-    //Fonction pour changer de UI à faire disparaitre
+    /// <summary>
+    /// Lance l'apparition d'un élément UI après un délai.
+    /// </summary>
     public void ShowUIDelay(GameObject UI)
     {
         StartCoroutine(corou_ShowUIDelay(UI));
     }
 
+    /// <summary>
+    /// Coroutine qui fait apparaître un élément UI avec un fondu.
+    /// </summary>
     IEnumerator corou_ShowUI(GameObject UI)
     {
         UI.SetActive(true);
@@ -201,7 +235,9 @@ public class UIManager : MonoBehaviour
         yield return null;
     }
 
-    // Un autre enumerator dans le cas ou je veux un délai avant l'apparition du UI
+    /// <summary>
+    /// Coroutine qui affiche un élément UI après un délai avec un effet de fondu.
+    /// </summary>
     IEnumerator corou_ShowUIDelay(GameObject UI)
     {
         yield return new WaitForSeconds(1f);
@@ -229,6 +265,9 @@ public class UIManager : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Coroutine qui fait disparaître un élément UI avec un fondu.
+    /// </summary>
     IEnumerator corou_HideUI(GameObject UI)
     {
         CanvasGroup cg = UI.GetComponent<CanvasGroup>();
@@ -256,13 +295,21 @@ public class UIManager : MonoBehaviour
         yield return null;
     }
 
-    //Fonction pour quit la game
+    /// <summary>
+    /// Lance la fermeture du jeu après un délai.
+    /// </summary>
     public void QuitterJeu()
     {
         Invoke("Quit", 5f);
     }
 
+    /// <summary>
+    /// Ferme l'application.
+    /// </summary>
     void Quit() => Application.Quit();
 
+    /// <summary>
+    /// Ouvre un lien web dans le navigateur.
+    /// </summary>
     public void OuvrirLien(string hyperlien) => Application.OpenURL(hyperlien);
 }

@@ -1,6 +1,19 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
 using UnityEngine;
 using UnityEngine.Playables;
 
+/// <summary>
+/// Gère les objectifs et la progression de la quête 2 dans le jeu.
+/// Active les interactions sur les objets à toucher et contrôle la timeline.
+/// </summary>
 public class Quest_2 : MonoBehaviour
 {
     public GameObject chevet;
@@ -12,12 +25,20 @@ public class Quest_2 : MonoBehaviour
 
     Quest quest_2;
 
+    /// <summary>
+    /// Initialise la quête 2 et lance la timeline au démarrage.
+    /// </summary>
     void Start()
     {
         quest_2 = QuestManager.Instance.TrouverQuest("2");
         TimelineManager.Instance.PlayTimeline();
     }
 
+    /// <summary>
+    /// Vérifie à chaque frame l’état de chaque objectif de la quête 2
+    /// et met à jour la progression en conséquence.
+    /// Active les objets à toucher seulement lorsque la timeline est en pause.
+    /// </summary>
     void Update()
     {
         // Objectif 1
@@ -28,7 +49,6 @@ public class Quest_2 : MonoBehaviour
                 chevet.GetComponent<ToucherDetection>().detecterToucher = true;
             }
 
-            // Si la table de chevet est touchée
             if (chevet.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -45,7 +65,6 @@ public class Quest_2 : MonoBehaviour
                 tableOrdi.GetComponent<ToucherDetection>().detecterToucher = true;
             }
 
-            // Si la table d'ordi est touchée
             if (tableOrdi.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -62,7 +81,6 @@ public class Quest_2 : MonoBehaviour
                 lit.GetComponent<ToucherDetection>().detecterToucher = true;
             }
 
-            // Si le lit est touché
             if (lit.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -79,7 +97,6 @@ public class Quest_2 : MonoBehaviour
                 commode.GetComponent<ToucherDetection>().detecterToucher = true;
             }
 
-            // Si la commode est touchée
             if (commode.GetComponent<ToucherDetection>().toucher)
             {
                 QuestManager.Instance.AjouterProgression("2");
@@ -88,7 +105,7 @@ public class Quest_2 : MonoBehaviour
             }
         }
 
-        // Objectif 5 | -------------------------------------------------------
+        // Objectif 5
         if (quest_2.progressionActuelle == 4)
         {
             if (TimelineManager.Instance.timelinePause)
@@ -96,32 +113,26 @@ public class Quest_2 : MonoBehaviour
                 plantes.GetComponent<ToucherDetection>().detecterToucher = true;
             }
 
-            // Si les plantes sont touchées
             if (plantes.GetComponent<ToucherDetection>().toucher)
             {
-                //Compléter la quête
                 QuestManager.Instance.AjouterProgression("2");
                 plantes.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
             }
         }
 
-        // Objectif 6 | -------------------------------------------------------
+        // Objectif 6
         if (quest_2.progressionActuelle == 5)
         {
-            //Si le narrateur est entrée en scène
             if (TimelineManager.Instance.entreeLho)
             {
-                //Compléter la quête
                 QuestManager.Instance.AjouterProgression("2");
-
-                //Démarrer la nouvelle quête
                 QuestManager.Instance.DemarrerQuest("3");
                 gameObject.GetComponent<Quest_3>().enabled = true;
             }
         }
 
-        // Si la quête actuelle n'est pas la quête 1, alors désactiver le script
+        // Désactive le script si la quête n'est plus active
         if (quest_2 != QuestManager.Instance.queteActuelle)
         {
             print("<color=green>Quête " + quest_2.questID + "complétée!</color>");

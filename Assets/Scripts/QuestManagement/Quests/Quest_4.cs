@@ -1,41 +1,63 @@
+/***
+ * 
+ * ÉTINCELLE
+ * 
+ * Par Malaïka Abevi
+ * Dernière modification : 06/03/2026 
+ * 
+ */
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gère la logique et la progression de la quête 4.
+/// Cette quête inclut plusieurs objectifs interactifs tels que l'utilisation du portail,
+/// l'interaction avec l'ordinateur et le clavier, la manipulation du crayon et du téléphone,
+/// et la fin de la partie.
+/// </summary>
 public class Quest_4 : MonoBehaviour
 {
-    public GameObject miroir;
     public GameObject crayon;
     public GameObject cahier;
     public GameObject telephone;
     public GameObject clavier;
+    public OrdinateurTexteInput ordi;
     public GameObject joueur;
+    public CollisionChaise collisionChaise;
+    public ZonePortail zonePortail;
+
+    bool devoilement;
 
     //Les effets sur les mains
     public List<GameObject> effetsMains;
 
-    public CollisionChaise collisionChaise;
-    public ZonePortail zonePortail;
-
     Quest quest_4;
 
+    /// <summary>
+    /// Initialise la référence à la quête 4 depuis le QuestManager.
+    /// </summary>
     void Start()
     {
-        //QuestManager.Instance.DemarrerQuest("1");
         quest_4 = QuestManager.Instance.TrouverQuest("4");
     }
 
+    /// <summary>
+    /// Vérifie en continu les conditions pour chacun des objectifs de la quête 4
+    /// et déclenche les événements associés (texte, son, téléportation, fin de partie...).
+    /// </summary>
     void Update()
     {
         // Objectif 1
         if (quest_4.progressionActuelle == 0)
         {
-            miroir.GetComponent<ToucherDetection>().detecterToucher = true;
+            zonePortail.detecterToucher = true;
 
-            // Si le joueur est dans la zone de portail et que le miroir est touché
-            if (miroir.GetComponent<ToucherDetection>().toucher)
+            // Si le joueur est dans la zone de portail et que le zoneMiroir est touché
+            if (zonePortail.toucher)
             {
-                miroir.GetComponent<ToucherDetection>().detecterToucher = false;
+                zonePortail.detecterToucher = false;
 
                 QuestManager.Instance.AjouterProgression("4");
 
@@ -43,7 +65,7 @@ public class Quest_4 : MonoBehaviour
                 zonePortail.RetourChambre();
 
                 //On ajuste le texte à l'écran
-                clavier.GetComponent<OrdinateurTexteInput>().ChangerTexte();
+                ordi.ChangerTexte();
 
                 crayon.GetComponent<Respawner>().Respawn();
 
@@ -58,8 +80,19 @@ public class Quest_4 : MonoBehaviour
         // Objectif 2
         if (quest_4.progressionActuelle == 1)
         {
+            clavier.GetComponent<ToucherDetection>().detecterToucher = true;
             // Si le joueur est assis à l'ordinateur
-            if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
+            if (clavier.GetComponent<ToucherDetection>().toucher && !devoilement)
+            {
+                clavier.GetComponent<ToucherDetection>().detecterToucher = false;
+
+                //On dévoile le texte final
+                ordi.DevoilerTexteFinal();
+                devoilement = true;
+            }
+
+            //Si le texte est enfin dévoilé, alors on passe à la quête suivante
+            if (ordi.texteDevoile)
             {
                 QuestManager.Instance.AjouterProgression("4");
             }
@@ -96,7 +129,7 @@ public class Quest_4 : MonoBehaviour
             }
         }
 
-        // Si la quête actuelle n'est pas la quête 1, alors désactiver le script
+        // Si la quête actuelle n'est pas la quête 4, alors désactiver le script
         if (quest_4 != QuestManager.Instance.queteActuelle)
         {
             print("<color=green>Quête " + quest_4.questID + "complétée!</color>");
