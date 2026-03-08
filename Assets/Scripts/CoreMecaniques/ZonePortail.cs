@@ -17,9 +17,6 @@ using System.Collections.Generic;
 /// </summary>
 public class ZonePortail : MonoBehaviour
 {
-    public bool toucher;
-    public bool detecterToucher;
-
     public CinemachineManager targetSwitcher;
     public Transform target;
 
@@ -30,25 +27,7 @@ public class ZonePortail : MonoBehaviour
     public DisparitionVille dispa;
     public GameObject chambreDummy;
 
-    /// <summary>
-    /// Initialise l'état de toucher à false au démarrage.
-    /// </summary>
-    void Start()
-    {
-        toucher = false;
-    }
-
-    /// <summary>
-    /// Détecte si le joueur entre dans la zone et active l'état de toucher si la détection est autorisée.
-    /// </summary>
-    /// <param name="infoCollider">Le collider entrant dans la zone</param>
-    private void OnTriggerEnter(Collider infoCollider)
-    {
-        if (infoCollider.gameObject.name == "PlayerController" && detecterToucher)
-        {
-            toucher = true;
-        }
-    }
+    public AudioClip sonPortail;
 
     /// <summary>
     /// Déclenche le retour dans la chambre avec les effets de fade et réinitialisation des objets.
@@ -66,6 +45,12 @@ public class ZonePortail : MonoBehaviour
     IEnumerator corou_RetourChambre()
     {
         GameManager.Instance.ChangerCouleurFade();
+
+        //Jouer le son du portail
+        AudioManager.Instance.JouerSFX(sonPortail);
+
+        //Fade la musique du plateau
+        AudioManager.Instance.FadeMusiqueMute(AudioManager.Instance.mPiste2);
 
         yield return new WaitForSeconds(0.5f);
 

@@ -66,8 +66,6 @@ public class TimelineManager : MonoBehaviour
     {
         director.Play();
         timelinePause = false;
-
-        // Debug.Log("<color=#00FFAA>Le timeline repars!</color>");
     }
 
     /// <summary>

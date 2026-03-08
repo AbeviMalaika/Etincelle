@@ -26,7 +26,15 @@ public class Quest_4 : MonoBehaviour
     public OrdinateurTexteInput ordi;
     public GameObject joueur;
     public CollisionChaise collisionChaise;
+    public GameObject portail;
     public ZonePortail zonePortail;
+    public AudioSource pisteSFX;
+
+    public AudioClip sonPortail;
+
+    public AudioSource pisteScenario;
+    public Image imgAppelTelephone;
+    public AudioClip audioAppel;
 
     bool devoilement;
 
@@ -41,6 +49,8 @@ public class Quest_4 : MonoBehaviour
     void Start()
     {
         quest_4 = QuestManager.Instance.TrouverQuest("4");
+
+        cahier.GetComponent<CahierTransformations>().SwitchCroquisFinal();
     }
 
     /// <summary>
@@ -52,17 +62,19 @@ public class Quest_4 : MonoBehaviour
         // Objectif 1
         if (quest_4.progressionActuelle == 0)
         {
-            zonePortail.detecterToucher = true;
+            portail.GetComponent<ToucherDetection>().detecterToucher = true;
 
             // Si le joueur est dans la zone de portail et que le zoneMiroir est touché
-            if (zonePortail.toucher)
+            if (portail.GetComponent<ToucherDetection>().toucher)
             {
-                zonePortail.detecterToucher = false;
+                portail.GetComponent<ToucherDetection>().detecterToucher = false;
 
-                QuestManager.Instance.AjouterProgression("4");
+                pisteSFX.PlayOneShot(sonPortail);
 
                 //On retourne dans la chambre
                 zonePortail.RetourChambre();
+
+                QuestManager.Instance.AjouterProgression("4");
 
                 //On ajuste le texte à l'écran
                 ordi.ChangerTexte();
@@ -107,6 +119,9 @@ public class Quest_4 : MonoBehaviour
                 //Faire sonner le téléphone
                 telephone.GetComponent<AudioSource>().Play();
 
+                //Pour qu'on voit l'image d'appel entrant
+                imgAppelTelephone.color = Color.white;
+
                 QuestManager.Instance.AjouterProgression("4");
             }
         }
@@ -119,6 +134,9 @@ public class Quest_4 : MonoBehaviour
             {
                 //Arrêter la sonnerie
                 telephone.GetComponent<AudioSource>().Stop();
+
+                //Puis, on entend l'appel entre le personnage principal et son ami
+                pisteScenario.PlayOneShot(audioAppel);
 
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("4");

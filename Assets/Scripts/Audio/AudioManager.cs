@@ -202,6 +202,14 @@ public class AudioManager : MonoBehaviour
     /// <summary>
     /// Joue un monologue depuis la liste et passe au suivant pour le prochain appel.
     /// </summary>
+    public void JouerSFX(AudioClip sonSFX)
+    {
+        pisteSFX.PlayOneShot(sonSFX);
+    }
+
+    /// <summary>
+    /// Joue un monologue depuis la liste et passe au suivant pour le prochain appel.
+    /// </summary>
     public void ChangerMonologue()
     {
         pisteMonologue.PlayOneShot(monologueListe[compteurMonologue]);

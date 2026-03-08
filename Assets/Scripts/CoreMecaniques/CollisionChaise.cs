@@ -7,6 +7,7 @@
  * 
  */
 
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -14,17 +15,19 @@ using UnityEngine;
 /// </summary>
 public class CollisionChaise : MonoBehaviour
 {
-    /// <summary>
-    /// Indique si le joueur est actuellement en contact avec la chaise.
-    /// </summary>
-    public bool contactChaise;
+    public bool joueurAssis; //si le joueur est actuellement en contact avec la chaise.
+
+    Coroutine timerCoroutine;  //Référence à la coroutine en cours
+
+    bool coroutineLancee;  //Pour voir si la coroutine à déjà été démarrée. On veut éviter de la lancer en boucle par le trigger
 
     /// <summary>
     /// Initialise l'état de contact à false au démarrage.
     /// </summary>
     void Start()
     {
-        contactChaise = false;
+        joueurAssis = false;
+        coroutineLancee = false;
     }
 
     /// <summary>
@@ -35,8 +38,12 @@ public class CollisionChaise : MonoBehaviour
     {
         if (infoCollider.gameObject.name == "PlayerController")
         {
-            contactChaise = true;
-            print("Contact avec la chaise");
+            if(!coroutineLancee)
+            {
+                // Démarre le timer quand le joueur entre
+                timerCoroutine = StartCoroutine(TempsAssis());
+                coroutineLancee = true;
+            }
         }
     }
 
@@ -48,7 +55,27 @@ public class CollisionChaise : MonoBehaviour
     {
         if (infoCollider.gameObject.name == "PlayerController")
         {
-            contactChaise = false;
+            // Annule le timer si le joueur sort avant 5 secondes
+            if (timerCoroutine != null)
+            {
+                StopCoroutine(timerCoroutine);
+                timerCoroutine = null;
+            }
+
+            joueurAssis = false;
+            coroutineLancee = false;
+            Debug.Log("Le joueur a quitté la zone");
         }
     }
+
+    IEnumerator TempsAssis()
+    {
+        yield return new WaitForSeconds(4.5f);
+
+        joueurAssis = true;
+        Debug.Log("Le joueur est bien à la chaise");
+    }
+
+
+
 }

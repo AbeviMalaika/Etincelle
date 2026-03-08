@@ -42,18 +42,19 @@ public class Quest_1 : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // Objectif 1
-        if (quest_1.progressionActuelle == 0)
-        {
-            // Si le joueur est assis à l'ordinateur
-            if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
-            {
-                QuestManager.Instance.AjouterProgression("1");
-            }
-        }
+
+        //// Objectif 1
+        //if (quest_1.progressionActuelle == 0)
+        //{
+        //    // Si le joueur est assis à l'ordinateur
+        //    if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
+        //    {
+        //        QuestManager.Instance.AjouterProgression("1");
+        //    }
+        //}
 
         // Objectif 2
-        if (quest_1.progressionActuelle == 1)
+        if (quest_1.progressionActuelle == 0)
         {
             // À FAIRE - Si la value du input field est égale à "" (en appuyant le backspace pour supprimer les inputs)
             if (ordi.texteSupp)
@@ -63,7 +64,7 @@ public class Quest_1 : MonoBehaviour
         }
 
         // Objectif 3 | -------------------------------------------------------
-        if (quest_1.progressionActuelle == 2)
+        if (quest_1.progressionActuelle == 1)
         {
             // Si le crayon est pris et que l'efface touche le cahier
             if (crayon.GetComponent<GrabDetection>().isGrabbed && cahier.GetComponent<CahierTransformations>().modifCahier)

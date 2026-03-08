@@ -22,6 +22,7 @@ public class Quest_2 : MonoBehaviour
     public GameObject commode;
     public GameObject plantes;
     public PlayableDirector director;
+    public AudioClip sonLuciole;
 
     Quest quest_2;
 
@@ -51,6 +52,10 @@ public class Quest_2 : MonoBehaviour
 
             if (chevet.GetComponent<ToucherDetection>().toucher)
             {
+                //Son de la luciole
+                AudioManager.Instance.JouerSFX(sonLuciole);
+
+                //Puis progrès de la quête
                 QuestManager.Instance.AjouterProgression("2");
                 chevet.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
@@ -67,6 +72,10 @@ public class Quest_2 : MonoBehaviour
 
             if (tableOrdi.GetComponent<ToucherDetection>().toucher)
             {
+                //Son de la luciole
+                AudioManager.Instance.JouerSFX(sonLuciole);
+
+                //Puis progrès de la quête
                 QuestManager.Instance.AjouterProgression("2");
                 tableOrdi.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
@@ -83,6 +92,10 @@ public class Quest_2 : MonoBehaviour
 
             if (lit.GetComponent<ToucherDetection>().toucher)
             {
+                //Son de la luciole
+                AudioManager.Instance.JouerSFX(sonLuciole);
+
+                //Puis progrès de la quête
                 QuestManager.Instance.AjouterProgression("2");
                 lit.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
@@ -99,6 +112,10 @@ public class Quest_2 : MonoBehaviour
 
             if (commode.GetComponent<ToucherDetection>().toucher)
             {
+                //Son de la luciole
+                AudioManager.Instance.JouerSFX(sonLuciole);
+
+                //Puis progrès de la quête
                 QuestManager.Instance.AjouterProgression("2");
                 commode.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
@@ -115,6 +132,10 @@ public class Quest_2 : MonoBehaviour
 
             if (plantes.GetComponent<ToucherDetection>().toucher)
             {
+                //Son de la luciole
+                AudioManager.Instance.JouerSFX(sonLuciole);
+
+                //Puis progrès de la quête
                 QuestManager.Instance.AjouterProgression("2");
                 plantes.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();

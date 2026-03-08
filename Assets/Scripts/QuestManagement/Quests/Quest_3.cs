@@ -62,8 +62,10 @@ public class Quest_3 : MonoBehaviour
         if (quest_3.progressionActuelle == 1)
         {
             // Si le joueur est assis à l'ordinateur
-            if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis && TimelineManager.Instance.timelinePause)
+            if (collisionChaise.joueurAssis && TimelineManager.Instance.timelinePause)
             {
+                //On désactive le UI pour ne pas qu'il soit une source de problème pendant la quête
+                GameManager.Instance.desactivationUI = true;
                 QuestManager.Instance.AjouterProgression("3");
                 Invoke("DemarrerTimeline", 5f);
 
@@ -81,6 +83,9 @@ public class Quest_3 : MonoBehaviour
             // Si la cinématique est terminée
             if (TimelineManager.Instance.cinematiqueTerminee)
             {
+                //On réactive le UI
+                GameManager.Instance.desactivationUI = false;
+
                 //Compléter la quête
                 QuestManager.Instance.AjouterProgression("3");
 

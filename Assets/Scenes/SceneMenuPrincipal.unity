@@ -1434,7 +1434,6 @@ GameObject:
   - component: {fileID: 82281693}
   - component: {fileID: 82281695}
   - component: {fileID: 82281694}
-  - component: {fileID: 82281696}
   - component: {fileID: 82281697}
   m_Layer: 0
   m_Name: CenterEyeAnchor
@@ -1518,38 +1517,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82281692}
   m_Enabled: 1
---- !u!114 &82281696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82281692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBrain
-  ShowDebugText: 0
-  ShowCameraFrustum: 1
-  IgnoreTimeScale: 0
-  WorldUpOverride: {fileID: 0}
-  ChannelMask: -1
-  UpdateMethod: 2
-  BlendUpdateMethod: 1
-  LensModeOverride:
-    Enabled: 0
-    DefaultMode: 2
-  DefaultBlend:
-    Style: 1
-    Time: 2
-    CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  CustomBlends: {fileID: 0}
 --- !u!114 &82281697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25306,15 +25273,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3fe444213e3dd43b565e2b1a6e1061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  volumeMusiqueDefaut: 0
-  volumeSFXDefaut: 0
-  pisteSFX: {fileID: 258281360}
   audioMixer: {fileID: 24100000, guid: bb403ccd43d6c9043bcbef28debfafc7, type: 2}
   controleurVolMusique: {fileID: 281258471}
   controleurVolSFX: {fileID: 591263932}
+  volumeMusiqueDefaut: 0
+  volumeSFXDefaut: 0
+  pisteSFX: {fileID: 258281360}
   mPiste1: {fileID: 0}
   mPiste2: {fileID: 0}
   vitesseTransition: 0
+  pisteMonologue: {fileID: 0}
+  monologueListe: []
 --- !u!1 &1344122217
 GameObject:
   m_ObjectHideFlags: 0

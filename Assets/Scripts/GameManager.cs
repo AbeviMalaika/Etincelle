@@ -56,6 +56,12 @@ public class GameManager : MonoBehaviour
 
     public Animator cristauxChemin;
 
+    public GameObject chambreDummy; //Représente la chambre fictive pour le reflet du portail
+
+    public AudioClip musiqueFin;
+
+    public bool desactivationUI;
+
     /// <summary>
     /// Initialise le GameManager en tant que Singleton.
     /// Configure certaines valeurs selon la scène actuelle
@@ -111,6 +117,9 @@ public class GameManager : MonoBehaviour
         //Récupérer le matériel de la sphère
         if (SphereTransition != null)
             matTransition = SphereTransition.GetComponent<MeshRenderer>().material;
+
+        matTransition.SetFloat("_Opacity", 1f);
+        FadeIn();
     }
 
     /// <summary>
@@ -119,7 +128,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (!finPartie)
+        if (!finPartie || !desactivationUI)
         {
             if (sceneActuelle.buildIndex == 1)
             {
@@ -270,7 +279,10 @@ public class GameManager : MonoBehaviour
         portail.runtimeAnimatorController = animatorPortailFin;
 
         cristauxChemin.SetTrigger("formation");
-        Invoke("ActiverPortail", 5f);
+
+        chambreDummy.SetActive(true);
+
+        Invoke("ActiverPortail", 3f);
     }
 
     /// <summary>
@@ -295,6 +307,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     IEnumerator corou_GestionFinPartie()
     {
+        finPartie = true;
+        enPause = true;
+        yield return new WaitForSeconds(5.5f);
+
+        //Démarrer la musique de fin
+        AudioManager.Instance.ChangementMusique(musiqueFin);
+
+        //On remet le fade en noir
+        matTransition.SetColor("_Color", Color.black);
+
         yield return new WaitForSeconds(5.5f);
 
         FadeOut();

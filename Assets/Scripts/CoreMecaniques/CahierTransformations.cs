@@ -23,6 +23,7 @@ public class CahierTransformations : MonoBehaviour
     float etatTransformation;
     float etatFinal;
     float etatDepart;
+    public bool autoriserModification;
 
     public Texture2D textureCroquisFinal;
 
@@ -38,6 +39,7 @@ public class CahierTransformations : MonoBehaviour
         etatDepart = !inverse ? 0f : 1.85f;
         initialisation = true;
         modifCahier = false;
+        autoriserModification = false;
 
         mat = GetComponent<MeshRenderer>().material;
         mat.SetFloat("_Effacage", etatDepart);
@@ -51,32 +53,36 @@ public class CahierTransformations : MonoBehaviour
         etatFinal = !inverse ? 1.85f : 0f;
         etatDepart = !inverse ? 0f : 1.85f;
 
-        if (modifCahier)
+        if(autoriserModification)
         {
-            print("Le cahier a été modifié");
-            if (tempsEcoule < dureeTransformation)
+            if (modifCahier)
             {
-                float t = tempsEcoule / dureeTransformation;
-                t = Mathf.SmoothStep(0f, 1f, t);
+                print("Le cahier a été modifié");
+                if (tempsEcoule < dureeTransformation)
+                {
+                    float t = tempsEcoule / dureeTransformation;
+                    t = Mathf.SmoothStep(0f, 1f, t);
 
-                etatTransformation = Mathf.Lerp(etatDepart, etatFinal, t);
-                tempsEcoule += Time.deltaTime;
-                mat.SetFloat("_Effacage", etatTransformation);
+                    etatTransformation = Mathf.Lerp(etatDepart, etatFinal, t);
+                    tempsEcoule += Time.deltaTime;
+                    mat.SetFloat("_Effacage", etatTransformation);
+                }
+                else
+                {
+                    etatTransformation = etatFinal;
+                    tempsEcoule = 0f;
+                    modifCahier = false;
+                    initialisation = false;
+                    inverse = !inverse;
+                    autoriserModification = false;
+                }
             }
             else
             {
-                etatTransformation = etatFinal;
-                tempsEcoule = 0f;
-                modifCahier = false;
-                initialisation = false;
-                inverse = !inverse;
-            }
-        }
-        else
-        {
-            if (initialisation)
-            {
-                mat.SetFloat("_Effacage", etatDepart);
+                if (initialisation)
+                {
+                    mat.SetFloat("_Effacage", etatDepart);
+                }
             }
         }
     }
