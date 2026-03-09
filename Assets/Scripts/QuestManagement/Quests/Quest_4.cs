@@ -36,6 +36,8 @@ public class Quest_4 : MonoBehaviour
     public Image imgAppelTelephone;
     public AudioClip audioAppel;
 
+    bool transitionPortail;
+
     bool devoilement;
 
     //Les effets sur les mains
@@ -65,7 +67,7 @@ public class Quest_4 : MonoBehaviour
             portail.GetComponent<ToucherDetection>().detecterToucher = true;
 
             // Si le joueur est dans la zone de portail et que le zoneMiroir est touché
-            if (portail.GetComponent<ToucherDetection>().toucher)
+            if (portail.GetComponent<ToucherDetection>().toucher && !transitionPortail)
             {
                 portail.GetComponent<ToucherDetection>().detecterToucher = false;
 
@@ -73,8 +75,6 @@ public class Quest_4 : MonoBehaviour
 
                 //On retourne dans la chambre
                 zonePortail.RetourChambre();
-
-                QuestManager.Instance.AjouterProgression("4");
 
                 //On ajuste le texte à l'écran
                 ordi.ChangerTexte();
@@ -86,6 +86,14 @@ public class Quest_4 : MonoBehaviour
                 {
                     eff.SetActive(false);
                 }
+
+                transitionPortail = true;
+            }
+
+
+            if (transitionPortail && zonePortail.retourChambre)
+            {
+                QuestManager.Instance.AjouterProgression("4");
             }
         }
 
@@ -113,6 +121,9 @@ public class Quest_4 : MonoBehaviour
         // Objectif 3
         if (quest_4.progressionActuelle == 2)
         {
+            //On autorise la modification du cahier
+            cahier.GetComponent<CahierTransformations>().autoriserModification = true;
+
             //À FAIRE - Si le crayon est pris et que la mine touche le cahier
             if (crayon.GetComponent<GrabDetection>().isGrabbed && cahier.GetComponent<CahierTransformations>().modifCahier)
             {
@@ -134,6 +145,9 @@ public class Quest_4 : MonoBehaviour
             {
                 //Arrêter la sonnerie
                 telephone.GetComponent<AudioSource>().Stop();
+
+                //Pour qu'on voit l'image d'appel entrant
+                imgAppelTelephone.color = Color.black;
 
                 //Puis, on entend l'appel entre le personnage principal et son ami
                 pisteScenario.PlayOneShot(audioAppel);

@@ -42,8 +42,11 @@ public class QuestManager : MonoBehaviour
         Quest quest = TrouverQuest(questID);
         if (quest != null && quest.etat == QuestState.NonDemarree)
         {
+            //Démarrer la quête
             quest.DemarrerQuest();
             queteActuelle = TrouverQuestActuelle();
+
+            //Afficher la quête et l'objectif dans le UI
             UIManager.Instance.AfficherQueteUI(quest);
             Debug.Log($"Quête commencée : {quest.titre}");
         }
@@ -63,6 +66,7 @@ public class QuestManager : MonoBehaviour
 
             if (quest.progressionActuelle < quest.progressionRequise)
             {
+                //Afficher la quête avec le nouvel objectif
                 UIManager.Instance.AfficherQueteUI(quest);
             }
         }

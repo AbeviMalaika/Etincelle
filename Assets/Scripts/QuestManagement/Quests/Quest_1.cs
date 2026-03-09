@@ -42,17 +42,6 @@ public class Quest_1 : MonoBehaviour
     /// </summary>
     void Update()
     {
-
-        //// Objectif 1
-        //if (quest_1.progressionActuelle == 0)
-        //{
-        //    // Si le joueur est assis à l'ordinateur
-        //    if (collisionChaise.contactChaise && joueur.GetComponent<HauteurDetection>().estAssis)
-        //    {
-        //        QuestManager.Instance.AjouterProgression("1");
-        //    }
-        //}
-
         // Objectif 2
         if (quest_1.progressionActuelle == 0)
         {
@@ -65,7 +54,10 @@ public class Quest_1 : MonoBehaviour
 
         // Objectif 3 | -------------------------------------------------------
         if (quest_1.progressionActuelle == 1)
-        {
+        {   
+            //On autorise la modification du cahier
+            cahier.GetComponent<CahierTransformations>().autoriserModification = true;
+
             // Si le crayon est pris et que l'efface touche le cahier
             if (crayon.GetComponent<GrabDetection>().isGrabbed && cahier.GetComponent<CahierTransformations>().modifCahier)
             {

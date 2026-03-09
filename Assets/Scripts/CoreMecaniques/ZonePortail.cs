@@ -29,6 +29,8 @@ public class ZonePortail : MonoBehaviour
 
     public AudioClip sonPortail;
 
+    public bool retourChambre;
+
     /// <summary>
     /// Déclenche le retour dans la chambre avec les effets de fade et réinitialisation des objets.
     /// </summary>
@@ -67,7 +69,7 @@ public class ZonePortail : MonoBehaviour
         chambreDummy.SetActive(false);
 
         //Petite pause par sécurité
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
 
         // Puis un fade in vers la chambre 
         GameManager.Instance.FadeIn();
@@ -81,6 +83,10 @@ public class ZonePortail : MonoBehaviour
         }
 
         decoPlateau.SetActive(false);
+
+        yield return new WaitForSeconds(3f);
+
+        retourChambre = true;
 
         yield return null;
     }

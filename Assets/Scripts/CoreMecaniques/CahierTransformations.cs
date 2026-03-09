@@ -94,14 +94,14 @@ public class CahierTransformations : MonoBehaviour
     private void OnTriggerEnter(Collider infoCollision)
     {
         // Effacer le dessin à la quête 1
-        if (infoCollision.gameObject.name == "Efface" && QuestManager.Instance.queteActuelle.questID == "1")
+        if (infoCollision.gameObject.name == "Efface" && autoriserModification && QuestManager.Instance.queteActuelle.questID == "1")
         {
             modifCahier = true;
             print("<color=green>Objet touché: " + infoCollision.gameObject.name + "</color>");
         }
 
         // Dessiner une étincelle à la quête 4
-        if (infoCollision.gameObject.name == "Mine" && QuestManager.Instance.queteActuelle.questID == "4")
+        if (infoCollision.gameObject.name == "Mine" && autoriserModification && QuestManager.Instance.queteActuelle.questID == "4")
         {
             modifCahier = true;
             print("<color=green>Objet touché: " + infoCollision.gameObject.name + "</color>");

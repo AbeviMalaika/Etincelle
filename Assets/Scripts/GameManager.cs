@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
 
     public bool desactivationUI;
 
+    public float tempsDelaiFin; //Délai avant la gestion complète de la fin
+
     /// <summary>
     /// Initialise le GameManager en tant que Singleton.
     /// Configure certaines valeurs selon la scène actuelle
@@ -118,7 +120,7 @@ public class GameManager : MonoBehaviour
         if (SphereTransition != null)
             matTransition = SphereTransition.GetComponent<MeshRenderer>().material;
 
-        matTransition.SetFloat("_Opacity", 1f);
+        matTransition.SetFloat("_Opacity", 1.5f);
         FadeIn();
     }
 
@@ -126,34 +128,30 @@ public class GameManager : MonoBehaviour
     /// Vérifie les gestes de la main pour gérer la pause du jeu
     /// et déclenche la gestion de fin de partie si nécessaire.
     /// </summary>
-    void Update()
+void Update()
+{
+    if (sceneActuelle.buildIndex == 1)
     {
-        if (!finPartie || !desactivationUI)
+        if (OvrHand != null && !finPartie && !desactivationUI)
         {
-            if (sceneActuelle.buildIndex == 1)
+            microGesture = OvrHand.GetMicrogestureType();
+
+            if (microGesture == OVRHand.MicrogestureType.SwipeRight && !gestureDone)
             {
-                if (OvrHand == null) return;
+                enPause = !enPause;
+                gestureDone = true;
 
-                microGesture = OvrHand.GetMicrogestureType();
-
-                if (microGesture == OVRHand.MicrogestureType.SwipeRight && !gestureDone)
-                {
-                    enPause = !enPause;
-                    gestureDone = true;
-
-                    OnPauseGesture?.Invoke();
-                }
-            }
-        }
-        else
-        {
-            if (!gestionFinFait)
-            {
-                gestionFinFait = true;
-                GestionFinPartie();
+                OnPauseGesture?.Invoke();
             }
         }
     }
+
+    if (finPartie && !gestionFinFait)
+    {
+        gestionFinFait = true;
+        GestionFinPartie();
+    }
+}
 
     /// <summary>
     /// Inverse l'état de pause du jeu.
@@ -265,7 +263,7 @@ public class GameManager : MonoBehaviour
         animTransition.enabled = false;
 
         if (matTransition != null)
-            matTransition.SetFloat("_Opacity", 1f);
+            matTransition.SetFloat("_Opacity", 1.5f);
 
         yield return null;
     }
@@ -308,8 +306,12 @@ public class GameManager : MonoBehaviour
     IEnumerator corou_GestionFinPartie()
     {
         finPartie = true;
+        //On veut pouvoir laisser un peu de temps pour le dialogue du personnage avec son ami
+        yield return new WaitForSeconds(tempsDelaiFin);
+
         enPause = true;
-        yield return new WaitForSeconds(5.5f);
+
+        //Puis on commence la transition vers la fin
 
         //Démarrer la musique de fin
         AudioManager.Instance.ChangementMusique(musiqueFin);
@@ -330,5 +332,10 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ShowUI(BtnUIFin);
 
         yield return null;
+    }
+
+    public void SwitchUI()
+    {
+        desactivationUI = !desactivationUI;
     }
 }

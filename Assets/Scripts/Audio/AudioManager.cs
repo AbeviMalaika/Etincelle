@@ -135,11 +135,14 @@ public class AudioManager : MonoBehaviour
 
             float t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(temps));
 
-            pisteEnCours.volume = Mathf.Lerp(1, 0, t);
-            pisteChoisie.volume = Mathf.Lerp(0, 1, t);
+            pisteEnCours.volume = Mathf.Lerp(1f, 0f, t);
+            pisteChoisie.volume = Mathf.Lerp(0f, 0.7f, t);
 
             yield return null;
         }
+
+        pisteEnCours.volume = 0f;
+        pisteChoisie.volume = 0.7f;
 
         pisteEnCours.Pause();
     }

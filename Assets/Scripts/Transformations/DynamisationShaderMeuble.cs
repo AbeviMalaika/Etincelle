@@ -16,7 +16,6 @@ public class DynamisationShaderMeuble : MonoBehaviour
 {
     public bool transformation;
     public bool inverse;
-    //bool initialisation;
     public float dureeTransformation;
     float tempsEcoule;
     float etatTransformation;
@@ -43,11 +42,14 @@ public class DynamisationShaderMeuble : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // On vérifie si l'objet a été touché par le joueur
         if (gameObject.GetComponent<ToucherDetection>().toucher)
         {
             transformation = true;
         }
 
+        // Inversion des états finaux et de départ selon la booléenne
+        // Pour transformer ou ramener à l'état normal un objet 
         etatFinal = !inverse ? 0f : 1f;
         etatDepart = !inverse ? 1f : 0f;
 
@@ -64,6 +66,11 @@ public class DynamisationShaderMeuble : MonoBehaviour
                 // Application de la transformation
                 etatTransformation = Mathf.Lerp(etatDepart, etatFinal, t);
                 tempsEcoule += Time.deltaTime;
+
+                /*
+                 _Degre_Transformation est la propriété qui manipule le AlphaClipping 
+                du shader / matériel. C'est ce qui fait l'effet de transformation
+                 */
                 mat.SetFloat("_Degre_Transformation", etatTransformation);
             }
 
@@ -73,7 +80,6 @@ public class DynamisationShaderMeuble : MonoBehaviour
                 etatTransformation = etatFinal;
                 tempsEcoule = 0f;
                 transformation = false;
-                //initialisation = false;
                 inverse = !inverse;
             }
         }
