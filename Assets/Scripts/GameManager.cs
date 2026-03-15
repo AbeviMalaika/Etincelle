@@ -3,7 +3,7 @@
  * ÉTINCELLE
  * 
  * Par Malaïka Abevi
- * Dernière modification : 06/03/2026 
+ * Dernière modification : 15/03/2026 
  * 
  */
 
@@ -23,46 +23,34 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public OVRHand OvrHand;
-    public bool gestureDone;
+    [SerializeField] Quest_1 quest1;
 
-    public Animator animTransition;
+    [Header("Paramètres de base")]
+    public bool enPause;
     public Scene sceneActuelle;
 
-    public GameObject SphereTransition;
-    Material matTransition;
-
+    [Header("Gestion du UI")]
+    OVRHand.MicrogestureType microGesture;
+    public OVRHand OvrHand;
+    public event Action OnPauseGesture;
+    public bool gestureDone;
     public GameObject MenuPrincipalUI;
     public GameObject ConteneurMenuPrincipalUI;
 
-    public event Action OnPauseGesture;
-
-    public bool enPause;
-
-    public bool finPartie;
-
-    public bool gestionFinFait;
-
-    public Color couleurFade;
-
-    public GameObject UIFin;
-    public GameObject BtnUIFin;
-
-    OVRHand.MicrogestureType microGesture;
-
-    //Pour la fin
+    [Header("Gestion de la fin de partie")]
     public Animator portail;
     public RuntimeAnimatorController animatorPortailFin;
-
     public Animator cristauxChemin;
-
     public GameObject chambreDummy; //Représente la chambre fictive pour le reflet du portail
-
     public AudioClip musiqueFin;
 
-    public bool desactivationUI;
-
     public float tempsDelaiFin; //Délai avant la gestion complète de la fin
+    public GameObject UIFin;
+    public GameObject BtnUIFin;
+    
+    public bool finPartie;
+    public bool desactivationUI; 
+    public bool gestionFinFait;
 
     /// <summary>
     /// Initialise le GameManager en tant que Singleton.
@@ -107,7 +95,7 @@ public class GameManager : MonoBehaviour
         {
             // On démarre la première quête
             QuestManager.Instance.DemarrerQuest("1");
-            QuestManager.Instance.gameObject.GetComponent<Quest_1>().enabled = true;
+            quest1.enabled = true;
 
             //if (SessionData.calibrage != null)
             //{
@@ -116,42 +104,39 @@ public class GameManager : MonoBehaviour
             //}
         }
 
-        //Récupérer le matériel de la sphère
-        if (SphereTransition != null)
-            matTransition = SphereTransition.GetComponent<MeshRenderer>().material;
-
-        matTransition.SetFloat("_Opacity", 1.5f);
-        FadeIn();
+        //Fade In avec le script de fade
+        VRFade.Instance.ChangerCouleurFade(Color.black);
+        VRFade.Instance.FadeIn(2.5f);
     }
 
     /// <summary>
     /// Vérifie les gestes de la main pour gérer la pause du jeu
     /// et déclenche la gestion de fin de partie si nécessaire.
     /// </summary>
-void Update()
-{
-    if (sceneActuelle.buildIndex == 1)
+    void Update()
     {
-        if (OvrHand != null && !finPartie && !desactivationUI)
+        if (sceneActuelle.buildIndex == 1)
         {
-            microGesture = OvrHand.GetMicrogestureType();
-
-            if (microGesture == OVRHand.MicrogestureType.SwipeRight && !gestureDone)
+            if (OvrHand != null && !finPartie && !desactivationUI)
             {
-                enPause = !enPause;
-                gestureDone = true;
+                microGesture = OvrHand.GetMicrogestureType();
 
-                OnPauseGesture?.Invoke();
+                if (microGesture == OVRHand.MicrogestureType.SwipeRight && !gestureDone)
+                {
+                    enPause = !enPause;
+                    gestureDone = true;
+
+                    OnPauseGesture?.Invoke();
+                }
             }
         }
-    }
 
-    if (finPartie && !gestionFinFait)
-    {
-        gestionFinFait = true;
-        GestionFinPartie();
+        if (finPartie && !gestionFinFait)
+        {
+            gestionFinFait = true;
+            GestionFinPartie();
+        }
     }
-}
 
     /// <summary>
     /// Inverse l'état de pause du jeu.
@@ -177,8 +162,8 @@ void Update()
     /// <param name="indexScene">Index de la scène à charger.</param>
     IEnumerator ChargementAsyncScene(int indexScene)
     {
-        //On active l'animation de fade-out
-        FadeOut();
+        //Fade Out avec le script de fade
+        VRFade.Instance.FadeOut(2.5f);
 
         //On attend le temps que l'animation dure
         yield return new WaitForSeconds(2.5f);
@@ -189,82 +174,19 @@ void Update()
         //On ne veut pas que la prochaine scène s'affiche tant qu'elle n'est pas entièrement chargée
         scene.allowSceneActivation = false;
 
-        do
+        // On attend que la scène soit chargée à 90%
+        while (scene.progress < 0.9f)
         {
             Debug.Log("Chargement... : " + scene.progress);
-
-            if (scene.progress >= 0.9f)
-            {
-                //On attend le temps que l'animation dure
-                yield return new WaitForSeconds(2f);
-                scene.allowSceneActivation = true;
-            }
-
             yield return null;
-
-        } while (!scene.isDone);
+        }
 
         Debug.Log("La scène est chargée");
 
-        yield return null;
-    }
+        //Activation de la scène
+        scene.allowSceneActivation = true;
 
-    /// <summary>
-    /// Change la couleur utilisée pour l'effet de fondu sur la sphère de transition.
-    /// </summary>
-    public void ChangerCouleurFade() { matTransition.SetColor("_Color", couleurFade); }
-
-    /// <summary>
-    /// Lance un fondu d'entrée (apparition de la scène).
-    /// </summary>
-    public void FadeIn()
-    {
-        StartCoroutine(corou_FadeIn());
-    }
-
-    /// <summary>
-    /// Lance un fondu de sortie (disparition de la scène).
-    /// </summary>
-    public void FadeOut()
-    {
-        StartCoroutine(corou_FadeOut());
-    }
-
-    /// <summary>
-    /// Coroutine qui gère l'animation de fondu d'entrée.
-    /// </summary>
-    IEnumerator corou_FadeIn()
-    {
-        animTransition.enabled = true;
-        animTransition.SetTrigger("fadeIn");
-
-        yield return new WaitForSeconds(2.5f);
-
-        //Désactiver l'animator car il controle l'opacité et empèche de set par la suite
-        animTransition.enabled = false;
-
-        if (matTransition != null)
-            matTransition.SetFloat("_Opacity", 0f);
-
-        yield return null;
-    }
-
-    /// <summary>
-    /// Coroutine qui gère l'animation de fondu de sortie.
-    /// </summary>
-    IEnumerator corou_FadeOut()
-    {
-        animTransition.enabled = true;
-        animTransition.SetTrigger("fadeOut");
-
-        yield return new WaitForSeconds(2.5f);
-
-        //Désactiver l'animator car il controle l'opacité et empèche de set par la suite
-        animTransition.enabled = false;
-
-        if (matTransition != null)
-            matTransition.SetFloat("_Opacity", 1.5f);
-
+        yield return new WaitForEndOfFrame();
         yield return null;
     }
 
@@ -316,12 +238,12 @@ void Update()
         //Démarrer la musique de fin
         AudioManager.Instance.ChangementMusique(musiqueFin);
 
-        //On remet le fade en noir
-        matTransition.SetColor("_Color", Color.black);
-
         yield return new WaitForSeconds(5.5f);
 
-        FadeOut();
+        //On remet le fade en noir
+        VRFade.Instance.ChangerCouleurFade(Color.black);
+        //Fade out avec le script de fade
+        VRFade.Instance.FadeOut(2.5f);
 
         yield return new WaitForSeconds(5.5f);
 

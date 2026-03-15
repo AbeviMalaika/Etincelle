@@ -19,29 +19,31 @@ using UnityEngine.UI;
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
-    /// <summary>
-    /// Instance singleton du AudioManager.
-    /// </summary>
+    [Header("Paramètres de base")]
     public static AudioManager Instance;
-
     public AudioMixer audioMixer;
+    public float vitesseTransition;
 
+    [Header("Sliders")]
     [SerializeField] private Slider controleurVolMusique;
     [SerializeField] private Slider controleurVolSFX;
 
+    [Header("Volumes par défaut")]
+    [Range(-80f, 20f)]
     public float volumeMusiqueDefaut;
+    [Range(-80f, 20f)]
     public float volumeSFXDefaut;
 
     public static float volumeMusique;
     public static float volumeSFX;
 
-    public AudioSource pisteSFX;
-
+    [Header("Pistes audio")]
     public AudioSource mPiste1;
     public AudioSource mPiste2;
-    public float vitesseTransition;
-
     public AudioSource pisteMonologue;
+    public AudioSource pisteSFX;
+
+    [Header("Paramètres pour le monologue")]
     int compteurMonologue;
     public List<AudioClip> monologueListe;
 

@@ -3361,6 +3361,7 @@ GameObject:
   - component: {fileID: 82281695}
   - component: {fileID: 82281694}
   - component: {fileID: 82281697}
+  - component: {fileID: 82281698}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -3487,6 +3488,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &82281698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82281692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.VR::OVRScreenFade
+  fadeTime: 2
+  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  fadeOnStart: 0
+  renderQueue: 5000
 --- !u!1 &82400375
 GameObject:
   m_ObjectHideFlags: 0
@@ -27876,6 +27893,37 @@ Transform:
   - {fileID: 1635651726}
   m_Father: {fileID: 1092893848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &464184365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 464184366}
+  m_Layer: 0
+  m_Name: AnchorOverrideAvatar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &464184366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464184365}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1125175956553839196}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464359075
 GameObject:
   m_ObjectHideFlags: 0
@@ -48084,6 +48132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Avatar
       objectReference: {fileID: 0}
+    - target: {fileID: 7189625782178939411, guid: ce554cd140cc890478a6e952f42c1e73, type: 3}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 464184366}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -68393,6 +68445,7 @@ GameObject:
   - component: {fileID: 1421605158}
   - component: {fileID: 1421605157}
   - component: {fileID: 1421605159}
+  - component: {fileID: 1421605160}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
@@ -68414,16 +68467,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   OvrHand: {fileID: 1461041744}
   gestureDone: 0
-  animTransition: {fileID: 2094371504}
+  quest1: {fileID: 1126890961}
   sceneActuelle:
     m_Handle: 0
-  SphereTransition: {fileID: 2094371503}
   MenuPrincipalUI: {fileID: 0}
   ConteneurMenuPrincipalUI: {fileID: 0}
   enPause: 0
   finPartie: 0
   gestionFinFait: 0
-  couleurFade: {r: 1, g: 1, b: 1, a: 0}
   UIFin: {fileID: 5317013}
   BtnUIFin: {fileID: 1331526292}
   portail: {fileID: 618707102}
@@ -68473,6 +68524,19 @@ MonoBehaviour:
   chambreDummy: {fileID: 393986257}
   sonPortail: {fileID: 8300000, guid: 31b4c7b28f0bacd41837f991e97b454d, type: 3}
   retourChambre: 0
+--- !u!114 &1421605160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421605156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c704612ae457847924235d2328e4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRFade
+  screenFade: {fileID: 82281698}
 --- !u!1 &1421850119
 GameObject:
   m_ObjectHideFlags: 0
@@ -80892,71 +80956,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571179729}
   m_Mesh: {fileID: -455496819541560481, guid: c530a77d5c44f2b46b866212c4f04cf3, type: 3}
---- !u!1 &1573040114
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1573040116}
-  - component: {fileID: 1573040115}
-  m_Layer: 0
-  m_Name: Reflection Probe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!215 &1573040115
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573040114}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 68.7, y: 51.46, z: 51.55}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
---- !u!4 &1573040116
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573040114}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.81, y: -5.36289, z: 114.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1574078151
 GameObject:
   m_ObjectHideFlags: 0
@@ -87647,6 +87646,10 @@ PrefabInstance:
     - target: {fileID: 1848256009252696805, guid: ce554cd140cc890478a6e952f42c1e73, type: 3}
       propertyPath: m_Name
       value: Avatar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848256009252696805, guid: ce554cd140cc890478a6e952f42c1e73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -111188,6 +111191,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7445622683445292474, guid: b32b8528ed778974caa1bd0176ec420c, type: 3}
       insertIndex: 3
       addedObject: {fileID: 857910644}
+    - targetCorrespondingSourceObject: {fileID: 7445622683445292474, guid: b32b8528ed778974caa1bd0176ec420c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 464184366}
     - targetCorrespondingSourceObject: {fileID: 6808200051347388248, guid: b32b8528ed778974caa1bd0176ec420c, type: 3}
       insertIndex: 107
       addedObject: {fileID: 2138345864}
@@ -123006,4 +123012,3 @@ SceneRoots:
   - {fileID: 1748747305}
   - {fileID: 1680625492}
   - {fileID: 1065707631}
-  - {fileID: 1573040116}

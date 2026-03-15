@@ -19,31 +19,33 @@ using UnityEngine.UI;
 /// </summary>
 public class Quest_4 : MonoBehaviour
 {
-    public GameObject crayon;
-    public GameObject cahier;
-    public GameObject telephone;
-    public GameObject clavier;
-    public OrdinateurTexteInput ordi;
+    [Header("Paramètres de base")]
     public GameObject joueur;
-    public CollisionChaise collisionChaise;
+    Quest quest_4;
+    //public CollisionChaise collisionChaise;
+
+    [Header("Références pour l'objectif 1")]
     public GameObject portail;
     public ZonePortail zonePortail;
     public AudioSource pisteSFX;
-
     public AudioClip sonPortail;
+    public List<GameObject> effetsMains;   //Les effets sur les mains
+    bool transitionPortail;
 
+    [Header("Références pour l'objectif 2")]
+    public GameObject clavier;
+    public OrdinateurTexteInput ordi;
+    bool devoilement;
+
+    [Header("Références pour l'objectif 3")]
+    public GameObject crayon;
+    public GameObject cahier;
+
+    [Header("Références pour l'objectif 4")]
+    public GameObject telephone;
     public AudioSource pisteScenario;
     public Image imgAppelTelephone;
     public AudioClip audioAppel;
-
-    bool transitionPortail;
-
-    bool devoilement;
-
-    //Les effets sur les mains
-    public List<GameObject> effetsMains;
-
-    Quest quest_4;
 
     /// <summary>
     /// Initialise la référence à la quête 4 depuis le QuestManager.

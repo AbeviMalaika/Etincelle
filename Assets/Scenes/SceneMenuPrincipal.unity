@@ -1435,6 +1435,7 @@ GameObject:
   - component: {fileID: 82281695}
   - component: {fileID: 82281694}
   - component: {fileID: 82281697}
+  - component: {fileID: 82281698}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -1561,6 +1562,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &82281698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82281692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.VR::OVRScreenFade
+  fadeTime: 2
+  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  fadeOnStart: 1
+  renderQueue: 5000
 --- !u!1 &87646387
 GameObject:
   m_ObjectHideFlags: 0
@@ -5600,7 +5617,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -25276,7 +25293,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: bb403ccd43d6c9043bcbef28debfafc7, type: 2}
   controleurVolMusique: {fileID: 281258471}
   controleurVolSFX: {fileID: 591263932}
-  volumeMusiqueDefaut: 0
+  volumeMusiqueDefaut: -10
   volumeSFXDefaut: 0
   pisteSFX: {fileID: 258281360}
   mPiste1: {fileID: 0}
@@ -27118,6 +27135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1421605158}
   - component: {fileID: 1421605157}
+  - component: {fileID: 1421605159}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
@@ -27139,21 +27157,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   OvrHand: {fileID: 1461041744}
   gestureDone: 0
-  animTransition: {fileID: 1385425634}
   sceneActuelle:
     m_Handle: 0
-  SphereTransition: {fileID: 1385425633}
   MenuPrincipalUI: {fileID: 728763285}
   ConteneurMenuPrincipalUI: {fileID: 1631457891}
   enPause: 0
   finPartie: 0
   gestionFinFait: 0
-  couleurFade: {r: 0, g: 0, b: 0, a: 0}
   UIFin: {fileID: 0}
   BtnUIFin: {fileID: 0}
   portail: {fileID: 0}
   animatorPortailFin: {fileID: 0}
   cristauxChemin: {fileID: 0}
+  chambreDummy: {fileID: 0}
+  musiqueFin: {fileID: 0}
+  desactivationUI: 0
+  tempsDelaiFin: 0
 --- !u!4 &1421605158
 Transform:
   m_ObjectHideFlags: 0
@@ -27169,6 +27188,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1421605159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421605156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c704612ae457847924235d2328e4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRFade
+  screenFade: {fileID: 82281698}
 --- !u!1 &1422439118
 GameObject:
   m_ObjectHideFlags: 0

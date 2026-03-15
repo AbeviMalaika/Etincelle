@@ -44,8 +44,8 @@ public class TimelineManager : MonoBehaviour
         director = GetComponent<PlayableDirector>();
 
         // Timeline à 0 et en pause au début du jeu
-        director.playOnAwake = false;
-        director.Stop();
+        //director.playOnAwake = false;
+        director.Pause();
 
         timelinePause = true;
     }

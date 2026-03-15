@@ -17,19 +17,19 @@ using System.Collections.Generic;
 /// </summary>
 public class ZonePortail : MonoBehaviour
 {
+    [Header("Environnement")]
+    public List<DynamisationShaderMeuble> transfoMeubles;
+    public GameObject decoPlateau;
+    public DisparitionVille dispa;
+    public GameObject chambreDummy;
+    public bool retourChambre;
+
+    [Header("Gestion de la caméra du joueur")]
     public CinemachineManager targetSwitcher;
     public Transform target;
 
-    public GameObject decoPlateau;
-
-    public List<DynamisationShaderMeuble> transfoMeubles;
-
-    public DisparitionVille dispa;
-    public GameObject chambreDummy;
-
+    [Header("Son")]
     public AudioClip sonPortail;
-
-    public bool retourChambre;
 
     /// <summary>
     /// Déclenche le retour dans la chambre avec les effets de fade et réinitialisation des objets.
@@ -46,7 +46,7 @@ public class ZonePortail : MonoBehaviour
     /// <returns>IEnumerator pour la coroutine</returns>
     IEnumerator corou_RetourChambre()
     {
-        GameManager.Instance.ChangerCouleurFade();
+        VRFade.Instance.ChangerCouleurFade(Color.white);
 
         //Jouer le son du portail
         AudioManager.Instance.JouerSFX(sonPortail);
@@ -57,7 +57,7 @@ public class ZonePortail : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         //Moment pour le fade out
-        GameManager.Instance.FadeOut();
+        VRFade.Instance.FadeOut(2.5f);
 
         yield return new WaitForSeconds(2.5f);
 
@@ -72,7 +72,7 @@ public class ZonePortail : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         // Puis un fade in vers la chambre 
-        GameManager.Instance.FadeIn();
+        VRFade.Instance.FadeIn(2.5f);
 
         yield return new WaitForSeconds(0.5f);
 
