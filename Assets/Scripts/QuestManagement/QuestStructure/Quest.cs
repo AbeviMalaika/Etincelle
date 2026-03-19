@@ -8,17 +8,28 @@
  */
 
 using System.Collections.Generic;
+using UnityEngine;
 
-[System.Serializable]
-public class Quest
+[CreateAssetMenu(fileName = "NewQuest", menuName = "Etincelle/Quest")]
+public class Quest : ScriptableObject
 {
-    public string questID;
+    public int questID;
     public string titre;
     public List<Objectif> listeObjectif = new List<Objectif>();
 
-    public QuestState etat;
-    public int progressionActuelle;
+    [HideInInspector] public QuestState etat = QuestState.NonDemarree;
+    [HideInInspector] public int progressionActuelle;
+
     public int progressionRequise;
+
+    /// <summary>
+    /// Réinitialise la quête à zéro.
+    /// </summary>
+    public void ResetQuest()
+    {
+        etat = QuestState.NonDemarree;
+        progressionActuelle = 0;
+    }
 
     /// <summary>
     /// Initialise la quête et la met en état "EnProgression".

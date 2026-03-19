@@ -21,6 +21,7 @@ public class GrabDetection : MonoBehaviour
     [SerializeField] private HandGrabInteractable handGrab;
 
     public bool isGrabbed;
+    public bool enableTriggerSwitch;
 
     /// <summary>
     /// Vérifie à chaque frame si l'objet est actuellement saisi (grabbed)
@@ -39,5 +40,19 @@ public class GrabDetection : MonoBehaviour
         {
             isGrabbed = false;
         }
+
+        //Si l'option de switch le trigger est true, alors appeler la fonction qui gère le changement
+        if (enableTriggerSwitch)
+        {
+            ColliderToTrigger();
+        }
+    }
+
+    /// <summary>
+    /// Change le statut trigger du collider selon si l'objet est attrapé ou non.
+    /// </summary>
+    void ColliderToTrigger()
+    {
+         GetComponent<Collider>().isTrigger = isGrabbed;
     }
 }

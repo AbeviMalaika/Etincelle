@@ -17,23 +17,16 @@ using UnityEngine.Playables;
 /// (fin de l'introduction, position du joueur, cinématique)
 /// afin de faire avancer les objectifs et déclencher les événements associés.
 /// </summary>
-public class Quest_3 : MonoBehaviour
+public class Quest_3 : QuestScript
 {
-    Quest quest_3;
+    [Header("Paramètres de base")]
     public GameObject joueur;
     public PlayableDirector director;
-    public CollisionChaise collisionChaise;
 
+    [Header("Références pour l'objectif 1")]
     //Les effets sur les mains
+    public CollisionChaise collisionChaise;
     public List<GameObject> effetsMains;
-
-    /// <summary>
-    /// Récupère la référence de la quête 3 depuis le QuestManager au démarrage.
-    /// </summary>
-    void Start()
-    {
-        quest_3 = QuestManager.Instance.TrouverQuest("3");
-    }
 
     /// <summary>
     /// Vérifie en continu les conditions permettant de faire progresser
@@ -43,12 +36,13 @@ public class Quest_3 : MonoBehaviour
     void Update()
     {
         // Objectif 1
-        if (quest_3.progressionActuelle == 0)
+        if (quest.progressionActuelle == 0)
         {
             // Le joueur doit écouter le narrateur et attendre
             if (TimelineManager.Instance.introTerminee)
             {
-                QuestManager.Instance.AjouterProgression("3");
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
 
                 //On désactive les effets sur les mains
                 foreach (GameObject eff in effetsMains)
@@ -59,15 +53,17 @@ public class Quest_3 : MonoBehaviour
         }
 
         // Objectif 2
-        if (quest_3.progressionActuelle == 1)
+        if (quest.progressionActuelle == 1)
         {
             // Si le joueur est assis à l'ordinateur
             if (collisionChaise.joueurAssis && TimelineManager.Instance.timelinePause)
             {
                 //On désactive le UI pour ne pas qu'il soit une source de problème pendant la quête
                 GameManager.Instance.desactivationUI = true;
-                QuestManager.Instance.AjouterProgression("3");
                 Invoke("DemarrerTimeline", 5f);
+
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
 
                 //On désactive les effets sur les mains
                 foreach (GameObject eff in effetsMains)
@@ -78,7 +74,7 @@ public class Quest_3 : MonoBehaviour
         }
 
         // Objectif 3 | -------------------------------------------------------
-        if (quest_3.progressionActuelle == 2)
+        if (quest.progressionActuelle == 2)
         {
             // Si la cinématique est terminée
             if (TimelineManager.Instance.cinematiqueTerminee)
@@ -86,20 +82,9 @@ public class Quest_3 : MonoBehaviour
                 //On réactive le UI
                 GameManager.Instance.desactivationUI = false;
 
-                //Compléter la quête
-                QuestManager.Instance.AjouterProgression("3");
-
-                //Démarrer la nouvelle quête
-                QuestManager.Instance.DemarrerQuest("4");
-                gameObject.GetComponent<Quest_4>().enabled = true;
+                //Compléter la quête ------------------------
+                CompleterQuete();
             }
-        }
-
-        // Si la quête actuelle n'est pas la quête 3, alors désactiver le script
-        if (quest_3 != QuestManager.Instance.queteActuelle)
-        {
-            print("<color=green>Quête " + quest_3.questID + "complétée!</color>");
-            enabled = false;
         }
     }
 

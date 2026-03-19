@@ -23,7 +23,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [SerializeField] Quest_1 quest1;
 
     [Header("Paramètres de base")]
     public bool enPause;
@@ -94,8 +93,7 @@ public class GameManager : MonoBehaviour
         if (sceneActuelle.buildIndex == 1)
         {
             // On démarre la première quête
-            QuestManager.Instance.DemarrerQuest("1");
-            quest1.enabled = true;
+            QuestManager.Instance.DemarrerQuest(1);
 
             //if (SessionData.calibrage != null)
             //{

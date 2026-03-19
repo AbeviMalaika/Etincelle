@@ -17,12 +17,10 @@ using UnityEngine.UI;
 /// l'interaction avec l'ordinateur et le clavier, la manipulation du crayon et du téléphone,
 /// et la fin de la partie.
 /// </summary>
-public class Quest_4 : MonoBehaviour
+public class Quest_4 : QuestScript
 {
     [Header("Paramètres de base")]
     public GameObject joueur;
-    Quest quest_4;
-    //public CollisionChaise collisionChaise;
 
     [Header("Références pour l'objectif 1")]
     public GameObject portail;
@@ -48,12 +46,10 @@ public class Quest_4 : MonoBehaviour
     public AudioClip audioAppel;
 
     /// <summary>
-    /// Initialise la référence à la quête 4 depuis le QuestManager.
+    /// Initialise de l'apparence du croquis final
     /// </summary>
     void Start()
     {
-        quest_4 = QuestManager.Instance.TrouverQuest("4");
-
         cahier.GetComponent<CahierTransformations>().SwitchCroquisFinal();
     }
 
@@ -64,7 +60,7 @@ public class Quest_4 : MonoBehaviour
     void Update()
     {
         // Objectif 1
-        if (quest_4.progressionActuelle == 0)
+        if (quest.progressionActuelle == 0)
         {
             portail.GetComponent<ToucherDetection>().detecterToucher = true;
 
@@ -92,15 +88,15 @@ public class Quest_4 : MonoBehaviour
                 transitionPortail = true;
             }
 
-
             if (transitionPortail && zonePortail.retourChambre)
             {
-                QuestManager.Instance.AjouterProgression("4");
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
             }
         }
 
         // Objectif 2
-        if (quest_4.progressionActuelle == 1)
+        if (quest.progressionActuelle == 1)
         {
             clavier.GetComponent<ToucherDetection>().detecterToucher = true;
             // Si le joueur est assis à l'ordinateur
@@ -116,12 +112,13 @@ public class Quest_4 : MonoBehaviour
             //Si le texte est enfin dévoilé, alors on passe à la quête suivante
             if (ordi.texteDevoile)
             {
-                QuestManager.Instance.AjouterProgression("4");
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
             }
         }
 
         // Objectif 3
-        if (quest_4.progressionActuelle == 2)
+        if (quest.progressionActuelle == 2)
         {
             //On autorise la modification du cahier
             cahier.GetComponent<CahierTransformations>().autoriserModification = true;
@@ -135,12 +132,13 @@ public class Quest_4 : MonoBehaviour
                 //Pour qu'on voit l'image d'appel entrant
                 imgAppelTelephone.color = Color.white;
 
-                QuestManager.Instance.AjouterProgression("4");
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
             }
         }
 
         // Objectif 4
-        if (quest_4.progressionActuelle == 3)
+        if (quest.progressionActuelle == 3)
         {
             // Le joueur doit prendre le téléphone et répondre à un appel
             if (telephone.GetComponent<GrabDetection>().isGrabbed)
@@ -149,25 +147,18 @@ public class Quest_4 : MonoBehaviour
                 telephone.GetComponent<AudioSource>().Stop();
 
                 //Pour qu'on voit l'image d'appel entrant
-                imgAppelTelephone.color = Color.black;
+
+                //imgAppelTelephone.color = Color.black;
 
                 //Puis, on entend l'appel entre le personnage principal et son ami
                 pisteScenario.PlayOneShot(audioAppel);
 
-                //Compléter la quête
-                QuestManager.Instance.AjouterProgression("4");
-
-                //Terminer la partie
+                //Terminer la partie ----------------------------------------------------
                 GameManager.Instance.finPartie = true;
-                //Code pour la gestion de fin de partie. Possiblement faire un script à part pour ça et le déclencher avec enabled et/ou boolean
-            }
-        }
 
-        // Si la quête actuelle n'est pas la quête 4, alors désactiver le script
-        if (quest_4 != QuestManager.Instance.queteActuelle)
-        {
-            print("<color=green>Quête " + quest_4.questID + "complétée!</color>");
-            enabled = false;
+                //Compléter la quête ----------------------------------------------------
+                CompleterQuete();
+            }
         }
     }
 }

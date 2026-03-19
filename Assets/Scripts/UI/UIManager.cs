@@ -115,9 +115,12 @@ public class UIManager : MonoBehaviour
             t.text = quete.titre;
         }
 
-        foreach (var t in titresObjectif)
+        if (quete.progressionActuelle < quete.listeObjectif.Count)
         {
-            t.text = quete.listeObjectif[quete.listeObjectif.Find(q => q.objectifID == quete.progressionActuelle).objectifID].titre;
+            foreach (var t in titresObjectif)
+            {
+                t.text = quete.listeObjectif[quete.progressionActuelle].titre;
+            }
         }
 
         PopUpHUD();

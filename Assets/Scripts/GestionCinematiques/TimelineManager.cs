@@ -23,6 +23,8 @@ public class TimelineManager : MonoBehaviour
     public bool entreeLho;
     public bool introTerminee;
 
+    public GameObject luciole;
+
     /// <summary>
     /// Singleton : Initialise l'instance de TimelineManager
     /// </summary>
@@ -41,13 +43,20 @@ public class TimelineManager : MonoBehaviour
     {
         cinematiqueTerminee = false;
         introTerminee = false;
+
         director = GetComponent<PlayableDirector>();
 
-        // Timeline à 0 et en pause au début du jeu
-        //director.playOnAwake = false;
+        //Préparer la timeline
+        director.RebuildGraph();
+        director.time = 0;
+        director.Evaluate();
         director.Pause();
 
         timelinePause = true;
+
+        Animator animator = luciole.GetComponent<Animator>();
+        animator.Play(0);
+        animator.Update(0);
     }
 
     /// <summary>

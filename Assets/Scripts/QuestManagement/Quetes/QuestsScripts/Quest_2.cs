@@ -14,26 +14,35 @@ using UnityEngine.Playables;
 /// Gère les objectifs et la progression de la quête 2 dans le jeu.
 /// Active les interactions sur les objets à toucher et contrôle la timeline.
 /// </summary>
-public class Quest_2 : MonoBehaviour
+public class Quest_2 : QuestScript
 {
-    public GameObject chevet;
-    public GameObject tableOrdi;
-    public GameObject lit;
-    public GameObject commode;
-    public GameObject plantes;
+    [Header("Paramètres de base")]
     public PlayableDirector director;
     public AudioClip sonLuciole;
 
-    Quest quest_2;
+    [Header("Références pour l'objectif 1")]
+    public GameObject chevet;
+
+    [Header("Références pour l'objectif 2")]
+    public GameObject tableOrdi;
+
+    [Header("Références pour l'objectif 3")]
+    public GameObject lit;
+
+    [Header("Références pour l'objectif 4")]
+    public GameObject commode;
+
+    [Header("Références pour l'objectif 5")]
+    public GameObject plantes;
 
     /// <summary>
-    /// Initialise la quête 2 et lance la timeline au démarrage.
+    /// Lance la timeline au démarrage.
     /// </summary>
     void Start()
     {
-        quest_2 = QuestManager.Instance.TrouverQuest("2");
         TimelineManager.Instance.PlayTimeline();
     }
+
 
     /// <summary>
     /// Vérifie à chaque frame l’état de chaque objectif de la quête 2
@@ -43,7 +52,7 @@ public class Quest_2 : MonoBehaviour
     void Update()
     {
         // Objectif 1
-        if (quest_2.progressionActuelle == 0)
+        if (quest.progressionActuelle == 0)
         {
             if (TimelineManager.Instance.timelinePause)
             {
@@ -55,15 +64,16 @@ public class Quest_2 : MonoBehaviour
                 //Son de la luciole
                 AudioManager.Instance.JouerSFX(sonLuciole);
 
-                //Puis progrès de la quête
-                QuestManager.Instance.AjouterProgression("2");
                 chevet.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
+
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
             }
         }
 
         // Objectif 2
-        if (quest_2.progressionActuelle == 1)
+        if (quest.progressionActuelle == 1)
         {
             if (TimelineManager.Instance.timelinePause)
             {
@@ -75,15 +85,16 @@ public class Quest_2 : MonoBehaviour
                 //Son de la luciole
                 AudioManager.Instance.JouerSFX(sonLuciole);
 
-                //Puis progrès de la quête
-                QuestManager.Instance.AjouterProgression("2");
                 tableOrdi.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
+
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
             }
         }
 
         // Objectif 3
-        if (quest_2.progressionActuelle == 2)
+        if (quest.progressionActuelle == 2)
         {
             if (TimelineManager.Instance.timelinePause)
             {
@@ -95,15 +106,16 @@ public class Quest_2 : MonoBehaviour
                 //Son de la luciole
                 AudioManager.Instance.JouerSFX(sonLuciole);
 
-                //Puis progrès de la quête
-                QuestManager.Instance.AjouterProgression("2");
                 lit.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
+
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
             }
         }
 
         // Objectif 4
-        if (quest_2.progressionActuelle == 3)
+        if (quest.progressionActuelle == 3)
         {
             if (TimelineManager.Instance.timelinePause)
             {
@@ -115,15 +127,16 @@ public class Quest_2 : MonoBehaviour
                 //Son de la luciole
                 AudioManager.Instance.JouerSFX(sonLuciole);
 
-                //Puis progrès de la quête
-                QuestManager.Instance.AjouterProgression("2");
                 commode.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
+
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
             }
         }
 
         // Objectif 5
-        if (quest_2.progressionActuelle == 4)
+        if (quest.progressionActuelle == 4)
         {
             if (TimelineManager.Instance.timelinePause)
             {
@@ -135,29 +148,22 @@ public class Quest_2 : MonoBehaviour
                 //Son de la luciole
                 AudioManager.Instance.JouerSFX(sonLuciole);
 
-                //Puis progrès de la quête
-                QuestManager.Instance.AjouterProgression("2");
                 plantes.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
+
+                //Ajout de progression  -------------------------------------
+                AjouterProgression();
             }
         }
 
         // Objectif 6
-        if (quest_2.progressionActuelle == 5)
+        if (quest.progressionActuelle == 5)
         {
             if (TimelineManager.Instance.entreeLho)
             {
-                QuestManager.Instance.AjouterProgression("2");
-                QuestManager.Instance.DemarrerQuest("3");
-                gameObject.GetComponent<Quest_3>().enabled = true;
+                //Compléter la quête ------------------------
+                CompleterQuete();
             }
-        }
-
-        // Désactive le script si la quête n'est plus active
-        if (quest_2 != QuestManager.Instance.queteActuelle)
-        {
-            print("<color=green>Quête " + quest_2.questID + "complétée!</color>");
-            enabled = false;
         }
     }
 }

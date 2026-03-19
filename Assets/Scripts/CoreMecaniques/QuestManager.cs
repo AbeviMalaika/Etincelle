@@ -31,25 +31,47 @@ public class QuestManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        foreach (Quest quest in quests)
+        {
+            quest.ResetQuest();
+        }
     }
 
     /// <summary>
     /// Démarre une quête à partir de son ID si elle n’a pas encore été commencée.
     /// </summary>
     /// <param name="questID">Identifiant de la quête à démarrer.</param>
-    public void DemarrerQuest(string questID)
+    public void DemarrerQuest(int questID)
     {
         Quest quest = TrouverQuest(questID);
-        if (quest != null && quest.etat == QuestState.NonDemarree)
-        {
-            //Démarrer la quête
-            quest.DemarrerQuest();
-            queteActuelle = TrouverQuestActuelle();
 
-            //Afficher la quête et l'objectif dans le UI
-            UIManager.Instance.AfficherQueteUI(quest);
-            Debug.Log($"Quête commencée : {quest.titre}");
+        if (quest == null || quest.etat != QuestState.NonDemarree)
+            return;
+
+        quest.DemarrerQuest();
+
+        //Enregistrer la quête actuelle
+        queteActuelle = quest;
+
+        //Activer le script lié à cette quête
+        QuestScript[] scripts = FindObjectsByType<QuestScript>(FindObjectsSortMode.None);
+
+        foreach (QuestScript script in scripts)
+        {
+            if (script.quest == quest)
+            {
+                script.enabled = true;
+            }
+            else
+            {
+                script.enabled = false;
+            }
         }
+
+        UIManager.Instance.AfficherQueteUI(quest);
+
+        Debug.Log($"Quête commencée : {quest.titre}");
     }
 
     /// <summary>
@@ -57,18 +79,18 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     /// <param name="questID">Identifiant de la quête.</param>
     /// <param name="amount">Quantité de progression à ajouter (1 par défaut).</param>
-    public void AjouterProgression(string questID, int amount = 1)
+    public void AjouterProgression(int questID, int amount = 1)
     {
         Quest quest = TrouverQuest(questID);
-        if (quest != null)
-        {
-            quest.AjouterProgression(amount);
+        if (quest == null) return;
 
-            if (quest.progressionActuelle < quest.progressionRequise)
-            {
-                //Afficher la quête avec le nouvel objectif
-                UIManager.Instance.AfficherQueteUI(quest);
-            }
+        quest.AjouterProgression(amount);
+
+        UIManager.Instance.AfficherQueteUI(quest);
+
+        if (quest.etat == QuestState.Completee)
+        {
+            Debug.Log($"Quête complétée : {quest.titre}");
         }
     }
 
@@ -77,7 +99,7 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     /// <param name="id">Identifiant de la quête.</param>
     /// <returns>La quête correspondante, ou null si elle n’existe pas.</returns>
-    public Quest TrouverQuest(string id)
+    public Quest TrouverQuest(int id)
     {
         return quests.Find(q => q.questID == id);
     }

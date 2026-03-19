@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e0a77436a286d4b9399a6b507667bb, type: 3}
+  m_Name: Quete_03
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questID: 3
+  titre: En route vers l'imaginaire
+  listeObjectif:
+  - objectifID: 0
+    titre: "WOW ! Voyons ce qu'elle a \xE0 dire..."
+  - objectifID: 1
+    titre: Fais-lui confiance, assis-toi !
+  - objectifID: 2
+    titre: C'est parti pour une belle aventure !
+  etat: 0
+  progressionActuelle: 0
+  progressionRequise: 3
