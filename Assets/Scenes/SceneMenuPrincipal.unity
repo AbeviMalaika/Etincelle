@@ -4437,7 +4437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34117648, g: 0.53333336, b: 0.9019608, a: 1}
+  m_Color: {r: 0.62352943, g: 0.6313726, b: 0.99215686, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6439,7 +6439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34117648, g: 0.53333336, b: 0.9019608, a: 1}
+  m_Color: {r: 0.62352943, g: 0.6313726, b: 0.99215686, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25291,15 +25291,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   audioMixer: {fileID: 24100000, guid: bb403ccd43d6c9043bcbef28debfafc7, type: 2}
+  vitesseTransition: 0
   controleurVolMusique: {fileID: 281258471}
   controleurVolSFX: {fileID: 591263932}
   volumeMusiqueDefaut: -10
   volumeSFXDefaut: 0
-  pisteSFX: {fileID: 258281360}
   mPiste1: {fileID: 0}
   mPiste2: {fileID: 0}
-  vitesseTransition: 0
   pisteMonologue: {fileID: 0}
+  pisteSFX: {fileID: 258281360}
   monologueListe: []
 --- !u!1 &1344122217
 GameObject:
@@ -27155,24 +27155,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19ede59d00a0f842a1dff9ad5ecfc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  OvrHand: {fileID: 1461041744}
-  gestureDone: 0
+  enPause: 0
   sceneActuelle:
     m_Handle: 0
+  OvrHand: {fileID: 1461041744}
+  gestureDone: 0
   MenuPrincipalUI: {fileID: 728763285}
   ConteneurMenuPrincipalUI: {fileID: 1631457891}
-  enPause: 0
-  finPartie: 0
-  gestionFinFait: 0
-  UIFin: {fileID: 0}
-  BtnUIFin: {fileID: 0}
   portail: {fileID: 0}
   animatorPortailFin: {fileID: 0}
   cristauxChemin: {fileID: 0}
   chambreDummy: {fileID: 0}
   musiqueFin: {fileID: 0}
-  desactivationUI: 0
   tempsDelaiFin: 0
+  UIFin: {fileID: 0}
+  BtnUIFin: {fileID: 0}
+  finPartie: 0
+  desactivationUI: 0
+  gestionFinFait: 0
 --- !u!4 &1421605158
 Transform:
   m_ObjectHideFlags: 0
@@ -27620,6 +27620,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0005570275
       objectReference: {fileID: 0}
+    - target: {fileID: 6500684759149572821, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500684759149572827, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e145f5925ec1ac445b41ffa0c1a95e52, type: 2}
     - target: {fileID: 6642106706145142259, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.5436577
@@ -27659,6 +27667,14 @@ PrefabInstance:
     - target: {fileID: 6943723477676434047, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.4921589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182968062786152631, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e145f5925ec1ac445b41ffa0c1a95e52, type: 2}
+    - target: {fileID: 7182968062786152633, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7491064687528003082, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_LocalRotation.z

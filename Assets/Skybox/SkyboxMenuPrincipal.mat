@@ -190,7 +190,7 @@ Material:
     - _Noise: -50
     - _Noise_Rotation_Speed: 1.5
     - _OcclusionStrength: 1
-    - _OpaciteTexture: 0.12
+    - _OpaciteTexture: 0
     - _Parallax: 0.005
     - _PositionEtoile: 33.7
     - _Quantite_Brillants: 0.59
@@ -199,7 +199,7 @@ Material:
     - _ReceiveShadows: 1
     - _Rotation: -197.5
     - _RotationEtoile: 0.005
-    - _RotationVortex: -6.83
+    - _RotationVortex: -4.82
     - _Seuil_Brillants: -28.6
     - _Smoothness: 0.47
     - _SmoothnessTextureChannel: 0
