@@ -2558,8 +2558,8 @@
     "m_ObjectId": "47cfab8a05db450492d7221c85c2a77f",
     "m_Title": "Effet de vague avec mouvement",
     "m_Position": {
-        "x": -3225.0,
-        "y": 1308.9998779296875
+        "x": -3225.000244140625,
+        "y": 1309.0001220703125
     }
 }
 
@@ -2643,7 +2643,7 @@
     "m_ObjectId": "4bb41af35dce4f469e4f2ae83402aee3",
     "m_Title": "Texture et dégradé pour un effet de transition de vague",
     "m_Position": {
-        "x": -4262.0,
+        "x": -4262.00048828125,
         "y": 429.0
     }
 }
@@ -2738,7 +2738,7 @@
         "a": 1.0
     },
     "isMainColor": false,
-    "m_ColorMode": 0
+    "m_ColorMode": 1
 }
 
 {
@@ -3261,8 +3261,8 @@
     "m_ObjectId": "7fbbe540fad148ff981e146f214c066b",
     "m_Title": "Résultat final de l'effet de vague en fondu",
     "m_Position": {
-        "x": -1385.0,
-        "y": 1063.0
+        "x": -1385.0001220703125,
+        "y": 1063.0001220703125
     }
 }
 
@@ -3488,8 +3488,8 @@
     "m_ObjectId": "87600597224e4c0488da436a682b1569",
     "m_Title": "Ajout d'un effet de fresnel optionnel",
     "m_Position": {
-        "x": -848.999755859375,
-        "y": 1062.0
+        "x": -849.0000610351563,
+        "y": 1062.0001220703125
     }
 }
 
@@ -4202,7 +4202,7 @@
     "m_Title": "Dégradé de couleur",
     "m_Position": {
         "x": -2063.0,
-        "y": 142.99993896484376
+        "y": 143.00001525878907
     }
 }
 
@@ -4709,10 +4709,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1437.9998779296875,
-            "y": 260.99981689453127,
-            "width": 136.9996337890625,
-            "height": 34.000152587890628
+            "x": -1437.0,
+            "y": 260.0,
+            "width": 119.0,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -5301,7 +5301,7 @@
         "a": 1.0
     },
     "isMainColor": false,
-    "m_ColorMode": 0
+    "m_ColorMode": 1
 }
 
 {

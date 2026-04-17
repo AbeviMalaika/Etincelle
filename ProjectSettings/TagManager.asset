@@ -33,9 +33,9 @@ TagManager:
   - UI
   - NoReflectionProbes
   - Ville
-  - 
-  - 
-  - 
+  - Ignore Skybox Light
+  - Ignore Avatar
+  - Ignore Room
   - 
   - 
   - 

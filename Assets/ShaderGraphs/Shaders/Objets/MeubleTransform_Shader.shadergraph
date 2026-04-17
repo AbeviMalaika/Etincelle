@@ -2996,7 +2996,7 @@
     "m_ObjectId": "3453a28c9b594909ad8ecc98d8ebb0eb",
     "m_Title": "Emission",
     "m_Position": {
-        "x": 760.0000610351563,
+        "x": 759.9998779296875,
         "y": -153.99998474121095
     }
 }
@@ -3023,7 +3023,7 @@
     "m_Hidden": false,
     "m_PerRendererData": false,
     "m_customAttributes": [],
-    "m_Value": 0.0,
+    "m_Value": 0.3199999928474426,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -3271,7 +3271,7 @@
     "m_Title": "Fresnel",
     "m_Position": {
         "x": -2491.999755859375,
-        "y": -252.0
+        "y": -251.99996948242188
     }
 }
 
@@ -4006,8 +4006,8 @@
     "m_ObjectId": "53bec33bbd864a71a554bd70440b70cf",
     "m_Title": "Normal animé",
     "m_Position": {
-        "x": -436.9999694824219,
-        "y": 715.0
+        "x": -437.0000305175781,
+        "y": 714.9999389648438
     }
 }
 
@@ -5440,8 +5440,8 @@
     "m_ObjectId": "8f9486c05a6747339ebb34f295540c7b",
     "m_Title": "BaseColor",
     "m_Position": {
-        "x": -592.9999389648438,
-        "y": -990.0
+        "x": -593.0,
+        "y": -989.9999389648438
     }
 }
 
@@ -7110,7 +7110,7 @@
     "m_Title": "Brillants",
     "m_Position": {
         "x": -4996.99951171875,
-        "y": -1187.0
+        "y": -1186.9998779296875
     }
 }
 
@@ -7362,7 +7362,7 @@
     "m_Title": "Alphaclip et alpha",
     "m_Position": {
         "x": -2631.999755859375,
-        "y": 692.0001220703125
+        "y": 691.9998779296875
     }
 }
 
@@ -8815,11 +8815,11 @@
     "m_ActiveSubTarget": {
         "m_Id": "f50bab4ac8fd4bae8b36dbd2b5e54a6a"
     },
-    "m_AllowMaterialOverride": false,
+    "m_AllowMaterialOverride": true,
     "m_SurfaceType": 0,
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
-    "m_AlphaMode": 0,
+    "m_AlphaMode": 2,
     "m_RenderFace": 0,
     "m_AlphaClip": true,
     "m_CastShadows": true,
