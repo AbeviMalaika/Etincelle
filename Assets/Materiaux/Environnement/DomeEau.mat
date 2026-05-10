@@ -77,10 +77,11 @@ Material:
     - _Cull: 2
     - _DstBlend: 10
     - _DstBlendAlpha: 10
-    - _ENVIRONMENTREFLECTIONS_OFF: 1
-    - _ForceNormal: 43.6
+    - _ENVIRONMENTREFLECTIONS_OFF: 0
+    - _ForceNormal: 167
     - _IntensityWave: 0.8
     - _Metallic: 1
+    - _Neutralisation: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0

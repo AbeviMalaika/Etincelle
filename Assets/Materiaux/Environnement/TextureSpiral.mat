@@ -24,14 +24,15 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 296cab9a57dde2740afa22fab26b628d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Opaque
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -121,8 +122,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
+    - _AlphaClip: 1
+    - _AlphaToMask: 1
     - _Amplitude_Degrade: 1.99
     - _Base_Gradient_Color: 0.48
     - _Blend: 0
@@ -133,7 +134,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Degre_Transformation: 0
+    - _Degre_Transformation: 0.06
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dissolve_Size: 30
@@ -152,7 +153,7 @@ Material:
     - _Grosseur_Brillants_1: 0
     - _Grosseur_Dissolution: 34.64
     - _Grosseur_Transformation: 1.01
-    - _Intensite_Lueur: -1.65
+    - _Intensite_Lueur: -2.05
     - _Intensite_Scintillement: 0.28
     - _Largeur_Bordure: 0.005
     - _Metallic: 0
@@ -181,8 +182,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
-    - _Couleur_Bordure: {r: 4.3612127, g: 1.3918763, b: 0, a: 1}
-    - _Couleur_Brillants: {r: 1.2690134, g: 4.534229, b: 3.0166497, a: 1}
+    - _Couleur_Bordure: {r: 4.2295966, g: 3.3197925, b: 2.8928843, a: 1}
+    - _Couleur_Brillants: {r: 5.653788, g: 1.7868102, b: 2.036781, a: 1}
     - _Couleur_Contour_Lumineux: {r: 2, g: 0, b: 0.8258381, a: 0}
     - _Couleur_Degrade_1: {r: 0.13207549, g: 0.03800285, b: 0.12140747, a: 0}
     - _Couleur_Degrade_2: {r: 0.5918476, g: 0.7769491, b: 0.9433962, a: 1}

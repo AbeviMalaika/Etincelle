@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SolPlateauFinMat
-  m_Shader: {fileID: -6465566751694194690, guid: e1e3ab531d12ff74494b2641120b1e82, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0ea4e72fbbcc50e4cb75867bb8e456fe, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,7 +29,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -198,7 +198,7 @@ Material:
     - _PositionEtoile: 29.4
     - _Quantite_Brillants: 0.59
     - _QueueControl: 0
-    - _QueueOffset: 1
+    - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Rotation: -197.5
     - _RotationEtoile: 0.001

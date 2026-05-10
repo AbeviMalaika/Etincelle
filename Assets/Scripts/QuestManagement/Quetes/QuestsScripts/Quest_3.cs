@@ -27,6 +27,10 @@ public class Quest_3 : QuestScript
     //Les effets sur les mains
     public CollisionChaise collisionChaise;
     public List<GameObject> effetsMains;
+    //public List<GameObject> glovesMains;
+
+    [Header("Références pour l'objectif 2")]
+    public AudioClip sonPouce;
 
     /// <summary>
     /// Vérifie en continu les conditions permettant de faire progresser
@@ -56,7 +60,7 @@ public class Quest_3 : QuestScript
         if (quest.progressionActuelle == 1)
         {
             // Si le joueur est assis à l'ordinateur
-            if (collisionChaise.joueurAssis && TimelineManager.Instance.timelinePause)
+            if (collisionChaise.joueurAssis && TimelineManager.Instance.timelinePause && GameManager.Instance.posePouce)
             {
                 //On désactive le UI pour ne pas qu'il soit une source de problème pendant la quête
                 GameManager.Instance.desactivationUI = true;
@@ -70,6 +74,13 @@ public class Quest_3 : QuestScript
                 {
                     eff.SetActive(true);
                 }
+
+                //foreach (GameObject glove in glovesMains)
+                //{
+                //    glove.GetComponent<DynamisationShaderMeuble>().transformation = true;
+                //}
+
+                AudioManager.Instance.JouerSFX(sonPouce);
             }
         }
 

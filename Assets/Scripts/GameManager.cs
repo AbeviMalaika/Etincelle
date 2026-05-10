@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     public GameObject MenuPrincipalUI;
     public GameObject ConteneurMenuPrincipalUI;
 
+    [Header("Détection de pose")]
+    public bool posePouce;
+
     [Header("Gestion de la fin de partie")]
     public Animator portail;
     public RuntimeAnimatorController animatorPortailFin;
@@ -186,6 +189,22 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
         yield return null;
+    }
+
+    /// <summary>
+    /// Détecter la pose de pouce en l'air
+    /// </summary>
+    public void DetecterPosePouce()
+    {
+        posePouce = true;
+    }
+
+    /// <summary>
+    /// Annuler la détection de la pose de pouce en l'air
+    /// </summary>
+    public void AnnulerPosePouce()
+    {
+        posePouce = false;
     }
 
     /// <summary>

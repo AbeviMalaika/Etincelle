@@ -2996,8 +2996,8 @@
     "m_ObjectId": "3453a28c9b594909ad8ecc98d8ebb0eb",
     "m_Title": "Emission",
     "m_Position": {
-        "x": 759.9998779296875,
-        "y": -153.99998474121095
+        "x": 760.0,
+        "y": -154.0
     }
 }
 
@@ -3013,7 +3013,7 @@
     "m_RefNameGeneratedByDisplayName": "Degre Transformation",
     "m_DefaultReferenceName": "_Degre_Transformation",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": false,
+    "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
@@ -3270,8 +3270,8 @@
     "m_ObjectId": "4009fc75d2ad47869e573bdea7662ee8",
     "m_Title": "Fresnel",
     "m_Position": {
-        "x": -2491.999755859375,
-        "y": -251.99996948242188
+        "x": -2492.0,
+        "y": -252.0
     }
 }
 
@@ -4006,8 +4006,8 @@
     "m_ObjectId": "53bec33bbd864a71a554bd70440b70cf",
     "m_Title": "Normal animé",
     "m_Position": {
-        "x": -437.0000305175781,
-        "y": 714.9999389648438
+        "x": -437.0,
+        "y": 715.0
     }
 }
 
@@ -5441,7 +5441,7 @@
     "m_Title": "BaseColor",
     "m_Position": {
         "x": -593.0,
-        "y": -989.9999389648438
+        "y": -990.0
     }
 }
 
@@ -7109,8 +7109,8 @@
     "m_ObjectId": "b69e3d2b566044339ac08d0fddc7fb5f",
     "m_Title": "Brillants",
     "m_Position": {
-        "x": -4996.99951171875,
-        "y": -1186.9998779296875
+        "x": -4997.0,
+        "y": -1187.0
     }
 }
 
@@ -7361,8 +7361,8 @@
     "m_ObjectId": "c2991f4cba9c4dfc83bd435f50dc5cc6",
     "m_Title": "Alphaclip et alpha",
     "m_Position": {
-        "x": -2631.999755859375,
-        "y": 691.9998779296875
+        "x": -2632.0,
+        "y": 692.0
     }
 }
 

@@ -177,8 +177,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0, g: 0.16340826, b: 0.5754717, a: 1}
     - _Color: {r: 0, g: 0.16340822, b: 0.57547164, a: 1}
-    - _Color01: {r: 0.482353, g: 0.4078432, b: 0.9333334, a: 1}
-    - _Color02: {r: 0.9411765, g: 0.5019608, b: 0.5019608, a: 1}
+    - _Color01: {r: 0, g: 0, b: 0, a: 1}
+    - _Color02: {r: 0, g: 0, b: 0, a: 1}
     - _ColorBaseOffset: {r: -0.03, g: 5, b: 0, a: 0}
     - _ColorBaseTilling: {r: 1.4, g: 1.74, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

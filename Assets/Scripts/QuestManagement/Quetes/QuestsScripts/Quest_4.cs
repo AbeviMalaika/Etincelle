@@ -29,6 +29,7 @@ public class Quest_4 : QuestScript
     public AudioClip sonPortail;
     public List<GameObject> effetsMains;   //Les effets sur les mains
     bool transitionPortail;
+    public GameObject chambre;
 
     [Header("Références pour l'objectif 2")]
     public GameObject clavier;
@@ -86,6 +87,9 @@ public class Quest_4 : QuestScript
                 }
 
                 transitionPortail = true;
+
+                chambre.SetActive(true);
+
             }
 
             if (transitionPortail && zonePortail.retourChambre)

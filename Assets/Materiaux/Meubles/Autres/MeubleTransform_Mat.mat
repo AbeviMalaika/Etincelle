@@ -26,6 +26,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHAPREMULTIPLY_ON
+  - _ALPHATEST_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -124,7 +125,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _AlphaToMask: 0
     - _Amplitude_Degrade: 1.99
     - _Base_Gradient_Color: 0.48
@@ -136,7 +137,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Degre_Transformation: 0
+    - _Degre_Transformation: 1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dissolve_Size: 30
