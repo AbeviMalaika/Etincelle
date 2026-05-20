@@ -40,7 +40,7 @@ public class Quest_2 : QuestScript
     /// </summary>
     void Start()
     {
-        TimelineManager.Instance.PlayTimeline();
+        Invoke("DemarrerTimeline", 2.7f);
     }
 
 
@@ -87,6 +87,9 @@ public class Quest_2 : QuestScript
 
                 tableOrdi.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
+
+                //Monologue 04 du personnage
+                AudioManager.Instance.ChangerMonologue();
 
                 //Ajout de progression  -------------------------------------
                 AjouterProgression();
@@ -151,6 +154,9 @@ public class Quest_2 : QuestScript
                 plantes.GetComponent<ToucherDetection>().detecterToucher = false;
                 TimelineManager.Instance.PlayTimeline();
 
+                //Monologue 05 du personnage
+                AudioManager.Instance.ChangerMonologue();
+
                 //Ajout de progression  -------------------------------------
                 AjouterProgression();
             }
@@ -165,5 +171,10 @@ public class Quest_2 : QuestScript
                 CompleterQuete();
             }
         }
+    }
+
+    void DemarrerTimeline()
+    {
+        TimelineManager.Instance.PlayTimeline();
     }
 }

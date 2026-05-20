@@ -18,9 +18,9 @@ MonoBehaviour:
   - objectifID: 0
     titre: "WOW ! Voyons ce qu'elle a \xE0 dire..."
   - objectifID: 1
-    titre: Fais-lui confiance, assis-toi !
+    titre: "Assis-toi et fais signe du pouce quand tu es pr\xEAt!"
   - objectifID: 2
     titre: C'est parti pour une belle aventure !
-  etat: 0
-  progressionActuelle: 0
+  etat: 2
+  progressionActuelle: 3
   progressionRequise: 3

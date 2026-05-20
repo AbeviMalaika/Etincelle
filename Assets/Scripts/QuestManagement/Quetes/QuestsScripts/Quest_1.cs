@@ -27,6 +27,12 @@ public class Quest_1 : QuestScript
     public GrabDetection crayonGrabDetection;
     public CahierTransformations cahierTransform;
 
+    private void Start()
+    {
+        //Monologue 01 du personnage
+        AudioManager.Instance.ChangerMonologue();
+    }
+
     /// <summary>
     /// Vérifie en continu la progression des objectifs de la quête
     /// et déclenche l'avancement lorsque les conditions sont remplies.
@@ -40,6 +46,9 @@ public class Quest_1 : QuestScript
             //Si la value du input field est égale à "" (en appuyant le backspace pour supprimer les inputs)
             if (ordi.texteSupp)
             {
+                //Monologue 02 du personnage
+                AudioManager.Instance.ChangerMonologue();
+
                 //QuestManager.Instance.AjouterProgression(quest.questID);
                 AjouterProgression();
             }
@@ -48,14 +57,17 @@ public class Quest_1 : QuestScript
         // Objectif 2 | -------------------------------------------------------
         if (quest.progressionActuelle == 1)
         {
-            //On autorise la modification du cahier
-            cahierTransform.autoriserModification = true;
-
             // Si le crayon est pris et que l'efface touche le cahier
-            if (crayonGrabDetection.isGrabbed && cahierTransform.modifCahier)
+            if (crayonGrabDetection.isGrabbed)
             {
+                //On autorise la modification du cahier
+                cahierTransform.autoriserModification = true;
+
                 //Compléter la quête ------------------------
-                CompleterQuete();
+                if (cahierTransform.modifCahier)
+                {
+                    CompleterQuete();
+                }
             }
         }
     }

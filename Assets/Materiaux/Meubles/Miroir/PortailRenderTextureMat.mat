@@ -159,7 +159,7 @@ Material:
     - _BordureOffset: {r: 0.25, g: 0.19, b: 0, a: 0}
     - _BordureTilling: {r: 0.6, g: 0.6, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorTexture: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+    - _ColorTexture: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GrosseurMask: {r: 1, g: 1, b: 0, a: 0}
     - _Offset: {r: 0.13, g: 0.04, b: 0, a: 0}

@@ -68,10 +68,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.29
-    - _Transparence: 19.69
+    - _Transparence: 3.1
     - _XRMotionVectorsPass: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _CouleurNuage: {r: 0.21698111, g: 0.15557568, b: 0.121796004, a: 1}
+    - _CouleurNuage: {r: 0.5283019, g: 0.38656998, b: 0.30153078, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

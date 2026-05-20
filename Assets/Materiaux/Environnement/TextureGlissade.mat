@@ -149,7 +149,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Grosseur_Brillants: 135.6
+    - _Grosseur_Brillants: 39.6
     - _Grosseur_Brillants_1: 0
     - _Grosseur_Dissolution: 34.64
     - _Grosseur_Transformation: 2.94
@@ -166,7 +166,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Seuil_Brillants: -28.6
+    - _Seuil_Brillants: -37.1
     - _Smoothness: 0.47
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

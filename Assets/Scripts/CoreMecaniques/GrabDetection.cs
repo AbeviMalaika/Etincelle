@@ -22,6 +22,9 @@ public class GrabDetection : MonoBehaviour
 
     public bool isGrabbed;
     public bool enableTriggerSwitch;
+    bool lastState;
+    public bool wasDropped;
+    public bool stateChanged;
 
     /// <summary>
     /// Vérifie à chaque frame si l'objet est actuellement saisi (grabbed)
@@ -46,6 +49,20 @@ public class GrabDetection : MonoBehaviour
         {
             ColliderToTrigger();
         }
+
+        if (isGrabbed != lastState)
+        {
+            stateChanged = true;
+            // State has changed since last frame
+            if (isGrabbed) { wasDropped = false; }
+            else { wasDropped = true; }
+        }
+        else
+        {
+            stateChanged = false;
+        }
+        // Update the previous state at the end of the frame
+        lastState = isGrabbed;
     }
 
     /// <summary>
