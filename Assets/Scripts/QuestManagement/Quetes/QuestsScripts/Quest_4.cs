@@ -39,6 +39,7 @@ public class Quest_4 : QuestScript
     [Header("Références pour l'objectif 3")]
     public GameObject crayon;
     public GameObject cahier;
+    public Sprite imgAppel;
 
     [Header("Références pour l'objectif 4")]
     public GameObject telephone;
@@ -52,6 +53,7 @@ public class Quest_4 : QuestScript
     void Start()
     {
         cahier.GetComponent<CahierTransformations>().SwitchCroquisFinal();
+        telephone.GetComponent<TelephoneFonctionnement>().manualSwitch = false;
     }
 
     /// <summary>
@@ -117,7 +119,8 @@ public class Quest_4 : QuestScript
             if (ordi.texteDevoile)
             {
                 //Ajout de progression  -------------------------------------
-                AjouterProgression();
+                Invoke("AjouterProgression", 2f);
+                //AjouterProgression();
             }
         }
 
@@ -127,14 +130,18 @@ public class Quest_4 : QuestScript
             //On autorise la modification du cahier
             cahier.GetComponent<CahierTransformations>().autoriserModification = true;
 
-            //À FAIRE - Si le crayon est pris et que la mine touche le cahier
+            //Si le crayon est pris et que la mine touche le cahier
             if (crayon.GetComponent<GrabDetection>().isGrabbed && cahier.GetComponent<CahierTransformations>().modifCahier)
             {
                 //Faire sonner le téléphone
                 telephone.GetComponent<AudioSource>().Play();
 
+                //On change l'image de l'écran
+                imgAppelTelephone.sprite = imgAppel;
+
                 //Pour qu'on voit l'image d'appel entrant
-                imgAppelTelephone.color = Color.white;
+                telephone.GetComponent<TelephoneFonctionnement>().switchOn = true;
+                telephone.GetComponent<TelephoneFonctionnement>().switching = true;
 
                 //Ajout de progression  -------------------------------------
                 AjouterProgression();
@@ -151,8 +158,8 @@ public class Quest_4 : QuestScript
                 telephone.GetComponent<AudioSource>().Stop();
 
                 //Pour qu'on voit l'image d'appel entrant
-
-                //imgAppelTelephone.color = Color.black;
+                telephone.GetComponent<TelephoneFonctionnement>().switchOn = false;
+                telephone.GetComponent<TelephoneFonctionnement>().switching = true;
 
                 //Puis, on entend l'appel entre le personnage principal et son ami
                 pisteScenario.PlayOneShot(audioAppel);

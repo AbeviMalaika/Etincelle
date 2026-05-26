@@ -37,7 +37,7 @@ public class GrabDetection : MonoBehaviour
         if (handGrab.State == InteractableState.Select)
         {
             isGrabbed = true;
-            Debug.Log(handGrab.State);
+            //Debug.Log(handGrab.State);
         }
         else
         {

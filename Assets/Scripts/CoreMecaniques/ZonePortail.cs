@@ -20,7 +20,6 @@ public class ZonePortail : MonoBehaviour
     [Header("Environnement")]
     public List<DynamisationShaderMeuble> transfoMeubles;
     public GameObject decoPlateau;
-    public DisparitionVille dispa;
     public GameObject chambreDummy;
     public bool retourChambre;
 
@@ -65,7 +64,6 @@ public class ZonePortail : MonoBehaviour
         targetSwitcher.TargetSwitch(target);
 
         TimelineManager.Instance.StopResetDirector();
-        dispa.ResetVille();
         chambreDummy.SetActive(false);
 
         //Petite pause par sécurité

@@ -5,13 +5,16 @@ public class TelephoneFonctionnement : MonoBehaviour
 {
     public Image imageEcran;
     public Image ecran;
-    public bool switchPhone;
-    public bool inverse;
+    public bool switching;
+    public bool manualSwitch;
+    public bool switchOn;
     public float fadeTemps;
 
     float tempsEcoule;
     Color etatFinal;
     Color etatDepart;
+
+    Color transparent;
 
 
     /// <summary>
@@ -19,10 +22,13 @@ public class TelephoneFonctionnement : MonoBehaviour
     /// </summary>
     void Start()
     {
+        transparent = new Color(1f, 1f, 1f, 0f);
+
         //Initialisation de l'image
-        etatFinal = !inverse ? Color.black : Color.white;
-        etatDepart = !inverse ? Color.white : Color.black;
-        switchPhone = false;
+        etatFinal = transparent;
+        etatDepart = Color.black;
+        switching = false;
+        switchOn = true;
     }
 
     /// <summary>
@@ -30,26 +36,45 @@ public class TelephoneFonctionnement : MonoBehaviour
     /// </summary>
     void Update()
     {
-        etatFinal = !inverse ? Color.black : Color.white;
-        etatDepart = !inverse ? Color.white : Color.black;
-
-        if (gameObject.GetComponent<GrabDetection>().isGrabbed)
+        if (gameObject.GetComponent<GrabDetection>().stateChanged && !switching && manualSwitch)
         {
-            switchPhone = true;
+            switching = true;
         }
 
-        if (gameObject.GetComponent<GrabDetection>().wasDropped)
+        if (switching)
         {
-            switchPhone = true;
-        }
-
-        if (switchPhone)
-        {
-            //Si l'état change, on inverse la transition et reset le temps
-            if(gameObject.GetComponent<GrabDetection>().stateChanged)
+            //Si l'allumage de l'écran est géré par l'utilisateur
+            if (gameObject.GetComponent<GrabDetection>().stateChanged && manualSwitch)
             {
-                inverse = !inverse;
                 tempsEcoule = 0;
+
+                //Si l'état change, on inverse la transition et reset le temps
+                if (gameObject.GetComponent<GrabDetection>().wasDropped)
+                {
+                    etatFinal = Color.black;
+                    etatDepart = transparent;
+                }
+                else if (gameObject.GetComponent<GrabDetection>().isGrabbed)
+                {
+                    etatFinal = transparent;
+                    etatDepart = Color.black;
+                }
+            }
+
+            //Si l'allumage de l'écran n'est pas géré par l'utilisateur 
+            else if (!manualSwitch)
+            {
+                if (switchOn)
+                {
+                    etatFinal = transparent;
+                    etatDepart = Color.black;
+                }
+
+                if (!switchOn)
+                {
+                    etatFinal = Color.black;
+                    etatDepart = transparent;
+                }
             }
 
             if (tempsEcoule < fadeTemps)
@@ -67,8 +92,7 @@ public class TelephoneFonctionnement : MonoBehaviour
             {
                 ecran.color = etatFinal;
                 tempsEcoule = 0f;
-                switchPhone = false;
-                inverse = !inverse;
+                switching = false;
             }
         }
     }
