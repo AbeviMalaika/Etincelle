@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3362893943971701527
+--- !u!114 &-7660477240369519371
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  m_EditorClassIdentifier: 
   version: 10
 --- !u!21 &2100000
 Material:
@@ -20,18 +20,19 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PieceBlanche
-  m_Shader: {fileID: -6465566751694194690, guid: ab1e6b3f15554024f8bfee1f827de641, type: 3}
+  m_Name: SwirlTexture
+  m_Shader: {fileID: -6465566751694194690, guid: 296cab9a57dde2740afa22fab26b628d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Opaque
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -70,6 +71,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Noise_Texture:
+        m_Texture: {fileID: 2800000, guid: 2473a609fbaa35a49843a35a2aa38e5c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 2473a609fbaa35a49843a35a2aa38e5c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -78,16 +87,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b26dd2597f974279b88e03469378849a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: b9fbe90325e55564c98332f5c9d7b155, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_c7f66e729e6d46eabd428a08d9daedf3_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 1318f787c77892742a9f9747919ee646, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture2DAsset_aad905eea8fc460ba77a14e48c903a0f_Out_0_Texture2D:
-        m_Texture: {fileID: 2800000, guid: fac014618d489424ead8933d02e8ead4, type: 3}
+    - _Texture_Brillants:
+        m_Texture: {fileID: 2800000, guid: b9fbe90325e55564c98332f5c9d7b155, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _TextureEau:
-        m_Texture: {fileID: 2800000, guid: fac014618d489424ead8933d02e8ead4, type: 3}
+    - _Texture_Paillettes:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -105,8 +122,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _AlphaClip: -13
-    - _AlphaToMask: 0
+    - _AlphaClip: 1
+    - _AlphaToMask: 1
+    - _Amplitude_Degrade: -0.24
+    - _Base_Gradient_Color: 0.48
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -115,29 +134,46 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Degre_Transformation: -0.4
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Dissolve_Size: 30
+    - _Dissolve_Timer: 0.5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+    - _Edge_Thickness: 0.02
     - _EnvironmentReflections: 1
+    - _Float: 0
+    - _Fresnel_Power: 3.12
+    - _Glitter_offset: 0.51
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GrosseurVague: 7
-    - _IntensiteReflet: 7.55
+    - _Grosseur_Brillants: 39.6
+    - _Grosseur_Brillants_1: 0
+    - _Grosseur_Dissolution: 34.64
+    - _Grosseur_Transformation: 33.25
+    - _Intensite_Lueur: -8.1
+    - _Intensite_Scintillement: 0.14
+    - _Largeur_Bordure: 1
     - _Metallic: 0
-    - _Metalness: 1
+    - _Metalness: 0.6
+    - _Noise: -50
+    - _Noise_Rotation_Speed: 1.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _Quantite_Brillants: 0.59
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 1
+    - _Seuil_Brillants: -37.1
+    - _Smoothness: 2.19
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _Temps_Dissolution: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZTest: 4
@@ -145,9 +181,24 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _CouleurEau: {r: 0.21176472, g: 0.42352945, b: 0.47450984, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Couleur_Bordure: {r: 0, g: 0, b: 0, a: 1}
+    - _Couleur_Brillants: {r: 1, g: 0.7125589, b: 0.6462264, a: 1}
+    - _Couleur_Contour_Lumineux: {r: 2, g: 0, b: 0.8258381, a: 0}
+    - _Couleur_Degrade_1: {r: 0.9150943, g: 0.6313726, b: 0.50980395, a: 1}
+    - _Couleur_Degrade_2: {r: 0, g: 0, b: 0, a: 1}
+    - _Couleur_Lueur: {r: 0.90588236, g: 0.21960784, b: 0.272186, a: 0}
+    - _Couleur_Paillettes: {r: 1, g: 0, b: 0, a: 1}
+    - _Edge_Color: {r: 0.8373351, g: 0, b: 0.38876286, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Fresnel_Color: {r: 1.664882, g: 0.81197727, b: 0.16491756, a: 1}
+    - _Glitter_Color: {r: 0.94114244, g: 0.6305857, b: 2.1915438, a: 1}
+    - _Grosseur_Brillants: {r: 1.7, g: 1.7, b: 0, a: 0}
+    - _Grosseur_Paillettes: {r: 1.7, g: 1.7, b: 0, a: 0}
+    - _Noise_Scale: {r: 5, g: 5, b: 0, a: 0}
+    - _Primary_Color: {r: 0.1079161, g: 0.08285868, b: 0.3584906, a: 0}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Secondary_Color: {r: 0.3773585, g: 0.19947258, b: 0.076539695, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

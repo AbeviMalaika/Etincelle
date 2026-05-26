@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: cbaa63a286b85324a9ac9e524a41ac7c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2473a609fbaa35a49843a35a2aa38e5c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -134,7 +134,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Degre_Transformation: 0
+    - _Degre_Transformation: -0.4
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dissolve_Size: 30
@@ -152,10 +152,10 @@ Material:
     - _Grosseur_Brillants: 39.6
     - _Grosseur_Brillants_1: 0
     - _Grosseur_Dissolution: 34.64
-    - _Grosseur_Transformation: 2.94
-    - _Intensite_Lueur: -9
+    - _Grosseur_Transformation: 33.25
+    - _Intensite_Lueur: -8.1
     - _Intensite_Scintillement: 0.14
-    - _Largeur_Bordure: 0.005
+    - _Largeur_Bordure: 1
     - _Metallic: 0
     - _Metalness: 0.6
     - _Noise: -50
@@ -167,7 +167,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Seuil_Brillants: -37.1
-    - _Smoothness: 0.47
+    - _Smoothness: 2.19
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
