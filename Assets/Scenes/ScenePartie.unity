@@ -19681,7 +19681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8624341481271022519, guid: dee2dbc6a945fcd4cbd0248dabf0cc12, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8624341481271022519, guid: dee2dbc6a945fcd4cbd0248dabf0cc12, type: 3}
       propertyPath: m_SortingOrder
@@ -22434,8 +22434,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159861555}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.299, y: 0, z: 1.968}
+  m_LocalRotation: {x: -0.1107503, y: 0.97837096, z: -0.10325759, w: 0.1409343}
+  m_LocalPosition: {x: -348.67206, y: 99.7, z: 1.9925864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -81323,8 +81323,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456709477}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.299, y: 0, z: 1.968}
+  m_LocalRotation: {x: -0.1107503, y: 0.97837096, z: -0.10325759, w: 0.1409343}
+  m_LocalPosition: {x: -348.67206, y: 99.7, z: 1.9925864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242609,7 +242609,7 @@ MonoBehaviour:
   vitesseTransition: 5
   controleurVolMusique: {fileID: 1918110495}
   controleurVolSFX: {fileID: 1015591223}
-  volumeMusiqueDefaut: -10
+  volumeMusiqueDefaut: 0
   volumeSFXDefaut: 0
   mPiste1: {fileID: 595909358}
   mPiste2: {fileID: 247282580}
