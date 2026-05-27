@@ -24,11 +24,12 @@ TagManager:
   - QDSUIBorderlessButton
   - QDSUIDestructiveButton
   - QDSUIToggleSwitch
+  - QDSUIBackplate
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Overlay UI
+  - 
   - Water
   - UI
   - NoReflectionProbes
@@ -55,7 +56,7 @@ TagManager:
   - 
   - 
   - 
-  - OVROverlayCanvas Rendering
+  - Overlay UI
   - OVROverlayCanvas Rendering
   m_SortingLayers:
   - name: Default

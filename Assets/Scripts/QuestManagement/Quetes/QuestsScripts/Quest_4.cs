@@ -119,8 +119,7 @@ public class Quest_4 : QuestScript
             if (ordi.texteDevoile)
             {
                 //Ajout de progression  -------------------------------------
-                Invoke("AjouterProgression", 2f);
-                //AjouterProgression();
+                AjouterProgression();
             }
         }
 
