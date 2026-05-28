@@ -18,7 +18,7 @@ MonoBehaviour:
   - objectifID: 0
     titre: Touche le portail et rentrons !
   - objectifID: 1
-    titre: "Assieds-toi au bureau et \xE9cris le synopsis"
+    titre: "Dirige-toi \xE0 l'ordinateur et \xE9cris le synopsis"
   - objectifID: 2
     titre: Va au chevet et dessine un croquis
   - objectifID: 3
