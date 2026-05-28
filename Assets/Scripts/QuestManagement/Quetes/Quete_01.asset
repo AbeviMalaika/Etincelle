@@ -16,9 +16,9 @@ MonoBehaviour:
   titre: "Panne cr\xE9ative..."
   listeObjectif:
   - objectifID: 0
-    titre: "Deux heures de travail pour des id\xE9es pas top... DELETE !"
+    titre: "Deux heures de travail pour des id\xE9es pas top\u2026 DELETE !"
   - objectifID: 1
     titre: "Ne parlons m\xEAme pas du croquis. Efface-le !"
-  etat: 0
-  progressionActuelle: 0
+  etat: 2
+  progressionActuelle: 2
   progressionRequise: 2

@@ -18,7 +18,7 @@ MonoBehaviour:
   - objectifID: 0
     titre: "Oh, voil\xE0 une luciole ! Attrape-la !"
   - objectifID: 1
-    titre: "D'o\xF9 vient cette luciole d'ailleurs ?"
+    titre: "D\u2019o\xF9 vient cette luciole, d\u2019ailleurs ?"
   - objectifID: 2
     titre: "\xC9trange..."
   - objectifID: 3

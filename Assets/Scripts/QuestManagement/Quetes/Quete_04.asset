@@ -18,11 +18,11 @@ MonoBehaviour:
   - objectifID: 0
     titre: Touche le portail et rentrons !
   - objectifID: 1
-    titre: "Assis-toi au bureau et \xE9cris le synopsis"
+    titre: "Assieds-toi au bureau et \xE9cris le synopsis"
   - objectifID: 2
     titre: Va au chevet et dessine un croquis
   - objectifID: 3
-    titre: "R\xE9pond au t\xE9l\xE9phone, c'est s\xFBrement important !"
-  etat: 2
-  progressionActuelle: 4
+    titre: "R\xE9ponds au t\xE9l\xE9phone, c\u2019est s\xFBrement important !"
+  etat: 0
+  progressionActuelle: 0
   progressionRequise: 4
