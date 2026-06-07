@@ -1,4 +1,4 @@
-# Projet de fin d'étude
+# Projet de fin d'études
 
 Un projet de **Malaïka Abevi**
 
