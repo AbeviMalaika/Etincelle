@@ -2,7 +2,7 @@
 
 Un projet de **Malaïka Abevi**
 
-Voici le repository du projet de fin d'étude.
+Voici le repository du projet de fin d'études.
 
 ---
 
